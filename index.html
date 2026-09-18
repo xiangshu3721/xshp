@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="翔叔的个人电脑桌面：个人介绍与原版个人简历。" />
+    <title>翔叔的桌面空间</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="theme-dream">
+    <div class="desktop-app" id="app">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="system-button" type="button" data-menu-toggle aria-expanded="false" aria-controls="system-menu"><span class="system-mark">X</span><span>翔叔</span></button>
+        </div>
+        <div class="topbar-center"><span class="topbar-status-dot"></span> 正在探索中</div>
+        <div class="topbar-right"><span class="weather-widget" title="杭州当地天气"><span class="weather-icon" aria-hidden="true">☼</span><span>杭州 · 晴</span></span><span data-clock>2026年9月18日 星期五 21:18</span></div>
+        <div class="system-menu" id="system-menu" hidden>
+          <button type="button" data-open-window="about">打开“关于翔叔”</button>
+          <button type="button" data-theme-toggle>切换桌面主题</button>
+          <button type="button" data-mascot-open>呼叫桌面管家</button>
+        </div>
+      </header>
+
+      <main class="desktop" id="desktop" aria-label="翔叔的个人桌面">
+        <div class="wallpaper-art" aria-hidden="true"></div>
+        <div class="desktop-haze" aria-hidden="true"></div>
+
+        <section class="desktop-welcome" aria-label="桌面欢迎语">
+          <p class="welcome-kicker">WELCOME TO XIANGSHU'S DESKTOP</p>
+          <h1>你好，我是翔叔。</h1>
+          <p>这里不是简历，是我如何理解世界、做出东西、继续生活的一张桌面。</p>
+        </section>
+
+        <div class="desktop-items" id="desktop-items">
+          <button class="desktop-item item-resume" type="button" data-window-id="resume" aria-label="打开个人简历"><span class="folder-icon folder-history"><span>历</span></span><span class="item-label">个人简历</span></button>
+          <button class="desktop-item item-about" type="button" data-window-id="about" aria-label="打开个人介绍"><span class="folder-icon folder-person"><span>我</span></span><span class="item-label">个人介绍</span></button>
+        </div>
+
+        <div class="window-layer" id="window-layer" aria-live="polite"></div>
+
+        <button class="mascot-desk" type="button" data-mascot-open aria-expanded="false" aria-label="打开翔叔桌面管家"><span class="mascot-glow"></span><img src="assets/xiangshu-mascot.png" alt="翔叔的卡通桌面管家" /><span class="mascot-name">翔叔管家</span></button>
+        <aside class="mascot-dialog" id="mascot-dialog" hidden><button class="dialog-close" type="button" data-mascot-close aria-label="关闭对话">×</button><p class="dialog-kicker">桌面管家</p><p class="dialog-main">先随便点开一个文件夹吧。这里没有正确路线，只有你现在想了解的那一部分。</p><div class="dialog-actions"><button type="button" data-open-window="projects">看项目</button><button type="button" data-open-window="docs">读文字</button></div></aside>
+
+        <nav class="dock" aria-label="桌面快捷入口">
+          <button type="button" class="dock-item" data-open-window="about"><span class="dock-glyph glyph-finder">⌘</span><span>关于</span></button>
+          <button type="button" class="dock-item" data-open-window="projects"><span class="dock-glyph glyph-folder">□</span><span>作品</span></button>
+          <button type="button" class="dock-item" data-theme-toggle><span class="dock-glyph glyph-theme">◐</span><span>主题</span></button>
+          <button type="button" class="dock-item" data-mascot-open><span class="dock-glyph glyph-mascot">X</span><span>管家</span></button>
+        </nav>
+      </main>
+      <div class="theme-panel" id="theme-panel" hidden></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
