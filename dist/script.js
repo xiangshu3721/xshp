@@ -117,7 +117,7 @@ const windowData = {
     title: '使用说明', path: 'SYSTEM / GUIDE', content: `
       <p class="window-kicker">WELCOME TO THE DESKTOP</p>
       <h2>像使用一台电脑一样认识翔叔。</h2>
-      <div class="help-grid"><div class="help-card"><h3>打开文件夹</h3><p>点击桌面文件夹、底部 Dock 图标或顶部菜单。窗口会在桌面上打开。</p></div><div class="help-card"><h3>移动文件夹</h3><p>按住文件夹拖动。松开后会保留在新的位置；短按则打开对应内容。</p></div><div class="help-card"><h3>移动窗口</h3><p>拖动窗口顶部标题栏。左侧三颗按钮分别用于关闭、隐藏和放大。</p></div><div class="help-card"><h3>更换主题</h3><p>点击顶部“主题”或 Dock 里的主题图标，在五种桌面气质之间切换。</p></div></div>
+      <div class="help-grid"><div class="help-card"><h3>打开内容</h3><p>使用底部 Dock 里的关于、简历和作品入口打开内容。</p></div><div class="help-card"><h3>移动翔叔管家</h3><p>按住翔叔管家拖动到桌面的任意位置。松开后会保留新的位置；轻点则打开对话。</p></div><div class="help-card"><h3>移动窗口</h3><p>拖动窗口顶部标题栏。左侧三颗按钮分别用于关闭、隐藏和放大。</p></div><div class="help-card"><h3>更换主题</h3><p>点击顶部“主题”或 Dock 里的主题图标，在五种桌面气质之间切换。</p></div></div>
     `,
   },
 };
@@ -227,6 +227,47 @@ function startFolderDrag(event, item) {
   item.addEventListener('pointercancel', end);
 }
 
+function startMascotDrag(event, mascot) {
+  if (event.button !== undefined && event.button !== 0) return;
+  const desktop = document.querySelector('.desktop');
+  if (!desktop) return;
+  const desktopRect = desktop.getBoundingClientRect();
+  const rect = mascot.getBoundingClientRect();
+  const offsetX = event.clientX - rect.left;
+  const offsetY = event.clientY - rect.top;
+  let moved = false;
+  const move = (moveEvent) => {
+    const dx = moveEvent.clientX - event.clientX;
+    const dy = moveEvent.clientY - event.clientY;
+    if (Math.abs(dx) + Math.abs(dy) > 5) moved = true;
+    if (!moved) return;
+    const maxLeft = Math.max(8, desktopRect.width - rect.width - 8);
+    const maxTop = Math.max(8, desktopRect.height - rect.height - 8);
+    const left = Math.min(maxLeft, Math.max(8, moveEvent.clientX - desktopRect.left - offsetX));
+    const top = Math.min(maxTop, Math.max(8, moveEvent.clientY - desktopRect.top - offsetY));
+    mascot.classList.add('is-dragging');
+    mascot.style.left = `${left}px`;
+    mascot.style.top = `${top}px`;
+    mascot.style.right = 'auto';
+    mascot.style.bottom = 'auto';
+  };
+  const end = () => {
+    mascot.classList.remove('is-dragging');
+    mascot.releasePointerCapture?.(event.pointerId);
+    mascot.removeEventListener('pointermove', move);
+    mascot.removeEventListener('pointerup', end);
+    mascot.removeEventListener('pointercancel', end);
+    if (moved) {
+      mascot.dataset.skipClick = 'true';
+      window.setTimeout(() => delete mascot.dataset.skipClick, 160);
+    }
+  };
+  mascot.setPointerCapture?.(event.pointerId);
+  mascot.addEventListener('pointermove', move);
+  mascot.addEventListener('pointerup', end);
+  mascot.addEventListener('pointercancel', end);
+}
+
 function startWindowDrag(event, titlebar) {
   if (event.target.closest('button')) return;
   const windowElement = titlebar.closest('.window');
@@ -256,6 +297,7 @@ function startWindowDrag(event, titlebar) {
 }
 
 document.querySelectorAll('.desktop-item').forEach((item) => item.addEventListener('pointerdown', (event) => startFolderDrag(event, item)));
+document.querySelector('.mascot-desk')?.addEventListener('pointerdown', (event) => startMascotDrag(event, event.currentTarget));
 
 document.addEventListener('pointerdown', (event) => {
   const windowElement = event.target.closest('.window');
@@ -311,6 +353,10 @@ document.addEventListener('click', (event) => {
 
   const mascotOpen = event.target.closest('[data-mascot-open]');
   if (mascotOpen) {
+    if (mascotOpen.dataset.skipClick === 'true') {
+      delete mascotOpen.dataset.skipClick;
+      return;
+    }
     setMascot(mascotDialog.hidden);
     return;
   }
