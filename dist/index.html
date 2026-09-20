@@ -7,7 +7,7 @@
     <title>翔叔的桌面空间</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="theme-dream">
+  <body class="theme-art">
     <div class="desktop-app" id="app">
       <header class="topbar">
         <div class="topbar-left">
@@ -17,7 +17,7 @@
         <div class="topbar-right"><span class="weather-widget" title="杭州当地天气"><span class="weather-icon" aria-hidden="true">☼</span><span>杭州 · 晴</span></span><span data-clock>2026年9月18日 星期五 21:18</span></div>
         <div class="system-menu" id="system-menu" hidden>
           <button type="button" data-open-window="about">打开“关于翔叔”</button>
-          <button type="button" data-theme-toggle>切换桌面主题</button>
+          <button type="button" data-theme-toggle>切换背景艺术图</button>
           <button type="button" data-mascot-open>呼叫桌面管家</button>
         </div>
       </header>
@@ -26,16 +26,111 @@
         <div class="wallpaper-art" aria-hidden="true"></div>
         <div class="desktop-haze" aria-hidden="true"></div>
 
-        <section class="desktop-welcome" aria-label="桌面欢迎语">
-          <p class="welcome-kicker">WELCOME TO XIANGSHU'S DESKTOP</p>
-          <h1>你好，我是翔叔。</h1>
-          <p>产品艺术家<br />以万物为师，行知合一<br />探索 AI x 身心成长最佳实践</p>
+        <section class="manifesto-page manifesto-hero" aria-label="桌面欢迎语" data-wallpaper="original">
+          <div class="desktop-welcome">
+            <p class="welcome-kicker">WELCOME TO XIANGSHU'S DESKTOP</p>
+            <h1>你好，我是翔叔。</h1>
+            <p>产品艺术家<br />以万物为师，行知合一<br />探索 AI x 身心成长最佳实践</p>
+            <p class="manifesto-scroll-hint">下滑，探索新世界<span>👇</span></p>
+          </div>
+        </section>
+
+        <section class="manifesto-rail" aria-label="翔叔的九大关系">
+          <article class="manifesto-page manifesto-page-right" data-wallpaper="02.jpeg">
+            <div class="manifesto-copy">
+              <p class="manifesto-index">01 / 与自己的关系</p>
+              <h2>先成为自己，<br /><em>再谈如何与世界相处。</em></h2>
+              <p class="manifesto-quote">“人最重要的成长，是把人生的方向盘拿回自己手里。”</p>
+              <p class="manifesto-body">主体性不是任性，也不是拒绝所有人的意见。它是我能够听见自己的感受，辨认自己的愿望，做出属于自己的选择，并愿意承担选择的结果。人不能只活成别人期待的样子，最终要慢慢活出自己、成为自己。</p>
+              <p class="manifesto-note">第一关系 / 自我认识 · 自我驱动 · 自我负责</p>
+            </div>
+          </article>
+
+          <article class="manifesto-page" data-wallpaper="03.jpeg">
+            <div class="manifesto-copy">
+              <p class="manifesto-index">02 / 与原生家庭的关系</p>
+              <h2>理解来处，<br /><em>但不被来处决定。</em></h2>
+              <p class="manifesto-quote">“家庭给了我们最早的语言，也可能留下最早的限制。”</p>
+              <p class="manifesto-body">我们都从家庭里继承了爱、习惯、恐惧和看待世界的方式。成长不是简单地责怪父母，也不是把一切都合理化，而是重新看见：哪些经验值得珍惜，哪些模式需要停在自己这里。理解父母，是为了更自由地成为自己。</p>
+              <p class="manifesto-note">第二关系 / 安全感 · 边界 · 重新选择</p>
+            </div>
+          </article>
+
+          <article class="manifesto-page manifesto-page-right" data-wallpaper="04.jpeg">
+            <div class="manifesto-copy">
+              <p class="manifesto-index">03 / 与亲密关系的关系</p>
+              <h2>靠近一个人，<br /><em>也不把自己弄丢。</em></h2>
+              <p class="manifesto-quote">“好的亲密，不是互相占有，而是彼此看见。”</p>
+              <p class="manifesto-body">亲密关系会照见我们最深的渴望，也会触发最熟悉的不安。真正的靠近，不是用牺牲换取留下，也不是用控制证明爱，而是在诚实表达、彼此信任和清晰边界里，让两个人都能保有完整的自己。</p>
+              <p class="manifesto-note">第三关系 / 依恋 · 信任 · 边界 · 爱与分离</p>
+            </div>
+          </article>
+
+          <article class="manifesto-page" data-wallpaper="01.jpeg">
+            <div class="manifesto-copy">
+              <p class="manifesto-index">04 / 与婚姻的关系</p>
+              <h2>把爱情放进生活，<br /><em>一起成为共同体。</em></h2>
+              <p class="manifesto-quote">“婚姻不是爱情的终点，而是共同生活的开始。”</p>
+              <p class="manifesto-body">婚姻会把浪漫带回柴米油盐，也会让责任、承诺、分工和价值观变得具体。它不是谁拯救谁，而是两个有主体性的人，愿意一起经营生活、面对变化，也在共同体里保留彼此成长的空间。</p>
+              <p class="manifesto-note">第四关系 / 责任 · 协商 · 承诺 · 共同生活</p>
+            </div>
+          </article>
+
+          <article class="manifesto-page manifesto-page-right" data-wallpaper="02.jpeg">
+            <div class="manifesto-copy">
+              <p class="manifesto-index">05 / 与孩子的关系</p>
+              <h2>爱孩子，<br /><em>也允许他成为他自己。</em></h2>
+              <p class="manifesto-quote">“父母不是把孩子塑造成作品，而是陪他长成一个人。”</p>
+              <p class="manifesto-body">孩子不是父母未完成的人生，也不是用来证明家庭成功的答案。养育需要保护，也需要放手；需要传递价值，也需要尊重差异。我们能做的，是给他足够的安全感，让他有一天可以带着自己的判断走向世界。</p>
+              <p class="manifesto-note">第五关系 / 保护 · 陪伴 · 边界 · 放手</p>
+            </div>
+          </article>
+
+          <article class="manifesto-page" data-wallpaper="03.jpeg">
+            <div class="manifesto-copy">
+              <p class="manifesto-index">06 / 与事业的关系</p>
+              <h2>让生命力进入现实，<br /><em>把想法做成事情。</em></h2>
+              <p class="manifesto-quote">“事业，是一个人把天赋、经验和价值交给世界的方式。”</p>
+              <p class="manifesto-body">事业不只是谋生，也不只是赢过别人。它可以是一种创造：把问题看清，把产品做出来，把服务交付给真实的人。好的事业让能力产生价值，也让一个人越来越知道自己愿意为什么长期投入。</p>
+              <p class="manifesto-note">第六关系 / 能力 · 创造 · 贡献 · 社会角色</p>
+            </div>
+          </article>
+
+          <article class="manifesto-page manifesto-page-right" data-wallpaper="04.jpeg">
+            <div class="manifesto-copy">
+              <p class="manifesto-index">07 / 与金钱财富的关系</p>
+              <h2>让钱成为工具，<br /><em>而不是人生的主人。</em></h2>
+              <p class="manifesto-quote">“财富的意义，不是让人更焦虑，而是让选择更有余地。”</p>
+              <p class="manifesto-body">钱连接着价值、欲望、安全感和自由。我们既不必羞于谈钱，也不能把收入当成唯一的自我证明。更重要的是建立健康的交换能力、分配能力和长期主义，让财富服务于真正想过的生活。</p>
+              <p class="manifesto-note">第七关系 / 匮乏与丰盛 · 自由 · 控制 · 流动</p>
+            </div>
+          </article>
+
+          <article class="manifesto-page" data-wallpaper="01.jpeg">
+            <div class="manifesto-copy">
+              <p class="manifesto-index">08 / 与大自然的关系</p>
+              <h2>重新连接自然，<br /><em>也重新连接自己的身体。</em></h2>
+              <p class="manifesto-quote">“人不是站在自然之外的观察者，而是生命网络中的一部分。”</p>
+              <p class="manifesto-body">当我们长期生活在屏幕、效率和信息里，很容易忘记身体有自己的节奏。走进山水、感受季节、照顾睡眠与呼吸，不是逃离现实，而是让自己回到真实的尺度，重新听见生命正在发生什么。</p>
+              <p class="manifesto-note">第八关系 / 身体 · 节律 · 当下 · 生机</p>
+            </div>
+          </article>
+
+          <article class="manifesto-page manifesto-page-right manifesto-page-closing" data-wallpaper="02.jpeg">
+            <div class="manifesto-copy">
+              <p class="manifesto-index">09 / 与信仰的关系</p>
+              <h2>在更大的存在里，<br /><em>安顿自己的生命。</em></h2>
+              <p class="manifesto-quote">“当人不再把自己当作世界的中心，反而更容易获得内在的自由。”</p>
+              <p class="manifesto-body">信仰不一定是一套标准答案，也可以是一个人对意义、终极价值和未知世界的诚实回应。它让我们在失去控制时仍有可以依靠的方向，在短暂的人生里保持谦卑、慈悲与敬畏。</p>
+              <p class="manifesto-signature">九大关系<br /><span>内在有自己，关系有连接，现实有能力，精神有归处。</span></p>
+            </div>
+          </article>
         </section>
 
         <div class="window-layer" id="window-layer" aria-live="polite"></div>
 
         <button class="mascot-desk" type="button" data-mascot-open aria-expanded="false" aria-label="打开翔叔桌面管家"><span class="mascot-glow"></span><img src="assets/xiangshu-mascot.png" alt="翔叔的卡通桌面管家" /><span class="mascot-name">翔叔管家</span></button>
-        <aside class="mascot-dialog" id="mascot-dialog" hidden><button class="dialog-close" type="button" data-mascot-close aria-label="关闭对话">×</button><p class="dialog-kicker">桌面管家</p><p class="dialog-main">先随便点开一个文件夹吧。这里没有正确路线，只有你现在想了解的那一部分。</p><div class="dialog-actions"><button type="button" data-open-window="projects">看项目</button><button type="button" data-open-window="docs">读文字</button></div></aside>
+        <aside class="mascot-dialog" id="mascot-dialog" hidden><button class="dialog-close" type="button" data-mascot-close aria-label="关闭对话">×</button><p class="dialog-kicker">今日诗句</p><p class="dialog-main" aria-live="polite"></p></aside>
 
         <nav class="dock" aria-label="桌面快捷入口">
           <button type="button" class="dock-item" data-open-window="about"><span class="dock-glyph glyph-finder">⌘</span><span>关于</span></button>
