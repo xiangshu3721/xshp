@@ -5,28 +5,6 @@ const themePanel = document.querySelector('#theme-panel');
 const systemMenu = document.querySelector('#system-menu');
 const mascotDialog = document.querySelector('#mascot-dialog');
 
-function initManifestoScroll() {
-  const pages = Array.from(document.querySelectorAll('.manifesto-page[data-wallpaper]'));
-  if (!desktop || !pages.length) return;
-  const setWallpaper = (page) => {
-    const wallpaper = page.dataset.wallpaper;
-    const theme = themes.find((item) => item.wallpaper === wallpaper || item.id === wallpaper);
-    const asset = theme?.src || `assets/manifesto/${wallpaper}`;
-    if (asset) desktop.style.setProperty('--active-wallpaper', `url("${asset}")`);
-    if (theme) {
-      desktop.dataset.wallpaperTheme = theme.id;
-      updateThemeChoices();
-    }
-  };
-  if (!desktop.dataset.wallpaperTheme) setWallpaper(pages[0]);
-  if (!('IntersectionObserver' in window)) return;
-  const observer = new IntersectionObserver((entries) => {
-    const visiblePage = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-    if (visiblePage) setWallpaper(visiblePage.target);
-  }, { threshold: [0.35, 0.6, 0.85], rootMargin: '-18% 0px -18% 0px' });
-  pages.forEach((page) => observer.observe(page));
-}
-
 let zIndex = 25;
 
 const themes = [
@@ -552,4 +530,3 @@ function updateClock() {
 
 updateClock();
 window.setInterval(updateClock, 1000);
-initManifestoScroll();
