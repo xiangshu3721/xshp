@@ -35,6 +35,8 @@ const themes = [
   { id: 'forest', name: '林间之路', note: '慢下来，向内走', wallpaper: '02.jpeg', src: 'assets/manifesto/02.jpeg' },
   { id: 'valley', name: '山野之间', note: '保持好奇', wallpaper: '03.jpeg', src: 'assets/manifesto/03.jpeg' },
   { id: 'cloud', name: '云上世界', note: '允许自己出发', wallpaper: '04.jpeg', src: 'assets/manifesto/04.jpeg' },
+  { id: 'lakeside', name: '湖畔读书', note: '在水边，慢慢读', src: 'assets/lakeside-reading.png' },
+  { id: 'pink-cloud', name: '粉云花园', note: '轻盈地，向天空伸手', src: 'assets/pink-cloud-girl-desktop.png' },
 ];
 
 const romanticPoems = [
@@ -538,5 +540,16 @@ try {
   if (savedTheme) setTheme(savedTheme);
 } catch (error) { /* local preference is optional */ }
 
-document.querySelector('[data-clock]')?.replaceChildren(new Intl.DateTimeFormat('zh-CN', { dateStyle: 'long', weekday: 'long' }).format(new Date()));
+function updateClock() {
+  const clock = document.querySelector('[data-clock]');
+  if (!clock) return;
+  const parts = new Intl.DateTimeFormat('zh-CN', {
+    year: 'numeric', month: 'numeric', day: 'numeric', weekday: 'long',
+    hour: '2-digit', minute: '2-digit', hour12: false, hourCycle: 'h23',
+  }).formatToParts(new Date()).reduce((result, part) => ({ ...result, [part.type]: part.value }), {});
+  clock.textContent = `${parts.year}年${parts.month}月${parts.day}日 ${parts.weekday} ${parts.hour}:${parts.minute}`;
+}
+
+updateClock();
+window.setInterval(updateClock, 1000);
 initManifestoScroll();
