@@ -848,3 +848,58 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   .about-v3-profile-body { margin-top: 23px; }
   .about-v3-profile-story p { font-size: 14px !important; }
 }
+
+
+/* LIFE AS ART / 10 WORKS — replacing the prior thought-notes panel */
+.thoughts-window { width: min(950px,calc(100vw - 52px)); }
+.life-art-page { width: min(100%,850px); margin: 0 auto; }
+.life-art-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(28px,4vw,48px) clamp(25px,4.5vw,48px) 35px;
+  border-radius: 12px;
+  border: 1px solid rgba(243,214,168,.27);
+  background: radial-gradient(ellipse at 110% 0%,rgba(220,176,120,.2),transparent 60%),linear-gradient(137deg,rgba(51,78,72,.8),rgba(29,45,54,.9));
+}
+.life-art-hero::before { content: ""; width: 290px; height: 290px; border: 1px solid rgba(242,203,148,.28); border-radius: 50%; position: absolute; top: -150px; right: -90px; pointer-events: none; box-shadow: 0 0 0 37px rgba(242,203,148,.045),0 0 0 82px rgba(242,203,148,.035); }
+.life-art-hero .window-kicker { position: relative; margin-bottom: 24px; font-size: 11px; color: #f4d4a3; letter-spacing: .16em; }
+.life-art-hero h2 { position: relative; max-width: 760px; margin: 0 0 29px; font: 500 clamp(40px,5.2vw,65px)/1.32 "Hiragino Mincho ProN","Songti SC","STSong",serif; letter-spacing: -.055em; color: #fcf3e4; }
+.life-art-hero h2 em { color: #f2c78e; font-style: normal; }
+.life-art-headline { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 20px; position: relative; padding-top: 19px; border-top: 1px solid rgba(246,226,195,.2); }
+.life-art-headcount { white-space: nowrap; color: #f0c991; font: 500 52px/1 "Hiragino Mincho ProN","Songti SC","STSong",serif; }
+.life-art-headcount small { font: 500 19px/1.5 "Hiragino Mincho ProN","Songti SC","STSong",serif; margin-left: 9px; letter-spacing: .1em; }
+.life-art-headline p { max-width: 340px; margin: 0; color: #e0e8db; font: 14px/1.9 "Hiragino Mincho ProN","Songti SC","STSong",serif; }
+.life-art-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; margin-top: 23px; }
+.life-art-card {
+  position: relative;
+  min-width: 0;
+  min-height: 181px;
+  padding: 25px 24px 29px;
+  border: 1px solid rgba(242,225,197,.2);
+  border-radius: 9px;
+  background: linear-gradient(152deg,rgba(255,255,255,.073),rgba(255,255,255,.022));
+  transition: background .2s, border-color .2s;
+  overflow: hidden;
+}
+.life-art-card:hover { background: linear-gradient(152deg,rgba(239,200,141,.105),rgba(255,255,255,.029)); border-color: rgba(242,201,147,.45); }
+.life-art-index { display: inline-block; color: #f0c991; font: 500 13px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing: .14em; }
+.life-art-kind { display: inline-block; margin-left: 12px; color: #aabeb3; font: 10px/1.2 ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing: .13em; }
+.life-art-card h3 { margin: 23px 0 11px; color: #faf1e2; font: 500 clamp(22px,2.2vw,28px)/1.4 "Hiragino Mincho ProN","Songti SC","STSong",serif; letter-spacing: -.02em; }
+.life-art-card p { max-width: 360px; margin: 0; color: #cbd7ca; font-size: 13px; line-height: 1.95; }
+.life-art-end { margin: 44px auto 8px; padding: 22px 0 0; border-top: 1px solid rgba(244,227,198,.23); text-align: center; }
+.life-art-end p { margin: 0 0 13px; color: #f3d2a2; font: 500 20px/1.75 "Hiragino Mincho ProN","Songti SC","STSong",serif; letter-spacing: .13em; }
+.life-art-end span { color: #a7bbad; font: 11px/1.8 Georgia,serif; letter-spacing: .16em; }
+@media(max-width:760px){
+  .thoughts-window { width: calc(100vw - 16px); }
+  .life-art-hero { padding: 28px 23px 27px; }
+  .life-art-hero h2 { font-size: clamp(38px,8vw,52px); }
+  .life-art-headcount { font-size: 45px; }
+  .life-art-headline p { font-size: 12px; }
+  .life-art-list { grid-template-columns: 1fr; gap: 10px; }
+  .life-art-card { min-height: unset; padding: 20px 21px 22px; }
+  .life-art-card h3 { font-size: 24px; margin: 15px 0 6px; }
+  .life-art-card p { font-size: 12px; line-height: 1.85; }
+  .life-art-end { margin-top: 32px; }
+  .life-art-end p { font-size: 17px; }
+}
+@media(prefers-reduced-motion:reduce){.life-art-card{transition:none}}
