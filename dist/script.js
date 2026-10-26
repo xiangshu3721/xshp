@@ -196,8 +196,6 @@ const windowData = {
         <div class="ai-gallery">${aiCards}</div>
         <div class="exhibition-section-title legacy-title"><p class="window-kicker">02 / PAST PRODUCT EXPERIENCE</p><h3>在真实的商业世界里。</h3><p>从社交与短视频直播，到二奢交易与复杂供应链产品。项目不是孤立的页面，而是我理解人、用户、组织和商业的过程。</p></div>
         <div class="legacy-gallery"><article><img src="assets/portfolio-pages/page-05.jpg" alt="Soulmate 创意社交历史项目界面" loading="lazy"><span>2017–2019</span><h4>Soulmate · 创意社交</h4><p>用户连接、社交机制、活动与运营。</p></article><article><img src="assets/portfolio-pages/page-04.jpg" alt="短视频直播产品界面及后台" loading="lazy"><span>2019–2021</span><h4>短视频 · 直播商业化</h4><p>内容、主播、公会、活动与商业增长。</p></article><article><img src="assets/portfolio-pages/page-03.jpg" alt="二奢与直播电商项目界面" loading="lazy"><span>2021–2024</span><h4>二奢 · 直播电商系统</h4><p>商品、仓储、订单、交易与私域协作。</p></article></div>
-        <div class="exhibition-actions"><button type="button" data-open-window="timeline">查看职业时间轴 ↗</button><button type="button" data-open-window="portfolioArchive">查看原版 11 页作品图集 ↗</button><button type="button" data-open-window="resume">打开原版简历 ↗</button></div>
-        <p class="exhibition-ethics">项目卡片为作品概览，部分仍在实验和迭代中；彩色封面是概念视觉，不代表真实产品界面。传统文化、心理与测评类内容仅供探索，不替代专业诊断。</p>
       </div>`,
   },
   portfolioArchive: {
