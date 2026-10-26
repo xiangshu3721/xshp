@@ -211,16 +211,83 @@ const windowData = {
     `,
   },
   writing: {
-    title: '思想札记', path: 'IDEAS / THOUGHT EXPERIMENTS', content: `
-      <div class="thought-page"><p class="window-kicker">THINK DEEPLY / LIVE FULLY</p><h2>一些我认真想过，<br /><em>仍在继续思考的事。</em></h2><p class="window-intro">这里先呈现正在探索的命题，而不是冒充已经发表的文章。它们是我理解人、世界与创造的几个入口。</p>
-      <div class="thought-list">
-        <article><small>01 / 主体性</small><h3>有选择，不代表真正自由。</h3><p>能不能分辨哪些是自己的声音，选择自己想要的路，并愿意为结果负责？</p></article>
-        <article><small>02 / 行知合一</small><h3>想明白，不等于真的成长。</h3><p>认识只有走进生活、行动与复盘，才可能生长为自己的智慧。</p></article>
-        <article><small>03 / AI × 人</small><h3>机器越来越聪明，人怎样更完整地成为自己？</h3><p>主体性、感受力、关系、审美和创造，反而值得被认真珍惜。</p></article>
-        <article><small>04 / 出世 × 入世</small><h3>向内修智慧，也向外创造价值。</h3><p>不把生命困在单一的成功标准里：有内在的通透，也有进入现实的勇气。</p></article>
-        <article><small>05 / 创作与真实</small><h3>作品不是概念，必须在现实中活起来。</h3><p>真实的人、真实的场景、真实的反馈，是创造力最重要的磨刀石。</p></article>
+    title: '人生艺术化 · 十件作品', path: 'LIFE AS ART / TEN WORKS', content: `
+      <div class="life-art-page">
+        <header class="life-art-hero">
+          <p class="window-kicker">LIFE AS ART / A WORK IN PROGRESS</p>
+          <h2>翔叔的<br /><em>人生艺术化。</em></h2>
+          <div class="life-art-headline">
+            <span class="life-art-headcount">10 <small>件作品</small></span>
+            <p>不仅创造产品，<br />也把自己的生命当作一件作品。</p>
+          </div>
+        </header>
+        <div class="life-art-list" aria-label="翔叔人生艺术化的十件作品">
+          <article class="life-art-card">
+            <span class="life-art-index">01</span>
+            <span class="life-art-kind">LIFE</span>
+            <h3>生命作品</h3>
+            <p>成为一个越来越完整、自由、有主体性的人。</p>
+          </article>
+          <article class="life-art-card">
+            <span class="life-art-index">02</span>
+            <span class="life-art-kind">WISDOM</span>
+            <h3>思想作品</h3>
+            <p>建立自己的生命智慧体系。</p>
+          </article>
+          <article class="life-art-card">
+            <span class="life-art-index">03</span>
+            <span class="life-art-kind">WORDS</span>
+            <h3>文字作品</h3>
+            <p>留下书、文章、思想记录。</p>
+          </article>
+          <article class="life-art-card">
+            <span class="life-art-index">04</span>
+            <span class="life-art-kind">PRODUCT</span>
+            <h3>产品作品</h3>
+            <p>创造真正注入自己精神的产品。</p>
+          </article>
+          <article class="life-art-card">
+            <span class="life-art-index">05</span>
+            <span class="life-art-kind">ART</span>
+            <h3>艺术作品</h3>
+            <p>音乐、绘画、空间、视觉、花道，任何纯粹表达生命的创作。</p>
+          </article>
+          <article class="life-art-card">
+            <span class="life-art-index">06</span>
+            <span class="life-art-kind">EDUCATION</span>
+            <h3>教育作品</h3>
+            <p>探索 AI 时代新的成长与教育方式。</p>
+          </article>
+          <article class="life-art-card">
+            <span class="life-art-index">07</span>
+            <span class="life-art-kind">LOVE</span>
+            <h3>爱情作品</h3>
+            <p>真正爱过，并经历一段深度关系。</p>
+          </article>
+          <article class="life-art-card">
+            <span class="life-art-index">08</span>
+            <span class="life-art-kind">FAMILY</span>
+            <h3>父子作品</h3>
+            <p>陪孩子成长，也允许他成为他自己。</p>
+          </article>
+          <article class="life-art-card">
+            <span class="life-art-index">09</span>
+            <span class="life-art-kind">FRIENDSHIP</span>
+            <h3>友谊作品</h3>
+            <p>拥有三五真正懂彼此的人。</p>
+          </article>
+          <article class="life-art-card">
+            <span class="life-art-index">10</span>
+            <span class="life-art-kind">WORLD</span>
+            <h3>世界作品</h3>
+            <p>旅居、行走、见天地见众生，不断拓展生命边界。</p>
+          </article>
+        </div>
+        <footer class="life-art-end">
+          <p>见天地 · 见众生 · 见自己</p>
+          <span>THINK IT · BUILD IT · SHARE IT</span>
+        </footer>
       </div>
-      <div class="thought-actions"><button type="button" data-open-window="universe">走进九大关系 ↗</button><button type="button" data-open-window="projects">看看我做的作品 ↗</button></div></div>
     `,
   },
   video: {
