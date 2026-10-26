@@ -1026,3 +1026,42 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   .exhibition-hero-simple { padding: 23px 21px; }
   .exhibition-hero-simple h2 { font-size: clamp(30px, 7.2vw, 40px); }
 }
+
+
+/* EXPRESSION MERGE / four clear entrances, one rich expression space */
+@media (min-width: 761px) {
+  .explore-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .explore-grid > .portal-card,
+  .explore-grid > .portal-card:nth-child(n+4) { grid-column: auto; min-height: 248px; }
+}
+.expression-window {
+  width: min(920px, calc(100vw - 52px));
+  max-height: min(850px, calc(100dvh - 80px));
+}
+.expression-page { width: 100%; max-width: 850px; margin-inline: auto; }
+.expression-intro { margin: 0 0 clamp(40px, 5vw, 58px); padding: 10px 0 28px; border-bottom: 1px solid rgba(242, 220, 190, .23); }
+.expression-intro > .window-kicker { color: #f1c991; font-size: 11px; letter-spacing: .15em; }
+.expression-intro h2 { margin: 22px 0 16px; font: 500 clamp(34px,4.8vw,58px)/1.35 "Hiragino Mincho ProN","Songti SC","STSong",serif; letter-spacing: -.045em; color: #f8f0e3; }
+.expression-intro h2 em { font-style: normal; color: #f0c991; }
+.expression-intro > p:last-of-type { margin: 0; color: #c9d5ca; font-size: 13px; line-height: 1.95; }
+.expression-nav { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 25px; }
+.expression-nav button { padding: 12px 17px; border: 1px solid rgba(241,207,163,.42); border-radius: 6px; background: rgba(255,255,255,.055); color: #f2ddbd; cursor: pointer; font: 500 13px/1.5 ui-sans-serif,-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif; transition: background .2s, border-color .2s; }
+.expression-nav button:hover, .expression-nav button:focus-visible { background: rgba(240,201,145,.16); border-color: #f0c991; }
+.expression-section { scroll-margin-top: 24px; }
+.expression-section + .expression-section { margin-top: clamp(60px,8vw,94px); padding-top: 40px; border-top: 1px solid rgba(245,228,196,.22); }
+.expression-universe { max-width: 850px; margin-inline: auto; }
+.expression-universe .universe-intro { padding-top: 0; }
+.expression-universe .universe-intro h2 { margin-top: 16px; }
+.expression-universe .manifesto-rail { margin-top: 15px; }
+.expression-universe-closing { margin: 36px 0 0; color: #f0d1a0; text-align: center; font: 500 clamp(15px,2vw,20px)/1.9 "Hiragino Mincho ProN","Songti SC","STSong",serif; }
+@media (max-width: 760px) {
+  .expression-window { width: calc(100vw - 16px); max-height: calc(100dvh - 80px); }
+  .expression-intro { margin-bottom: 32px; padding-bottom: 24px; }
+  .expression-intro h2 { font-size: clamp(30px,7.5vw,40px); line-height: 1.4; }
+  .expression-nav { flex-direction: column; gap: 8px; }
+  .expression-nav button { width: 100%; padding: 11px 15px; text-align: left; font-size: 12px; }
+  .expression-section + .expression-section { margin-top: 56px; padding-top: 29px; }
+  .expression-universe .manifesto-page { padding: 24px 0 28px; }
+  .expression-universe-closing { font-size: 15px; }
+}
+@media (prefers-reduced-motion: reduce) { .expression-nav button { transition: none; } }

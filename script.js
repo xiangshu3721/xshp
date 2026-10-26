@@ -204,16 +204,20 @@ const windowData = {
       <div class="portfolio-pages">${portfolioPages.join('')}</div>
     `,
   },
-  universe: {
-    title: '精神宇宙 · 九大关系', path: 'INNER UNIVERSE / NINE RELATIONSHIPS', content: `
-      <div class="universe-intro"><p class="window-kicker">MY INNER UNIVERSE</p><h2>从认识自己，到理解世界。</h2><p>我一直在探索的，是人与自己、亲密关系、家庭、事业、自然乃至意义的关系。九大关系不是一套标准答案，而是一幅仍在生长的生命地图。</p><nav class="universe-toc" aria-label="跳转到不同关系">${Array.from({length:9},(_,i)=>`<button type="button" data-universe-anchor="relation-${i+1}" aria-label="查看第 ${i+1} 个关系">${String(i+1).padStart(2,'0')}</button>`).join('')}</nav></div>
-      ${document.querySelector('#universe-content')?.innerHTML || ''}
-      <p class="universe-end">内在有自己，关系有连接，现实有能力，精神有归处。<br /><button type="button" data-open-window="writing">继续探索思想札记 ↗</button></p>
-    `,
-  },
   writing: {
-    title: '人生艺术化 · 十件作品', path: 'LIFE AS ART / TEN WORKS', content: `
-      <div class="life-art-page">
+    title: '表达', path: 'EXPRESSION / INNER WORLD & LIFE AS ART', content: `
+      <div class="expression-page">
+        <header class="expression-intro">
+          <p class="window-kicker">EXPRESSION / THINK · BUILD · SHARE</p>
+          <h2>思考，<em>创造与表达。</em></h2>
+          <p>那些关于如何活着的思考，以及我想用一生去创造的作品。</p>
+          <nav class="expression-nav" aria-label="表达内容目录">
+            <button type="button" data-expression-anchor="expression-works">人生艺术化 · 10 件作品</button>
+            <button type="button" data-expression-anchor="expression-universe">理解生命 · 九大关系</button>
+          </nav>
+        </header>
+        <section id="expression-works" class="expression-section">
+          <div class="life-art-page">
         <header class="life-art-hero">
           <p class="window-kicker">LIFE AS ART / A WORK IN PROGRESS</p>
           <h2>翔叔的<br /><em>人生艺术化。</em></h2>
@@ -288,6 +292,20 @@ const windowData = {
           <p>见天地 · 见众生 · 见自己</p>
           <span>THINK IT · BUILD IT · SHARE IT</span>
         </footer>
+          </div>
+        </section>
+        <section class="expression-section expression-universe" id="expression-universe">
+          <div class="universe-intro">
+            <p class="window-kicker">INNER WORLD / NINE RELATIONSHIPS</p>
+            <h2>从认识自己，到理解世界。</h2>
+            <p>我一直在探索的，是人与自己、亲密关系、家庭、事业、自然乃至意义的关系。九大关系不是一套标准答案，而是一幅仍在生长的生命地图。</p>
+            <nav class="universe-toc" aria-label="跳转到九大关系">
+              ${Array.from({length:9},(_,i)=>`<button type="button" data-universe-anchor="relation-${i+1}" aria-label="查看第 ${i+1} 个关系">${String(i+1).padStart(2,'0')}</button>`).join('')}
+            </nav>
+          </div>
+          ${document.querySelector('#universe-content')?.innerHTML || ''}
+          <p class="expression-universe-closing">内在有自己，关系有连接，现实有能力，精神有归处。</p>
+        </section>
       </div>
     `,
   },
@@ -371,7 +389,7 @@ function renderWindow(id) {
   if (!data) return null;
   const windowElement = document.createElement('section');
   const isDocument = id === 'resume' || id === 'portfolioArchive';
-  windowElement.className = `window is-focused is-centered${id === 'about' ? ' about-window' : ''}${id === 'projects' ? ' works-window' : ''}${id === 'universe' ? ' universe-window' : ''}${id === 'writing' ? ' thoughts-window' : ''}${isDocument ? ' document-window' : ''}`;
+  windowElement.className = `window is-focused is-centered${id === 'about' ? ' about-window' : ''}${id === 'projects' ? ' works-window' : ''}${id === 'writing' ? ' thoughts-window universe-window expression-window' : ''}${isDocument ? ' document-window' : ''}`;
   windowElement.dataset.window = id;
   windowElement.setAttribute('role', 'dialog');
   windowElement.setAttribute('aria-label', data.title);
@@ -631,6 +649,14 @@ document.addEventListener('click', (event) => {
     if (!exhibition) return;
     exhibition.querySelectorAll('[data-ai-filter]').forEach((b) => b.setAttribute('aria-pressed', String(b === filterButton)));
     exhibition.querySelectorAll('.ai-card').forEach((card) => {card.hidden = choice !== 'all' && card.dataset.aiCategory !== choice;});
+    return;
+  }
+  const expressionAnchor = event.target.closest('[data-expression-anchor]');
+  if (expressionAnchor) {
+    const host = expressionAnchor.closest('.window');
+    const target = host?.querySelector('#' + expressionAnchor.dataset.expressionAnchor);
+    const scroller = host?.querySelector('.window-content');
+    if (target && scroller) scroller.scrollTo({ top: scroller.scrollTop + target.getBoundingClientRect().top - scroller.getBoundingClientRect().top - 16, behavior: 'smooth' });
     return;
   }
   const universeAnchor = event.target.closest('[data-universe-anchor]');
