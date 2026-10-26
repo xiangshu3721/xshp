@@ -355,11 +355,11 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .portal-card { position: relative; grid-column: span 2; display: flex; flex-direction: column; align-items: flex-start; min-height: 244px; padding: 22px 23px; overflow: hidden; border: 1px solid rgba(246,233,202,.24); border-radius: 11px; color: #f7f2e7; background: linear-gradient(130deg, rgba(77,112,107,.4), rgba(17,47,53,.8)), url("assets/reference-dream-valley.jpg") center/cover; text-align: left; cursor: pointer; box-shadow: 0 20px 35px rgba(4,22,27,.12); transition: transform .26s, border-color .26s, filter .26s; }
 .portal-card:nth-child(n+4) { grid-column: span 3; min-height: 220px; }
 .portal-card:hover, .portal-card:focus-visible { transform: translateY(-6px); border-color: #f0c991; filter: saturate(1.1); }
-.portal-about { background-image: linear-gradient(120deg, rgba(24,53,54,.72), rgba(64,85,69,.64)), url("assets/reference-dream-garden.jpg"); }
-.portal-works { background-image: linear-gradient(110deg, rgba(21,48,55,.63) 0%, rgba(24,56,65,.28) 65%, rgba(20,49,56,.47) 100%), url("assets/manifesto/04.jpeg"); background-position: 56% center; }
+.portal-about { background-image: linear-gradient(120deg, rgba(24,53,54,.62), rgba(20,40,36,.48)), url("assets/xiangshu-portal-about.jpg"); background-position: left center; }
+.portal-works { background-image: linear-gradient(110deg, rgba(48,28,22,.58) 0%, rgba(48,28,22,.28) 65%, rgba(30,24,22,.45) 100%), url("assets/xiangshu-portal-works.jpg"); background-position: left center; }
 .portal-universe { background-image: linear-gradient(130deg, rgba(40,52,82,.75), rgba(22,39,66,.77)), url("assets/xiangshu-terrace-sunrise.jpg"); }
-.portal-writing { background-image: linear-gradient(110deg, rgba(58,52,49,.8), rgba(34,55,49,.7)), url("assets/reference-luminous-castle.jpg"); }
-.portal-contact { background-image: linear-gradient(110deg, rgba(40,66,63,.77), rgba(66,81,57,.66)), url("assets/manifesto/03.jpeg"); }
+.portal-writing { background-image: linear-gradient(110deg, rgba(32,48,62,.62), rgba(20,36,48,.48)), url("assets/xiangshu-portal-writing.jpg"); background-position: left center; }
+.portal-contact { background-image: linear-gradient(110deg, rgba(72,42,42,.55), rgba(48,36,32,.42)), url("assets/xiangshu-portal-contact.jpg"); background-position: left center; }
 .portal-no { color: #f6d9b0; font: 10px ui-monospace, Menlo, monospace; letter-spacing: .14em; }
 .portal-symbol { position: absolute; top: 19px; right: 23px; font: 500 32px/1.2 "Hiragino Mincho ProN", "Songti SC", serif; letter-spacing: .08em; color: rgba(248,237,216,.65); text-shadow: 0 1px 12px rgba(4,20,25,.2); pointer-events: none; }
 .portal-card strong { position: relative; z-index: 1; margin-top: auto; color: #fff7e4; font: 500 32px/1.2 "Hiragino Mincho ProN", "Songti SC", serif; letter-spacing: -.04em; }
