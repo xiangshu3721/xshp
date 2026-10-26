@@ -332,7 +332,20 @@ const windowData = {
       <p class="window-kicker">OPEN TO A GOOD CONVERSATION</p>
       <h2>世界很大，<br /><em>我们不妨聊聊。</em></h2>
       <p class="window-intro">如果你也在探索 AI 与人、产品创新、心理成长、艺术或商业的交叉地带，或者只是有一个想认真讨论的问题，很愿意从一场好奇的对话开始。</p>
-      <div class="contact-sheet"><div class="info-block"><h3>适合聊什么</h3><p>AI 产品与业务共创、需求洞察、心理成长、艺术创作、个人知识与内容系统。</p></div><div class="info-block"><h3>公开连接入口</h3><p><a href="https://github.com/xiangshu3721" target="_blank" rel="noopener noreferrer">查看 GitHub 和公开作品 ↗</a></p><p>直接联系方式尚未确认，这里不放可能失效的微信或邮箱。</p></div></div>
+      <section class="contact-wechat-card" aria-label="翔叔微信联系方式">
+        <div class="contact-wechat-info">
+          <div class="contact-wechat-identity">
+            <img src="assets/xiangshu-avatar.jpg" alt="翔叔的微信头像" loading="lazy" />
+            <div><span class="contact-wechat-kicker">WECHAT · 微信昵称</span><h3>翔叔</h3></div>
+          </div>
+          <p class="contact-wechat-invite">很高兴在这里遇见你。<br />扫码添加微信，我们聊聊。</p>
+          <a class="contact-wechat-link" href="https://u.wechat.com/EDQCntwGibCWB9xGitJ7gSI?s=2" target="_blank" rel="noopener noreferrer" aria-label="打开翔叔微信名片">打开微信名片 <span aria-hidden="true">↗</span></a>
+        </div>
+        <figure class="contact-wechat-qr">
+          <div class="contact-wechat-qr-paper"><img src="assets/wechat-contact-qr.svg" alt="翔叔微信名片二维码，使用微信扫一扫添加好友" loading="lazy" decoding="async" /></div>
+          <figcaption>微信扫一扫 · 添加好友</figcaption>
+        </figure>
+      </section>
     `,
   },
   help: {
