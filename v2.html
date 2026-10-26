@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#142620">
+  <meta name="description" content="你好，我是翔叔。产品艺术家、AI 应用构建者、成长探索者。8 年以上互联网产品与运营经历，持续在 AI、心理、艺术与商业的交叉处创造新可能。">
+  <meta property="og:title" content="翔叔｜把对人的好奇，做成新的可能">
+  <meta property="og:description" content="产品 × AI × 心理 × 艺术。思考，创造，表达。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://xiangshu3721.github.io/xshp/assets/xiangshu-avatar.jpg">
+  <title>翔叔 XIANGSHU — 产品艺术家 · AI 构建者 · 思想探索者</title>
+  <style>
+    :root{--forest:#142620;--forest-2:#1b342d;--paper:#f4f1e9;--paper-2:#eae7dd;--ink:#1c2823;--muted:#6e766d;--coral:#f07f5a;--mint:#c9dfac;--line:#d8dcd1;--font-sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;--font-serif:"Songti SC","STSong","Noto Serif CJK SC",serif}
+    *,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-sans);-webkit-font-smoothing:antialiased}::selection{background:var(--coral);color:var(--forest)}a{color:inherit;text-decoration:none}button{font:inherit}img{display:block;width:100%}a:focus-visible,button:focus-visible{outline:2px solid var(--coral);outline-offset:5px}section[id],footer[id]{scroll-margin-top:92px}
+    .wrap{width:min(1232px,calc(100% - 104px));margin-inline:auto}.eyebrow{display:flex;align-items:center;gap:12px;margin:0;font:600 11px/1.6 var(--font-sans);letter-spacing:.18em;text-transform:uppercase}.eyebrow::before{content:"";display:block;width:23px;height:1px;background:currentColor}.display{font-family:var(--font-serif);font-weight:500;letter-spacing:-.06em}.dim{color:var(--muted)}.accent{color:var(--coral)}.ink-accent{color:#a14931}.rule{border:0;border-top:1px solid var(--line);margin:0}.button{display:inline-flex;align-items:center;justify-content:center;gap:18px;padding:16px 24px;border:1px solid currentColor;border-radius:2px;font-size:13px;font-weight:600;letter-spacing:.03em;transition:background .25s,color .25s,transform .25s}.button:hover{transform:translateY(-3px)}.button-primary{background:var(--mint);border-color:var(--mint);color:var(--forest)}.button-primary:hover{background:#edf4da}.button-outline{border-color:rgba(244,241,233,.43);color:var(--paper)}.button-outline:hover{background:rgba(255,255,255,.09)}
+    .topnav{position:fixed;z-index:100;top:0;inset-inline:0;display:flex;align-items:center;justify-content:space-between;padding:17px max(52px,calc((100vw - 1232px)/2));border-bottom:1px solid rgba(242,238,229,.14);background:rgba(14,32,26,.76);backdrop-filter:blur(22px);color:#f7f4e9}.brand{display:flex;gap:11px;align-items:center}.brand-mark{display:grid;place-items:center;width:36px;height:36px;border:1px solid rgba(249,246,230,.64);border-radius:50%;font:italic 24px Georgia,serif}.brand-word{font-size:12px;font-weight:650;letter-spacing:.18em;line-height:1.45}.brand-word small{display:block;color:#a6b5a9;font-size:8px;letter-spacing:.28em}.navlinks{display:flex;gap:36px;align-items:center}.navlinks a{font-size:12px;color:#dce5d9;transition:color .2s}.navlinks a:hover{color:var(--coral)}.navlinks .nav-contact{border-bottom:1px solid var(--coral);padding-bottom:5px;color:#fff}.mobile-menu{display:none;background:transparent;border:1px solid #62796c;border-radius:3px;color:white;padding:9px 12px;cursor:pointer}
+    .hero{min-height:860px;min-height:100svh;position:relative;isolation:isolate;overflow:hidden;background:var(--forest);color:var(--paper);padding:160px 0 104px}.hero::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse 38% 65% at 74% 39%,#38504699,transparent 85%),radial-gradient(ellipse 30% 26% at 6% 76%,#375d484a,transparent 100%)}.hero::after{content:"";position:absolute;z-index:-1;inset:0;background-image:radial-gradient(#b0c7b119 .7px,transparent .7px);background-size:14px 14px;mask-image:linear-gradient(90deg,transparent 30%,black)}.hero-layout{display:grid;grid-template-columns:1.12fr .88fr;gap:6%;align-items:center}.hero-content{position:relative;z-index:2}.hero-kicker{color:var(--mint);margin-bottom:40px}.hero h1{margin:0;font-size:clamp(56px,6.55vw,108px);line-height:1.2;max-width:890px}.hero h1 em{font-style:normal;color:var(--mint);position:relative}.hero h1 em::after{content:"";position:absolute;bottom:-6px;left:3px;right:4px;height:6px;border-bottom:2px solid var(--coral);border-radius:50%;transform:rotate(-2deg)}.hero-sub{margin:32px 0 22px;max-width:520px;font-size:17px;line-height:2;color:#c9d6c9;font-weight:300}.hero-sub strong{font-weight:500;color:#fff}.hero-tags{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:40px}.hero-tags span{padding:9px 11px;border:1px solid #63756880;border-radius:24px;color:#e0e8da;font-size:11px;letter-spacing:.02em}.hero-actions{display:flex;flex-wrap:wrap;gap:12px}.hero-caption{margin:57px 0 0;color:#9cb19e;font-size:10px;letter-spacing:.14em}.hero-caption span{margin-left:14px;color:var(--coral)}
+    .hero-art{position:relative;height:min(590px,63vw);min-height:440px;align-self:stretch;display:flex;align-items:center;justify-content:center}.orbit{position:absolute;inset:5% -3% 4%;border:1px solid rgba(228,236,218,.17);border-radius:50%;transform:rotate(-18deg)}.orbit:nth-child(2){inset:-1% 7% 12%;transform:rotate(35deg);border-color:rgba(201,223,172,.18)}.orbit:nth-child(3){inset:14% -15% 18%;transform:rotate(73deg);border-style:dashed;opacity:.5}.orbit-dot{position:absolute;width:15px;height:15px;border-radius:50%;background:var(--coral);right:3%;top:10%;box-shadow:0 0 35px #e8795e55}.hero-photo{position:relative;width:75%;aspect-ratio:4/5.4;max-height:530px;border-radius:49% 49% 4px 4px;overflow:hidden;box-shadow:0 55px 90px #04140f7a;border:1px solid #9dbba048;background:#5c806f}.hero-photo img{height:100%;object-fit:cover;object-position:55% 50%;filter:saturate(.74) contrast(1.04)}.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#15281f88,transparent 35%)}.hero-art-stamp{position:absolute;right:0;bottom:8%;width:140px;height:140px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--coral);color:var(--forest);font:600 14px/1.8 var(--font-serif);transform:rotate(12deg);box-shadow:0 20px 40px #06160f66}.hero-art-vertical{position:absolute;left:1%;top:13%;writing-mode:vertical-rl;color:#d4decc6b;font:10px Georgia,serif;letter-spacing:.3em}
+    .signal{background:#c9dfac;color:#20382c;border-block:1px solid #c3d6aa}.signal-inner{display:grid;grid-template-columns:repeat(4,1fr)}.signal-item{padding:28px 23px;border-right:1px solid #809c8160}.signal-item:first-child{padding-left:0}.signal-item:last-child{border:0}.signal-item strong{display:block;font:500 clamp(27px,3.1vw,43px)/1.2 var(--font-serif);letter-spacing:-.04em}.signal-item span{display:block;margin-top:5px;font-size:11px;color:#496450}
+    .section{padding:132px 0}.section-head{display:grid;grid-template-columns:1fr 1.1fr;align-items:start;gap:100px;margin-bottom:66px}.section-eyebrow{color:#906a47}.section-title{font:500 clamp(42px,5vw,70px)/1.22 var(--font-serif);letter-spacing:-.06em;margin:22px 0 0}.section-explainer{font-size:15px;line-height:2.15;color:#626c61;max-width:540px;margin:28px 0 0}.identity{background:var(--paper)}.identity-lead{margin:0 0 55px;max-width:1010px;font:500 clamp(27px,3.15vw,49px)/1.7 var(--font-serif);letter-spacing:-.038em}.identity-lead .underline{border-bottom:5px solid #c9dfac}.identity-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #c9cec3;border-bottom:1px solid #c9cec3}.identity-item{padding:32px 26px 34px;border-right:1px solid #c9cec3;transition:background .25s}.identity-item:first-child{padding-left:0}.identity-item:last-child{border:0}.identity-item:hover{background:#eceee4}.identity-num{font:italic 24px Georgia,serif;color:#ad7f6d}.identity-item h3{font:500 24px/1.4 var(--font-serif);letter-spacing:-.05em;margin:30px 0 16px}.identity-item p{font-size:12px;line-height:2.05;color:#677064;margin:0}
+    .interlude{padding:115px 0;background:var(--forest-2);color:#f4f1e8;position:relative;overflow:hidden}.interlude::before{content:"∞";font:450px/1 Georgia,serif;color:#f4f1e809;position:absolute;right:-10px;top:-115px}.interlude .eyebrow{color:#c9dfac}.interlude-quote{position:relative;margin:28px 0 30px;font:500 clamp(38px,5vw,73px)/1.4 var(--font-serif);letter-spacing:-.06em;max-width:1080px}.interlude-quote em{font-style:normal;color:var(--mint)}.interlude p:last-child{margin:0;color:#b4c3b6;font-size:13px;letter-spacing:.08em}
+    .works{background:#eaece3}.work-head-side{display:flex;flex-direction:column;align-items:flex-start}.filterbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:30px}.filter{cursor:pointer;border:1px solid #b6c0b4;background:transparent;color:#617167;padding:10px 18px;border-radius:40px;font-size:12px;transition:all .2s}.filter[aria-pressed="true"],.filter:hover{background:var(--forest);color:#fff;border-color:var(--forest)}.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.work-card{display:flex;flex-direction:column;min-height:466px;overflow:hidden;background:var(--paper);border:1px solid #d8dfd2;transition:transform .3s,box-shadow .3s}.work-card:hover{transform:translateY(-7px);box-shadow:0 24px 40px #21352a13}.work-card[hidden]{display:none}.work-visual{height:226px;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;background:var(--forest);color:var(--mint)}.work-visual::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff09 1px,transparent 1px),linear-gradient(90deg,#ffffff09 1px,transparent 1px);background-size:27px 27px}.work-visual .visual-word{position:relative;z-index:1;font:500 clamp(36px,4vw,56px)/1.2 var(--font-serif);letter-spacing:-.07em;white-space:nowrap}.work-visual .visual-sub{position:absolute;bottom:16px;left:20px;color:#ffffff90;font-size:10px;letter-spacing:.17em}.work-visual .visual-orb{position:absolute;width:188px;height:188px;border:1px solid #d9edb650;border-radius:50%;right:-35px;top:-62px;box-shadow:0 0 0 37px #cee5a712,0 0 0 75px #cee5a70b}.work-visual[data-visual="warm"]{background:#ad5a47;color:#fff5e4}.work-visual[data-visual="warm"] .visual-orb{border-color:#fbe6d080;box-shadow:0 0 0 37px #ffffff12,0 0 0 75px #ffffff0b}.work-visual[data-visual="cream"]{background:#c8d6bd;color:#253e33}.work-visual[data-visual="cream"]::before{background-image:linear-gradient(#244c3511 1px,transparent 1px),linear-gradient(90deg,#244c3511 1px,transparent 1px)}.work-visual[data-visual="cream"] .visual-sub{color:#406049}.work-visual[data-visual="blue"]{background:#294251;color:#d5e7e9}.work-visual[data-visual="bronze"]{background:#7b6751;color:#fff0dc}.work-visual[data-visual="lavender"]{background:#6c6488;color:#faf2ff}.work-image{width:100%;height:100%;object-fit:cover;object-position:center}.work-image-overlay{position:absolute;inset:0;background:linear-gradient(0deg,#10231baa,transparent 65%)}.work-photo-label{position:absolute;bottom:17px;left:18px;color:#fff;font:500 31px/1.3 var(--font-serif);letter-spacing:-.05em;text-shadow:0 2px 20px #0007}.work-body{padding:24px 24px 22px;display:flex;flex:1;flex-direction:column}.work-meta{display:flex;justify-content:space-between;gap:8px;color:#879185;font-size:10px;letter-spacing:.06em}.work-meta .status{color:#a4644d}.work-body h3{font:500 25px/1.4 var(--font-serif);letter-spacing:-.04em;margin:19px 0 10px}.work-body p{font-size:12px;color:#697467;line-height:1.9;margin:0 0 22px}.work-bottom{margin-top:auto;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #dce1d8;padding-top:15px;font-size:11px;color:#3a5b48}.work-bottom a{font-weight:650;border-bottom:1px solid #91aa96}.work-bottom a:hover{color:#a8553b}.work-bottom span{color:#96a294}.works-note{margin:24px 0 0;color:#718073;font-size:11px;line-height:1.9}
+    .more-work{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}.more-work a{display:inline-flex;gap:9px;align-items:center;padding:11px 15px;border:1px solid #b9c8b6;background:#f3f5ec;font-size:12px;transition:background .2s}.more-work a:hover{background:#d4e2c5}
+    .career{background:var(--paper)}.career-list{border-top:1px solid var(--line)}.career-row{display:grid;grid-template-columns:160px 130px minmax(0,1fr) 160px;align-items:center;gap:34px;padding:35px 0;border-bottom:1px solid var(--line)}.career-year{color:#8b9388;font-size:12px;letter-spacing:.05em}.career-thumb{width:130px;height:100px;object-fit:cover;border-radius:2px;filter:saturate(.7)}.career-copy h3{font:500 28px/1.25 var(--font-serif);letter-spacing:-.045em;margin:0 0 10px}.career-copy p{color:#687267;font-size:12px;line-height:1.95;max-width:590px;margin:0}.career-result{font-family:var(--font-serif);font-size:16px;line-height:1.6;color:#945b47;text-align:right}.career-result strong{display:block;font-size:23px;font-weight:500}.career-caption{margin:25px 0 0;font-size:11px;color:#8a948a}
+    .method{background:#e5e9df}.method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}.method-step{border-top:2px solid #1d3a2e;padding-top:18px}.method-step b{display:block;font:italic 30px Georgia,serif;color:#a95741}.method-step h3{font:500 26px/1.4 var(--font-serif);margin:25px 0 14px}.method-step p{margin:0;color:#6a756b;font-size:12px;line-height:2}
+    .about{background:var(--paper)}.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:10%;align-items:start}.about-side{position:sticky;top:120px}.about-image{height:490px;overflow:hidden;background:#c9d7c1}.about-image img{height:100%;object-fit:cover;object-position:50% 45%;filter:saturate(.7)}.image-caption{margin-top:13px;font-size:10px;color:#818c81;letter-spacing:.08em}.about-text{font-size:15px;line-height:2.3;color:#536355}.about-text p{margin:0 0 23px}.about-text .lead{font:500 31px/1.7 var(--font-serif);color:#24382c;letter-spacing:-.045em}.about-text .signature{margin-top:38px;font:italic 31px Georgia,serif;color:#a45c44}.about-hobbies{display:flex;gap:9px;flex-wrap:wrap;margin-top:30px}.about-hobbies span{font-size:12px;color:#627566;padding:9px 14px;background:#e6eae0;border-radius:30px}
+    .contact{position:relative;overflow:hidden;background:var(--forest);color:var(--paper);padding:130px 0 83px}.contact::before{content:"";position:absolute;width:560px;height:560px;right:-200px;top:-150px;border:1px solid #d6ebba36;border-radius:50%;box-shadow:0 0 0 90px #c3dda70b,0 0 0 180px #c3dda709}.contact-head{font:500 clamp(46px,7vw,105px)/1.25 var(--font-serif);letter-spacing:-.065em;position:relative;margin:25px 0 32px}.contact-head em{font-style:normal;color:var(--mint)}.contact-copy{position:relative;max-width:710px;color:#c5d4c5;font-size:15px;line-height:2.1;margin:0 0 32px}.contact-actions{display:flex;gap:13px;flex-wrap:wrap;position:relative}.contact-note{color:#8fa493;font-size:11px;margin:22px 0 0}.footer{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:100px;padding-top:25px;border-top:1px solid #ffffff2a;color:#8ca08d;font-size:11px;letter-spacing:.06em}.footer span:last-child{font:italic 17px Georgia,serif;color:#d1dfbd}
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity .65s ease,transform .65s ease}.reveal.in{opacity:1;transform:translateY(0)}
+    @media(max-width:1100px){.wrap{width:min(100% - 64px,1232px)}.topnav{padding-inline:32px}.hero{min-height:auto}.hero-layout{grid-template-columns:1.05fr .95fr;gap:2%}.hero h1{font-size:clamp(51px,6vw,76px)}.hero-photo{width:85%}.work-grid{grid-template-columns:repeat(2,1fr)}.section-head{gap:45px}.identity-grid{grid-template-columns:repeat(2,1fr)}.identity-item:nth-child(2){border-right:0}.identity-item:nth-child(-n+2){border-bottom:1px solid var(--line)}.identity-item:nth-child(3){padding-left:0}.career-row{grid-template-columns:115px 105px 1fr 120px;gap:22px}.career-thumb{width:105px}.method-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:700px){.wrap{width:calc(100% - 40px)}.topnav{padding:12px 20px}.brand-mark{width:34px;height:34px}.mobile-menu{display:block}.navlinks{position:absolute;top:61px;inset-inline:0;background:#18332a;padding:22px;display:none;flex-direction:column;gap:23px;align-items:flex-start;box-shadow:0 25px 40px #0003}.navlinks.is-open{display:flex}.hero{padding:124px 0 70px}.hero-layout{display:flex;flex-direction:column;align-items:stretch;gap:50px}.hero h1{font-size:clamp(46px,12vw,74px);line-height:1.26}.hero-kicker{margin-bottom:26px}.hero-sub{font-size:14px;line-height:1.9}.hero-actions .button{padding:14px 16px;font-size:12px}.hero-art{height:390px;min-height:0;align-self:auto}.hero-photo{width:59%;max-width:265px;height:350px;aspect-ratio:auto}.orbit{inset:5% 10% 4%}.orbit:nth-child(2){inset:2% 19% 12%}.orbit:nth-child(3){inset:17% 7% 16%}.hero-art-stamp{right:6%;bottom:0;width:96px;height:96px;font-size:10px}.hero-art-vertical{left:6%}.hero-caption{margin-top:30px}.signal-inner{grid-template-columns:repeat(2,1fr)}.signal-item{padding:22px 12px;border-bottom:1px solid #809c8160}.signal-item:nth-child(2){border-right:0}.signal-item:nth-child(3),.signal-item:nth-child(4){border-bottom:0}.signal-item:first-child,.signal-item:nth-child(3){padding-left:0}.signal-item strong{font-size:29px}.signal-item span{font-size:10px}.section{padding:76px 0}.section-head{display:block;margin-bottom:39px}.section-title{font-size:44px}.section-explainer{margin-top:20px;font-size:13px;line-height:1.9}.identity-lead{font-size:26px}.identity-item{padding:24px 15px!important}.identity-item:nth-child(odd){padding-left:0!important}.identity-item h3{font-size:19px;margin:18px 0 10px}.identity-item p{font-size:11px;line-height:1.85}.interlude{padding:79px 0}.interlude-quote{font-size:35px}.work-grid{grid-template-columns:1fr}.work-card{min-height:428px}.work-visual{height:215px}.career-row{grid-template-columns:84px 1fr;gap:12px 16px;padding:27px 0}.career-year{grid-column:1/-1}.career-thumb{width:84px;height:94px}.career-copy h3{font-size:22px}.career-copy p{font-size:11px}.career-result{grid-column:2;text-align:left;font-size:13px}.career-result strong{font-size:21px}.method-grid{gap:35px 20px}.method-step h3{font-size:21px}.about-grid{display:flex;flex-direction:column;gap:25px}.about-side{position:static;width:100%}.about-image{height:340px}.about-text{font-size:13px;line-height:2.15}.about-text .lead{font-size:26px}.contact{padding:90px 0 40px}.contact-head{font-size:49px}.contact-copy{font-size:13px}.footer{margin-top:90px;align-items:start;flex-direction:column}.works-note{font-size:10px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.button,.work-card{transition:none}}
+  </style>
+</head>
+<body>
+  <header class="topnav">
+    <a class="brand" href="#top" aria-label="返回首页"><span class="brand-mark">X</span><span class="brand-word">翔叔 XIANGSHU<small>THINK · MAKE · LIVE</small></span></a>
+    <button class="mobile-menu" id="menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="打开导航">☰ 菜单</button>
+    <nav class="navlinks" id="site-nav" aria-label="主导航">
+      <a href="#identity">我是谁</a><a href="#works">AI 作品</a><a href="#career">过往项目</a><a href="#about">认识我</a><a class="nav-contact" href="#contact">聊聊新可能 ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="wrap hero-layout">
+        <div class="hero-content">
+          <p class="eyebrow hero-kicker">A HUMAN-CENTERED CREATOR / 2026</p>
+          <h1 class="display">你好，<br>我是翔叔。<br><em>我研究人，</em><br>也创造可能。</h1>
+          <p class="hero-sub">我对世界最大的好奇，始终是<strong>「人」</strong>。<br>过去做产品、运营与商业；现在把 AI、心理学、艺术和东方智慧放在一起，尝试创造以前不存在的东西。</p>
+          <div class="hero-tags"><span>产品艺术家</span><span>AI 应用构建者</span><span>成长探索者</span><span>思想实验者</span></div>
+          <div class="hero-actions"><a class="button button-primary" href="#works">看看我创造了什么 <span aria-hidden="true">↗</span></a><a class="button button-outline" href="#about">再认识我一点 <span aria-hidden="true">↘</span></a></div>
+          <p class="hero-caption">THINK DEEPLY. MAKE BOLDLY. LIVE FULLY. <span>✳</span></p>
+        </div>
+        <div class="hero-art" aria-label="翔叔真人照片与艺术轨道图形">
+          <div class="orbit" aria-hidden="true"></div><div class="orbit" aria-hidden="true"></div><div class="orbit" aria-hidden="true"></div><div class="orbit-dot" aria-hidden="true"></div>
+          <span class="hero-art-vertical" aria-hidden="true">THE ART OF BEING HUMAN</span>
+          <div class="hero-photo"><img src="assets/xiangshu-avatar.jpg" alt="翔叔的真实人物照片" fetchpriority="high"></div>
+          <div class="hero-art-stamp">以万物为师<br>行知合一 ✳</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="signal" aria-label="经历与成果">
+      <div class="wrap signal-inner">
+        <div class="signal-item"><strong>8<span aria-hidden="true" style="display:inline">+</span> 年</strong><span>互联网产品与运营实践</span></div>
+        <div class="signal-item"><strong>0 → 1</strong><span>从想法到产品与业务落地</span></div>
+        <div class="signal-item"><strong>千万级 PV</strong><span>创意社交活动项目累计表现</span></div>
+        <div class="signal-item"><strong>10<span aria-hidden="true" style="display:inline">×</span>+</strong><span>直播业务半年月流水增长</span></div>
+      </div>
+    </div>
+
+    <section class="section identity" id="identity">
+      <div class="wrap">
+        <p class="eyebrow section-eyebrow reveal">01 / MORE THAN A TITLE</p>
+        <h2 class="identity-lead reveal">我不太想把自己塞进一个标准的职业标签里。<br>真正让我着迷的，是那些看似无关的领域，<span class="underline">彼此相遇时产生的新可能。</span></h2>
+        <div class="identity-grid">
+          <div class="identity-item reveal"><span class="identity-num">01.</span><h3>用产品思维<br>发现问题背后的结构</h3><p>8 年以上产品、运营与商业实践，擅长从混乱场景中找到关键问题，把抽象需求转化为可执行的产品与流程。</p></div>
+          <div class="identity-item reveal"><span class="identity-num">02.</span><h3>用心理学<br>理解真实而复杂的人</h3><p>长期关注人格、关系、生命成长与人性。比“快速给答案”更感兴趣的，是一个人为什么会这样想、这样选择。</p></div>
+          <div class="identity-item reveal"><span class="identity-num">03.</span><h3>用艺术与哲学<br>保持感受力和想象力</h3><p>喜欢音乐、绘画、东方美学，也持续学习东西方思想。理性负责看清结构，感性负责感知未被说出的部分。</p></div>
+          <div class="identity-item reveal"><span class="identity-num">04.</span><h3>用 AI<br>把想法真正做出来</h3><p>不是只讨论未来，而是动手做 AI 应用、原型、工作流和系统，在真实用户与业务中验证价值。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="interlude">
+      <div class="wrap reveal">
+        <p class="eyebrow">WHAT I BELIEVE</p>
+        <blockquote class="interlude-quote">当机器越来越聪明，<br>我希望人不是越来越像机器，<br>而是<em>越来越完整地成为自己。</em></blockquote>
+        <p>AI × HUMANITY　/　技术的边界，是人的可能性</p>
+      </div>
+    </section>
+
+    <section class="section works" id="works">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="reveal"><p class="eyebrow section-eyebrow">02 / SELECTED AI WORKS</p><h2 class="section-title">想法不是用来<br>收藏的。<br><span class="ink-accent">是用来创造的。</span></h2></div>
+          <div class="work-head-side reveal"><p class="section-explainer">这些是我最近持续构建的 AI 产品与实践：从心理成长到企业工作台，从 AI 应用诊断到创造力系统。有些已经跑通 MVP，有些还在实验中。<br>我更想展示探索过程，而不是制造一种“每个项目都已成功”的假象。</p><div class="filterbar" role="group" aria-label="作品类别"><button class="filter" type="button" data-filter="all" aria-pressed="true">全部作品</button><button class="filter" type="button" data-filter="people" aria-pressed="false">AI × 人</button><button class="filter" type="button" data-filter="business" aria-pressed="false">AI × 商业</button><button class="filter" type="button" data-filter="creation" aria-pressed="false">AI × 创造</button></div></div>
+        </div>
+        <div class="work-grid" id="work-grid">
+          <article class="work-card reveal" data-category="people"><div class="work-visual" data-visual="warm"><span class="visual-orb"></span><span class="visual-word">解忧小屋</span><span class="visual-sub">AI × INNER GROWTH / 001</span></div><div class="work-body"><div class="work-meta"><span>AI 心理成长 · 导诊</span><span class="status">MVP 持续迭代</span></div><h3>解忧小屋</h3><p>从一段真实的困扰出发，用 AI 帮人理清问题、辨认需要，并设计自然衔接真人陪伴服务的路径。</p><div class="work-bottom"><a href="https://github.com/xiangshu3721/jieyou-xiaowu-v1" target="_blank" rel="noopener noreferrer">查看公开项目 ↗</a><span>产品设计 / 规则与流程</span></div></div></article>
+          <article class="work-card reveal" data-category="business"><div class="work-visual" data-visual="blue"><span class="visual-orb"></span><span class="visual-word">ASVA · OS</span><span class="visual-sub">AI × SERVICE OPERATIONS / 002</span></div><div class="work-body"><div class="work-meta"><span>AI 工作台 · 组织协作</span><span class="status">基建与功能迭代</span></div><h3>ASVA 导师工作台</h3><p>围绕客户档案、导师协作、跟进与 AI 洞察，把依赖个人记忆的服务过程沉淀为可持续的业务资产。</p><div class="work-bottom"><a href="https://github.com/xiangshu3721/asva-workbench" target="_blank" rel="noopener noreferrer">查看公开项目 ↗</a><span>产品架构 / 业务设计</span></div></div></article>
+          <article class="work-card reveal" data-category="business"><div class="work-visual" data-visual="cream"><span class="visual-orb"></span><span class="visual-word">AI 机会雷达</span><span class="visual-sub">AI × OPPORTUNITY / 003</span></div><div class="work-body"><div class="work-meta"><span>AI 场景诊断 · 商业落地</span><span class="status">MVP 验证中</span></div><h3>AI 场景诊断</h3><p>让普通人把模糊痛点梳理清楚，找到三个值得优先尝试的 AI 机会，先微体验，再决定如何落地。</p><div class="work-bottom"><a href="https://github.com/xiangshu3721/ai-scene-dx" target="_blank" rel="noopener noreferrer">查看公开项目 ↗</a><span>需求洞察 / 转化设计</span></div></div></article>
+          <article class="work-card reveal" data-category="people"><div class="work-visual" data-visual="lavender"><span class="visual-orb"></span><span class="visual-word">心力地图</span><span class="visual-sub">AI × SELF EXPLORATION / 004</span></div><div class="work-body"><div class="work-meta"><span>心理成长 · 交互测评</span><span class="status">产品打磨中</span></div><h3>高敏感心力地图</h3><p>围绕原生、情感、情绪与财富四个维度，设计易理解的可视化自我探索体验，而不是给人贴上标签。</p><div class="work-bottom"><a href="https://github.com/xiangshu3721/sensitive-map" target="_blank" rel="noopener noreferrer">查看公开项目 ↗</a><span>用户体验 / 内容结构</span></div></div></article>
+          <article class="work-card reveal" data-category="creation"><div class="work-visual" data-visual="bronze"><span class="visual-orb"></span><span class="visual-word">思想工厂</span><span class="visual-sub">AI × CREATIVE PRACTICE / 005</span></div><div class="work-body"><div class="work-meta"><span>AI 创作系统 · 个人知识</span><span class="status">内部持续构建</span></div><h3>翔叔 · AI 思想工厂</h3><p>从用户需求洞察、灵感与知识积累，到选题研究、内容创作及多平台表达，搭建属于个人的思想生产系统。</p><div class="work-bottom"><span>研究 / 创作 / 自动化</span><span>个人内部项目</span></div></div></article>
+          <article class="work-card reveal" data-category="people creation"><div class="work-visual" data-visual="warm"><span class="visual-orb"></span><span class="visual-word">观相实验室</span><span class="visual-sub">AI × EASTERN CULTURE / 006</span></div><div class="work-body"><div class="work-meta"><span>图像理解 · 文化探索</span><span class="status">探索性应用</span></div><h3>AI 观相与空间实验</h3><p>把视觉 AI、东方传统文化与规则系统连接起来，探索可解释、能给出行动建议的互动体验；文化解读不等于科学诊断。</p><div class="work-bottom"><a href="https://github.com/xiangshu3721/guanxiang" target="_blank" rel="noopener noreferrer">查看观相项目 ↗</a><span>多模态 / 规则设计</span></div></div></article>
+        </div>
+        <p class="works-note">注：作品阶段为当前公开展示口径；公开仓库仅展示部分代码与实践，不等于正式上线、可直接使用或具有临床效力。</p>
+        <div class="more-work" aria-label="更多实验作品">
+          <a href="https://github.com/xiangshu3721/juejing" target="_blank" rel="noopener noreferrer">觉镜 JueLens ↗</a>
+          <a href="https://github.com/xiangshu3721/aircanvas" target="_blank" rel="noopener noreferrer">手势画板 ↗</a>
+          <a href="https://github.com/xiangshu3721/hand-drive-game" target="_blank" rel="noopener noreferrer">手势游戏 ↗</a>
+          <a href="https://github.com/xiangshu3721/mirror-cards" target="_blank" rel="noopener noreferrer">镜像卡牌 ↗</a>
+          <a href="https://github.com/xiangshu3721/mindtest-web" target="_blank" rel="noopener noreferrer">AI 测评应用 ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section career" id="career">
+      <div class="wrap">
+        <div class="section-head"><div class="reveal"><p class="eyebrow section-eyebrow">03 / THE ROAD SO FAR</p><h2 class="section-title">那些年，我在<br>真实的商业世界里。</h2></div><p class="section-explainer reveal">AI 之前，我已经在社交、直播、电商和复杂业务系统里摸爬滚打许多年。这些经历让我明白：再好的想法，最终都要接受真实需求、真实协作和真实结果的检验。</p></div>
+        <div class="career-list">
+          <article class="career-row reveal"><span class="career-year">2021—2024</span><img class="career-thumb" src="assets/portfolio-pages/page-03.jpg" alt="二手奢侈品与直播电商产品案例视觉" loading="lazy"><div class="career-copy"><h3>二奢交易 × 直播电商</h3><p>覆盖采购、仓储、商品、订单、商城、寄卖、会员与私域，把复杂的供应链、交易与运营流程连接成系统。</p></div><div class="career-result"><strong>复杂系统</strong>全链路产品实践</div></article>
+          <article class="career-row reveal"><span class="career-year">2019—2021</span><img class="career-thumb" src="assets/portfolio-pages/page-04.jpg" alt="短视频直播产品与后台系统案例视觉" loading="lazy"><div class="career-copy"><h3>短视频直播 × 商业化增长</h3><p>参与直播业务、营收活动、主播与公会体系及风控、财务等运营后台，把增长与系统能力衔接起来。</p></div><div class="career-result"><strong>10×+</strong>半年月流水增长</div></article>
+          <article class="career-row reveal"><span class="career-year">2017—2019</span><img class="career-thumb" src="assets/portfolio-pages/page-05.jpg" alt="Soulmate 创意社交项目视觉" loading="lazy"><div class="career-copy"><h3>Soulmate × 创意社交</h3><p>参与「心跳实验」「一周 CP」「世界上另一个我」等创意玩法，研究陌生人之间的表达、互动与真实连接。</p></div><div class="career-result"><strong>千万级 PV</strong>品牌活动累计表现</div></article>
+          <article class="career-row reveal"><span class="career-year">2015—2017</span><img class="career-thumb" src="assets/travel-commerce-community.png" alt="旅行、电商、内容社区项目视觉" loading="lazy"><div class="career-copy"><h3>旅行 × 电商 × 内容社区</h3><p>从内容与社群出发，进入互联网产品的真实现场，学习用户研究、内容运营、交易服务和从 0 到 1 的实践。</p></div><div class="career-result"><strong>起点</strong>从理解用户开始</div></article>
+        </div>
+        <p class="career-caption">以上为阶段性经历与代表项目的精选摘要；具体职责、成果口径与案例材料可在后续作品档案中持续补充。</p>
+      </div>
+    </section>
+
+    <section class="section method" id="method">
+      <div class="wrap">
+        <div class="section-head"><div class="reveal"><p class="eyebrow section-eyebrow">04 / HOW I WORK</p><h2 class="section-title">有好奇心，<br>也有把事做成的方法。</h2></div><p class="section-explainer reveal">我偏爱小而美、有生命力、能解决真问题的作品。比起无休止地讨论一个宏大方案，我更喜欢让想法尽快与现实见面。</p></div>
+        <div class="method-grid">
+          <div class="method-step reveal"><b>01</b><h3>先问对问题</h3><p>用户真正困扰的是什么？那些被直接表达出来的需求，背后藏着什么？</p></div>
+          <div class="method-step reveal"><b>02</b><h3>再看见结构</h3><p>连接人、场景、规则和利益关系，找到真正影响结果的关键环节。</p></div>
+          <div class="method-step reveal"><b>03</b><h3>动手做出来</h3><p>用 AI、产品设计与快速原型，把概念变成真实可试用的第一版。</p></div>
+          <div class="method-step reveal"><b>04</b><h3>让现实来回答</h3><p>找到真实的人、真实的反馈、真实的使用与付费场景，再复盘迭代。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="wrap about-grid">
+        <div class="about-side reveal"><div class="about-image"><img src="assets/xiangshu-fieldboard.png" alt="翔叔关于人与 AI 协作的艺术创作" loading="lazy"></div><p class="image-caption">THE HUMAN BEHIND THE WORK / 创作、探索、生活</p></div>
+        <div class="reveal">
+          <p class="eyebrow section-eyebrow">05 / A LITTLE MORE PERSONAL</p>
+          <h2 class="section-title">如果你想<br>再认识我一点。</h2>
+          <div class="about-text">
+            <p class="lead">看起来，我换过很多赛道。<br>但回头看，我似乎一直在研究同一件事：人。</p>
+            <p>做社交时，我想知道陌生人如何真正连接。做直播时，我想知道内容、情绪与商业如何相互作用。做交易系统时，我开始理解信任、价格和协作。后来接触心理成长、艺术疗愈与东方思想，我把目光从「一个人使用什么产品」转向「一个人如何认识和成为自己」。</p>
+            <p>AI 的出现，又让我重新兴奋起来：许多过去只能停留在笔记本上的构想，现在可以被迅速做成可以触摸、可以试用的作品。</p>
+            <p>我喜欢深度谈话，也喜欢安静地思考；喜欢远方、新鲜体验和不按常规出牌的创意；也享受把复杂问题慢慢想透、再把它变简单的过程。</p>
+            <p>我没有兴趣扮演一个什么都想明白了的人。我更愿意做一个持续学习、持续创造的人，与有趣的人一道，去经历真实而鲜活的世界。</p>
+            <p class="lead">我希望此生留下的，不只是完成过多少项目，而是一些真正让人眼睛一亮、心里一动的作品。</p>
+            <div class="about-hobbies"><span>心理学与人的成长</span><span>AI 与未来文明</span><span>东方智慧</span><span>音乐与艺术</span><span>深度对话</span><span>自由探索</span></div>
+            <p class="signature">Think it. Build it. Share it.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="contact" id="contact">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--mint)">06 / OPEN TO CONNECTION</p>
+      <h2 class="contact-head">世界很大。<br>我们不妨<em>聊聊。</em></h2>
+      <p class="contact-copy">如果你也在探索 AI 与人、产品创新、心理成长、艺术或商业的交叉地带，或者手上有一个还没被很好解决的真实问题——很想听听你的故事，也许我们能一起创造点有意思的东西。</p>
+      <div class="contact-actions"><a class="button button-primary" href="https://github.com/xiangshu3721" target="_blank" rel="noopener noreferrer">看看我的 GitHub <span aria-hidden="true">↗</span></a><a class="button button-outline" href="#top">回到开头 <span aria-hidden="true">↑</span></a></div>
+      <p class="contact-note">更多直接联系方式尚待补充；当前先通过公开作品和 GitHub 认识我。</p>
+      <div class="footer"><span>© 2026 XIANGSHU · BUILT WITH CURIOSITY, NOT CERTAINTY.</span><span>以万物为师 · 行知合一</span></div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var filters=document.querySelectorAll('[data-filter]');
+      var cards=document.querySelectorAll('.work-card');
+      filters.forEach(function(button){button.addEventListener('click',function(){
+        var value=button.getAttribute('data-filter');
+        filters.forEach(function(item){item.setAttribute('aria-pressed',item===button?'true':'false')});
+        cards.forEach(function(card){card.hidden=value!=='all'&&!card.getAttribute('data-category').split(' ').includes(value)});
+      })});
+      var menuButton=document.getElementById('menu-btn');
+      var nav=document.getElementById('site-nav');
+      menuButton.addEventListener('click',function(){var open=nav.classList.toggle('is-open');menuButton.setAttribute('aria-expanded',open?'true':'false')});
+      nav.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){nav.classList.remove('is-open');menuButton.setAttribute('aria-expanded','false')})});
+      if('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('in');observer.unobserve(entry.target)}})},{threshold:.08,rootMargin:'0px 0px -10px 0px'});
+        document.querySelectorAll('.reveal').forEach(function(item){observer.observe(item)});
+      }else{document.querySelectorAll('.reveal').forEach(function(item){item.classList.add('in')})}
+    })();
+  </script>
+</body>
+</html>
