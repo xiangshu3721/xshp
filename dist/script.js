@@ -151,18 +151,28 @@ const resumeTimelineMarkup = resumeTimeline.map((project) => `
 `).join('');
 
 const aiWorks = [{"title":"ASVA 导师工作台","art":"ASVA OS","category":"business","tag":"导师协作 · 客户管理","summary":"面向成长机构的客户与导师协作工作台，集中管理客户档案、预约分配、服务记录和跟进任务，并用 AI 辅助理解客户、整理服务反馈、查询日常业务数据。","num":"01"},{"title":"解忧小屋","art":"解忧小屋","category":"people","tag":"身心成长 · AI 导诊","summary":"面向情绪、事业、亲密关系与家庭等生活困扰，用 AI 对话倾听心声、澄清问题和提供初步支持，遇到需要深入帮助的情况再衔接真人导师，让人看清眼前的困扰和下一步。","num":"02"},{"title":"翔叔 · AI 思想工厂","art":"思想工厂","category":"creation","tag":"研究 · 内容创作","summary":"把个人知识、灵感、用户需求和市场情报汇入统一工作台，借助 AI 挖掘选题、展开研究、创作文章与播客，再将每一次输出沉淀为可持续积累的思想与作品。","num":"03"},{"title":"AI 场景诊断","art":"AI 场景诊断","category":"business","tag":"AI 机会 · 落地实践","summary":"通过问题梳理与场景扫描，识别生活、工作和业务中最值得使用 AI 的环节，评估机会的价值与实现难度，并用诊断报告、优先级建议和行动地图帮助找到第一步。","num":"04"},{"title":"寻根之旅·原生家庭考古","art":"寻根之旅","category":"people","tag":"原生家庭 · 自我理解","summary":"围绕父母档案、成长经历与家庭互动开展一次原生家庭探索，结合相关测评和 AI 辅助洞察梳理代际关系与习得模式，尝试理解早年经历如何影响今天的感受与选择。","num":"05"},{"title":"SEFS·看见感受的形状","art":"SEFS","category":"people","tag":"主观体验 · 自我测评","summary":"通过 24 道题，从体验广度、体验容纳、体验归属和体验自主四个维度勾勒个人主观感受的状态，并以可阅读的结果报告帮助人认识自己的体验方式，而非作出临床诊断。","num":"06"},{"title":"镜像神通卡","art":"镜像神通卡","category":"people","tag":"抽牌互动 · 内在觉察","summary":"把抽牌与镜像式自我觉察结合，让用户从随机遇见的卡牌主题出发重新观看当下的困惑和内在反应，借由开放式提问梳理感受、关系与尚未看见的可能。","num":"07"},{"title":"怼怼","art":"怼怼","category":"people","tag":"情绪释放 · 关系模拟","summary":"以可控的 AI 对话模拟争执、互怼与缓和的情境，让人试着表达怒气、练习冲突中的回应和降温方式，在情绪释放之后重新理解沟通、边界与关系修复。","num":"08"},{"title":"修行日课","art":"修行日课","category":"people","tag":"每日修行 · 习惯记录","summary":"将天气预报觉察、断舍离、忏悔与自定义修行功课整理成每日打卡清单，支持记录当日压力和能量、查看历史与近期趋势，让零散的修习更容易持续和回顾。","num":"09"},{"title":"问己","art":"问己","category":"people","tag":"AI 镜像对话 · 自我探索","summary":"一个不急着提供标准答案的 AI 镜像对话伙伴，从用户亲自提出的困惑出发，通过倾听、澄清与适时提问，陪人走过“我看见、我明白、我选择”的自我理解过程。","num":"10"},{"title":"AI 观相","art":"AI 观相","category":"creation","tag":"视觉 AI · 传统文化","summary":"上传正脸照片后，先由视觉模型提取可观察的面部特征，再依据传统相学文化规则形成结构化解读，区分客观观察与文化推断，供趣味探索和自我反思参考。","num":"11"},{"title":"觉镜","art":"觉镜","category":"business","tag":"成长导师 · 个案复盘","summary":"面向心理成长导师和疗愈服务者的辅助工作台，围绕个案记录、会谈重点、成长目标与阶段变化，运用 AI 帮助整理咨询前后的信息、复盘服务过程并形成后续跟进思路。","num":"12"},{"title":"有点情绪","art":"有点情绪","category":"people","tag":"情绪记录 · 自我觉察","summary":"让用户随时用文字或语音倒出情绪碎碎念，围绕发生的事、身体感受、情绪与真实需要进行梳理，逐步形成可回看的情绪记录，帮助认识自己反复出现的触发和反应。","num":"13"},{"title":"屁大点事","art":"屁大点事","category":"people","tag":"轻松吐槽 · 情绪整理","summary":"像对一个会听你吐槽的损友倒苦水一样，把烦心小事交给应用归类为日常琐事、旧事、别人的事、未来担忧或冲突，再得到一句看法与一个轻量行动，少些内耗。","num":"14"},{"title":"主体边界卡","art":"主体边界卡","category":"people","tag":"人际边界 · 主体性","summary":"围绕关系里的选择、责任、情绪和个人空间设计情境式觉察卡，帮助区分哪些事情由自己负责、哪些属于他人，在日常互动中练习表达意愿与守护个人边界。","num":"15"},{"title":"言衣","art":"言衣","category":"creation","tag":"语言交互 · 创意穿搭","summary":"只要说出或输入想要的穿衣风格、场合与颜色，系统就从虚拟衣橱选择单品叠加到模特身上，还能接着要求换颜色、加外套、调整搭配并保存满意的造型。","num":"16"},{"title":"灵境","art":"灵境","category":"creation","tag":"体感互动 · 数字艺术","summary":"一个由手势、表情和身体动作驱动的互动艺术空间，可以在摄像头前创造霓虹图形、作画、敲木鱼、颂钵、泡茶、插花或玩体感小游戏，也能切换触屏交互。","num":"17"},{"title":"AirCanvas 空中画板","art":"AirCanvas","category":"creation","tag":"手势识别 · 空中绘画","summary":"对着摄像头捏合拇指与食指就能在空中画画，松开即停笔；还支持画笔与颜色切换、撤销重做、保存作品，并兼容鼠标或触屏绘画，让创作摆脱传统画板。","num":"18"}];
-const aiCards = aiWorks.map((p) => `
-<article class="ai-card ai-card-selected" data-ai-category="${p.category}">
-  <div class="ai-cover ai-cover-${p.category}">
-    <small>${p.num} / ${p.tag}</small>
-    <strong>${p.art}</strong>
-    <span>XIANGSHU · CREATIVE WORKS</span>
-  </div>
-  <div class="ai-card-body">
-    <h3>${p.title}</h3>
-    <p class="ai-card-description">${p.summary}</p>
-  </div>
-</article>`).join('');
+const verifiedProjectPages = Object.freeze({"ASVA 导师工作台":"https://xiangshu3721.github.io/asva-workbench/","解忧小屋":"https://xiangshu3721.github.io/jieyou-xiaowu-v1/","AI 场景诊断":"https://xiangshu3721.github.io/ai-scene-dx/","寻根之旅·原生家庭考古":"https://xiangshu3721.github.io/root-journey-web/","镜像神通卡":"https://xiangshu3721.github.io/mirror-cards/","修行日课":"https://xiangshu3721.github.io/xiuxing-rike/","问己":"https://xiangshu3721.github.io/wenji/","AI 观相":"https://xiangshu3721.github.io/guanxiang/","觉镜":"https://xiangshu3721.github.io/juejing/","有点情绪":"https://xiangshu3721.github.io/shenghuo-xinqing/","屁大点事":"https://xiangshu3721.github.io/pidadianshi/","言衣":"https://xiangshu3721.github.io/voice-tryon/","灵境":"https://xiangshu3721.github.io/lingjing/","AirCanvas 空中画板":"https://xiangshu3721.github.io/aircanvas/"});
+const aiCards = aiWorks.map((p) => {
+  const previewUrl = verifiedProjectPages[p.title];
+  const cover = previewUrl
+    ? `<div class="ai-cover ai-cover-live ai-cover-${p.category}">
+        <div class="ai-cover-native" aria-hidden="true">
+          <iframe class="ai-native-frame" data-project-preview="${previewUrl}" title="${p.title}真实项目首页" tabindex="-1" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin"></iframe>
+        </div>
+        <div class="ai-cover-fallback">
+          <small>${p.num} / ${p.tag}</small><strong>${p.art}</strong>
+          <span>PROJECT SITE / 原站首页</span>
+        </div>
+      </div>`
+    : `<div class="ai-cover ai-cover-${p.category} ai-cover-missing">
+        <small>${p.num} / ${p.tag}</small><strong>${p.art}</strong>
+        <span>封面素材待补充</span>
+      </div>`;
+  return `<article class="ai-card ai-card-selected" data-ai-category="${p.category}">
+    ${cover}
+    <div class="ai-card-body"><h3>${p.title}</h3><p class="ai-card-description">${p.summary}</p></div>
+  </article>`;
+}).join('');
 
 const windowData = {
   resume: {
@@ -383,8 +393,47 @@ function renderWindow(id) {
     <div class="window-content">${data.content}</div>
   `;
   windowLayer.appendChild(windowElement);
+  if (id === 'projects') setupRealProjectCoverPreviews(windowElement);
   bringToFront(windowElement);
   return windowElement;
+}
+
+// Show each project's own public homepage inside its preview frame.
+// Only a few frames near the visible scroll region load at a time; offscreen
+// previews are unloaded to avoid running eighteen other web apps in the background.
+function setupRealProjectCoverPreviews(host) {
+  const cards = Array.from(host.querySelectorAll('.ai-card:has([data-project-preview])'));
+  if (!cards.length || !('IntersectionObserver' in window)) return;
+  const root = host.querySelector('.window-content');
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      const frame = entry.target.querySelector('iframe[data-project-preview]');
+      if (!frame) continue;
+      const cover = frame.closest('.ai-cover-live');
+      if (entry.isIntersecting) {
+        if (!frame.hasAttribute('src')) frame.setAttribute('src', frame.dataset.projectPreview);
+      } else if (frame.hasAttribute('src')) {
+        frame.removeAttribute('src');
+        cover?.classList.remove('is-ready');
+      }
+    }
+  }, {root, rootMargin: '170px 0px', threshold: 0});
+  for (const card of cards) {
+    const frame = card.querySelector('iframe[data-project-preview]');
+    frame.addEventListener('load', () => {
+      if (!frame.hasAttribute('src')) return;
+      // A blocked frame must not cover the readable original-style fallback.
+      try {
+        if (frame.contentDocument?.body?.children.length) {
+          frame.closest('.ai-cover-live')?.classList.add('is-ready');
+        }
+      } catch (_) {
+        // Cross-origin / blocked: retain fallback instead of an empty pane.
+      }
+    });
+    observer.observe(card);
+  }
+  host._projectCoverObserver = observer;
 }
 
 function openWindow(id) {
@@ -400,6 +449,7 @@ function openWindow(id) {
 
 function closeWindow(windowElement) {
   if (!windowElement) return;
+  windowElement._projectCoverObserver?.disconnect();
   if (windowElement.classList.contains('document-window')) {
     desktop?.classList.remove('is-document-open');
     appShell?.classList.remove('is-document-open');
