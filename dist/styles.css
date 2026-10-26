@@ -939,3 +939,39 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   .contact-wechat-qr figcaption { font-size: 10px; }
 }
 @media(prefers-reduced-motion:reduce) { .contact-wechat-link { transition: none; } }
+
+
+/* WECHAT ID / COPY ACTION */
+.contact-wechat-id {
+  margin: 11px 0 0;
+  color: #dce8da;
+  font: 13px/1.7 ui-sans-serif,-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;
+}
+.contact-wechat-id span {
+  display: inline-block;
+  color: #f3d3a1;
+  font: 600 17px/1.65 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  letter-spacing: .02em;
+  user-select: text;
+  -webkit-user-select: text;
+}
+.contact-wechat-copy {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 180px;
+  font: 600 14px/1.6 ui-sans-serif,-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;
+}
+.contact-wechat-copy:disabled { cursor: wait; opacity: .85; }
+.contact-wechat-copy-icon { font-size: 18px; line-height: 1; }
+.contact-wechat-copy-status {
+  margin: 10px 0 0;
+  min-height: 1.6em;
+  color: #d7e4d4;
+  font: 12px/1.65 ui-sans-serif,-apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif;
+}
+@media(max-width:760px){
+  .contact-wechat-id { margin-top: 8px; font-size: 12px; }
+  .contact-wechat-id span { font-size: 15px; }
+}
