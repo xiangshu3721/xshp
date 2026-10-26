@@ -1013,3 +1013,47 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   .ai-card-selected .ai-card-body h3 { font-size: 23px; margin-bottom: 12px; }
   .ai-card-selected .ai-card-description { font-size: 13px; line-height: 1.85; }
 }
+
+
+/* PORTFOLIO / project-native artwork previews, not placeholder gradients */
+.exhibition-hero-simple { padding: clamp(23px, 2.7vw, 33px) clamp(24px, 3.3vw, 38px); }
+.exhibition-hero-simple h2 {
+  font-size: clamp(32px, 3.25vw, 51px);
+  line-height: 1.32;
+  letter-spacing: -.045em;
+}
+.ai-card-selected .ai-cover-live { position: relative; overflow: hidden; padding: 0; background: #e9e5d8; isolation: isolate; }
+.ai-card-selected .ai-cover-live::before { display: none; }
+.ai-cover-native { position: absolute; inset: 0; z-index: 2; opacity: 0; transition: opacity .22s ease; overflow: hidden; pointer-events: none; }
+.ai-cover-live.is-ready .ai-cover-native { opacity: 1; }
+.ai-native-frame {
+  display: block;
+  position: absolute;
+  top: 0; left: 0;
+  width: 300%;
+  height: 300%;
+  transform: scale(.3333333333);
+  transform-origin: top left;
+  border: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: #f4f0e7;
+}
+.ai-cover-fallback { position: relative; display: flex; flex-direction: column; justify-content: end; height: 100%; padding: 18px 19px; background: linear-gradient(135deg, #425c5e, #283d47); }
+.ai-cover-people .ai-cover-fallback { background: linear-gradient(125deg, #ad7773, #4b536f); }
+.ai-cover-business .ai-cover-fallback { background: linear-gradient(125deg, #305b60, #213948); }
+.ai-cover-creation .ai-cover-fallback { background: linear-gradient(125deg, #81736b, #424f63); }
+.ai-cover-fallback small { left: 18px; top: 14px; color: #ffefdb; }
+.ai-cover-fallback strong { font-size: clamp(23px, 2.25vw, 33px); }
+.ai-cover-fallback span { margin-top: 10px; font: 10px/1.4 ui-monospace, Menlo, monospace; color: rgba(255,255,255,.76); }
+.ai-cover-missing { background: linear-gradient(128deg,#45615a,#293c45); }
+.ai-cover-missing span { color: rgba(255,247,231,.75); }
+@media (max-width: 760px) {
+  .exhibition-hero-simple { padding: 23px 21px; }
+  .exhibition-hero-simple h2 { font-size: clamp(30px, 7.2vw, 40px); }
+  .ai-card-selected .ai-cover-live { height: 166px; }
+  .ai-card-selected .ai-cover-fallback { padding: 17px 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ai-cover-native { transition: none; }
+}
