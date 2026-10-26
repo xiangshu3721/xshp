@@ -666,3 +666,104 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   .manifesto-hero .persona-orbit-one { inset: 2% 10% 2%; }
   .manifesto-hero .persona-orbit-two { inset: 7% 18% 0; }
 }
+
+
+/* ABOUT / ME 2026.10 — five-section personal dossier */
+.about-v3 { max-width: 780px; margin: 0 auto; font-family: ui-sans-serif,-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif; }
+.about-window { width: min(960px, calc(100vw - 40px)); max-height: min(850px, calc(100dvh - 80px)); }
+.about-window .window-content { padding: clamp(22px,3vw,40px) clamp(22px,4vw,55px) 62px; }
+.about-v3-hero { padding: 8px 0 30px; }
+.about-v3-hero-grid { display: grid; grid-template-columns: minmax(0,1.18fr) minmax(200px,.82fr); align-items: center; gap: clamp(20px,4vw,46px); }
+.about-v3-hero-copy h2 { max-width: none; margin: 20px 0 26px; font: 500 clamp(44px,5.6vw,66px)/1.3 "Hiragino Mincho ProN","Songti SC","STSong",serif; letter-spacing: -.055em; color: #faf4e8; }
+.about-v3-hero-copy h2 span { color: #f0c991; }
+.about-v3-placeholder { display: inline-flex; align-items: center; gap: 10px; padding: 11px 15px; border: 1px solid rgba(240,201,145,.45); border-radius: 4px; background: rgba(240,201,145,.07); color: #f4d5aa; font-size: 13px; letter-spacing: .04em; }
+.about-v3-placeholder strong { font-weight: 500; color: #f4d5aa; }
+.about-v3-placeholder-dot { width: 6px; height: 6px; border-radius: 50%; background: #f0c991; }
+.about-v3-placeholder-note { max-width: 390px; margin: 15px 0 0 !important; color: #b8c6bb !important; font: 13px/1.95 "Hiragino Mincho ProN","Songti SC",serif !important; }
+.about-v3-photo { position: relative; margin: 0; min-width: 0; border-radius: 9px; overflow: hidden; border: 1px solid rgba(248,232,200,.25); background: #435f51; }
+.about-v3-photo img { display: block; width: 100%; height: 300px; object-fit: cover; object-position: 55% 41%; }
+.about-v3-photo::after { content: ""; position: absolute; inset: 35% 0 0; pointer-events: none; background: linear-gradient(0deg,rgba(10,28,27,.58),transparent); }
+.about-v3-photo figcaption { position: absolute; z-index: 1; bottom: 13px; left: 15px; margin: 0; color: rgba(255,246,227,.87); font: 9px Georgia,serif; letter-spacing: .11em; }
+.about-v3-nav { display: flex; flex-wrap: wrap; gap: 8px; border-block: 1px solid var(--panel-line); padding: 19px 0; margin-bottom: 43px; }
+.about-v3-nav button { display: inline-flex; align-items: center; gap: 7px; border: 1px solid rgba(242,226,201,.27); border-radius: 40px; padding: 9px 13px; background: rgba(255,255,255,.045); color: #e9e4d7; cursor: pointer; font-size: 12px; transition: background .18s, border-color .18s; }
+.about-v3-nav button span { color: #e7bf88; font: 10px Georgia,serif; }
+.about-v3-nav button:hover,.about-v3-nav button:focus-visible { background: rgba(240,201,145,.13); border-color: #f0c991; }
+.about-v3-section { padding: 12px 0 12px; margin: 0 0 clamp(57px,7vw,81px); scroll-margin-top: 25px; }
+.about-v3-heading { margin-bottom: 28px; }
+.about-v3-eyebrow { margin: 0 0 15px !important; color: #efc68c !important; font: 11px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace !important; letter-spacing: .16em; }
+.about-v3-heading h2 { max-width: 760px; margin: 0 0 13px; font: 500 clamp(32px,4.3vw,49px)/1.38 "Hiragino Mincho ProN","Songti SC","STSong",serif; letter-spacing: -.045em; }
+.about-v3-heading h2 em,.about-v3-period { color: #f0c991; font-style: normal; }
+.about-v3-heading-note { max-width: 700px; margin: 0; color: #c4cec4 !important; font-size: 12px !important; line-height: 1.95 !important; }
+.about-v3-timeline { position: relative; list-style: none; margin: 0; padding: 0 0 0 24px; border-left: 1px solid rgba(240,201,145,.45); }
+.about-v3-milestone { position: relative; display: grid; grid-template-columns: 120px minmax(0,1fr); gap: 20px; padding: 7px 0 26px 21px; }
+.about-v3-milestone::before { content: ""; position: absolute; left: -30px; top: 12px; width: 11px; height: 11px; border: 2px solid #f0c991; border-radius: 50%; background: #283d42; box-shadow: 0 0 0 4px rgba(240,201,145,.06); }
+.about-v3-milestone:last-child { padding-bottom: 0; }
+.about-v3-time { padding-top: 4px; color: #e5c89d; font: 500 15px/1.6 "Hiragino Mincho ProN","Songti SC",serif; }
+.about-v3-milestone-body { padding: 0 0 22px; border-bottom: 1px solid rgba(255,255,255,.12); }
+.about-v3-milestone:last-child .about-v3-milestone-body { border: 0; }
+.about-v3-milestone-body h3 { margin: 0 0 11px; color: #fcf4e6; font: 500 clamp(19px,2.3vw,25px)/1.45 "Hiragino Mincho ProN","Songti SC",serif; }
+.about-v3-milestone-body p { max-width: 570px; margin: 0 0 10px; color: #cbd5c9; font-size: 13px; line-height: 1.95; }
+.about-v3-milestone-now::before { background: #f0c991; }
+.about-v3-timeline-tagline { margin-top: 15px !important; color: #f0c991 !important; font: italic 16px/1.8 Georgia,serif !important; letter-spacing: .025em; }
+.about-v3-skill-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 11px; }
+.about-v3-skill-card { min-width: 0; padding: 22px 16px 23px; border: 1px solid rgba(244,228,201,.21); border-top: 2px solid #efc78f; border-radius: 3px 3px 8px 8px; background: linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.028)); }
+.about-v3-skill-count { display: block; color: #e3ba83; font: 10px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing: .075em; }
+.about-v3-skill-card h3 { margin: 19px 0 17px; font: 500 23px/1.35 "Hiragino Mincho ProN","Songti SC",serif; color: #fff1dc; }
+.about-v3-chips { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 7px; }
+.about-v3-chips span { padding: 7px 9px; border: 1px solid rgba(240,214,168,.23); border-radius: 3px; background: rgba(10,29,32,.19); color: #e6e7dc; font-size: 11px; line-height: 1.45; }
+.about-v3-clarification { margin: 18px 0 0; color: #9eafa3 !important; font-size: 10px !important; line-height: 1.95 !important; }
+.about-v3-interests { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 10px; }
+.about-v3-interests span { display: grid; place-items: center; min-height: 110px; padding: 10px; border: 1px solid rgba(244,221,190,.19); border-radius: 8px; background: radial-gradient(circle at 80% 15%,rgba(240,201,145,.2),transparent 50%),linear-gradient(155deg,rgba(69,97,80,.52),rgba(29,52,58,.9)); color: #fff0d9; font: 500 20px/1.4 "Hiragino Mincho ProN","Songti SC",serif; letter-spacing: -.02em; text-align: center; }
+.about-v3-interests span:nth-child(2){background:radial-gradient(circle at 78% 17%,rgba(242,210,150,.25),transparent 50%),linear-gradient(145deg,#706b53,#364e4a);}
+.about-v3-interests span:nth-child(3){background:radial-gradient(circle at 80% 12%,rgba(240,186,166,.24),transparent 50%),linear-gradient(145deg,#4f6473,#344854);}
+.about-v3-interests span:nth-child(4){background:radial-gradient(circle at 80% 12%,rgba(225,202,166,.24),transparent 50%),linear-gradient(145deg,#6a5e73,#34454a);}
+.about-v3-interests span:nth-child(5){background:radial-gradient(circle at 82% 16%,rgba(170,222,192,.25),transparent 50%),linear-gradient(145deg,#367879,#25434e);}
+.about-v3-manifesto { margin-bottom: 0; }
+.about-v3-question { position: relative; padding: clamp(23px,4vw,39px); border: 1px solid rgba(250,221,169,.27); border-radius: 8px; background: radial-gradient(ellipse at 98% 0%,rgba(238,198,141,.2),transparent 50%),linear-gradient(130deg,rgba(34,66,63,.8),rgba(36,50,55,.9)); overflow: hidden; }
+.about-v3-quote-mark { position: absolute; top: 3px; right: 20px; font: 140px/1 Georgia,serif; color: rgba(249,233,187,.1); pointer-events: none; }
+.about-v3-question > p:first-of-type { position: relative; max-width: 620px; margin: 0 0 31px; color: #f3eadd; font: 500 clamp(19px,2.6vw,27px)/1.9 "Hiragino Mincho ProN","Songti SC",serif; }
+.about-v3-answer-intro { margin: 0 0 6px !important; font-size: 13px !important; color: #c3d2c4 !important; }
+.about-v3-answer { display: block; color: #f2c890 !important; font: 500 clamp(30px,4.6vw,51px)/1.4 "Hiragino Mincho ProN","Songti SC",serif !important; letter-spacing: -.03em; }
+.about-v3-answer span { color: #f8eedc; }
+.about-v3-three { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 0; margin-top: 30px; border-top: 1px solid var(--panel-line); border-bottom: 1px solid var(--panel-line); }
+.about-v3-three article { padding: 25px 19px 29px; border-right: 1px solid var(--panel-line); min-width: 0; }
+.about-v3-three article:first-child { padding-left: 0; }
+.about-v3-three article:last-child { border: 0; padding-right: 0; }
+.about-v3-three-no { color: #e6ba81; font: 10px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing: .1em; }
+.about-v3-three h3 { margin: 20px 0 14px; color: #f5eee2; font: 500 29px/1.25 "Hiragino Mincho ProN","Songti SC",serif; }
+.about-v3-three p { color: #cbd8cb; font-size: 12px; line-height: 2; margin: 0; }
+.about-v3-ending { padding-top: 27px; text-align: center; }
+.about-v3-ending p { margin: 0 !important; color: #f0c991 !important; font: italic 17px/1.75 Georgia,serif !important; letter-spacing: .065em; }
+.about-v3-ending p span { color: #d8ded1; margin: 0 3px; }
+.about-v3-ending small { color: #b2c2b4; font-size: 11px; letter-spacing: .24em; }
+@media (max-width:760px){
+  .about-window { width: calc(100vw - 16px); max-height: calc(100dvh - 78px); }
+  .about-window .window-content { padding: 18px 17px 42px; }
+  .about-v3-hero-grid { grid-template-columns: minmax(0,1fr) minmax(0,.68fr); gap: 15px; align-items: start; }
+  .about-v3-hero-copy h2 { margin-top: 12px; font-size: clamp(33px,7.5vw,49px); }
+  .about-v3-photo img { height: 230px; }
+  .about-v3-photo figcaption { font-size: 7px; letter-spacing: .03em; left: 8px; }
+  .about-v3-nav { gap: 7px; }
+  .about-v3-nav button { font-size: 11px; padding: 8px 10px; }
+  .about-v3-heading h2 { font-size: clamp(27px,6.2vw,38px); }
+  .about-v3-milestone { grid-template-columns: 1fr; gap: 4px; padding: 7px 0 20px 14px; }
+  .about-v3-milestone::before { left: -30px; }
+  .about-v3-time { font-size: 13px; }
+  .about-v3-milestone-body h3 { font-size: 20px; }
+  .about-v3-skill-grid { grid-template-columns: 1fr; }
+  .about-v3-skill-card { padding: 17px; }
+  .about-v3-skill-card h3 { margin: 9px 0 14px; font-size: 22px; }
+  .about-v3-interests { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .about-v3-interests span { min-height: 90px; }
+  .about-v3-three { grid-template-columns: 1fr; }
+  .about-v3-three article { border-right: 0; border-bottom: 1px solid var(--panel-line); padding: 17px 0; }
+  .about-v3-three article:last-child { border: 0; }
+  .about-v3-three h3 { margin: 8px 0 8px; font-size: 24px; }
+}
+@media (max-width:420px){
+  .about-v3-hero-grid { grid-template-columns: 1fr; }
+  .about-v3-photo { width: min(100%,260px); }
+  .about-v3-photo img { height: 230px; }
+  .about-v3-hero-copy h2 { font-size: 42px; }
+}
+@media(prefers-reduced-motion:reduce){.about-v3-nav button{transition:none}}
