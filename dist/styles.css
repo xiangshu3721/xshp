@@ -1065,3 +1065,27 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   .expression-universe-closing { font-size: 15px; }
 }
 @media (prefers-reduced-motion: reduce) { .expression-nav button { transition: none; } }
+
+
+/* Avatar-menu background chooser: keep Dock minimal and make themes accessible */
+.theme-panel {
+  position: fixed;
+  top: 54px;
+  left: 12px;
+  right: auto;
+  width: min(360px, calc(100vw - 24px));
+  max-height: min(76dvh, 660px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  z-index: 90;
+}
+.theme-panel .theme-choice { min-width: 0; }
+@media (max-width: 760px) {
+  .theme-panel {
+    top: 52px;
+    left: 10px;
+    right: auto;
+    width: min(360px, calc(100vw - 20px));
+    max-height: min(75dvh, 620px);
+  }
+}
