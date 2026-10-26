@@ -8,7 +8,7 @@
     <meta property="og:description" content="一个不太愿意被定义的人。欢迎来到我的创造作品与精神宇宙。" />
     <meta property="og:image" content="https://xiangshu3721.github.io/xshp/assets/xiangshu-avatar.jpg" />
     <title>翔叔的世界｜作品 · 思想 · 生活</title>
-    <link rel="stylesheet" href="styles.css?v=20261026-portalbright13" />
+    <link rel="stylesheet" href="styles.css?v=20261026-expressions14" />
   </head>
   <body class="theme-art">
     <div class="desktop-app" id="app">
@@ -21,9 +21,7 @@
         <div class="system-menu" id="system-menu" hidden>
           <button type="button" data-open-window="about">认识翔叔</button>
           <button type="button" data-open-window="projects">打开作品展厅</button>
-          <button type="button" data-open-window="universe">探索九大关系</button>
-          <button type="button" data-theme-toggle>切换背景艺术图</button>
-          <button type="button" data-mascot-open>呼叫桌面管家</button>
+          <button type="button" data-open-window="writing">探索思想与九大关系</button>
         </div>
       </header>
 
@@ -54,16 +52,15 @@
 
         <section class="desktop-explore" id="explore" aria-labelledby="explore-title">
           <div class="explore-heading">
-            <p class="explore-kicker">FIVE PORTALS · 五个入口</p>
+            <p class="explore-kicker">FOUR PORTALS · 四个入口</p>
             <h2 id="explore-title">从这里，<em>走进我的世界。</em></h2>
             <p>你可以先看我创造的作品，也可以慢慢探索我的经历、思想和生活。<br />不必按顺序，跟着你的好奇心走就好。</p>
           </div>
           <div class="explore-grid">
             <button class="portal-card portal-about" type="button" data-open-window="about"><span class="portal-no">01 / THE PERSON</span><span class="portal-symbol">自我</span><strong>关于我</strong><small>不是标准履历，是一个不断变化的人。</small></button>
             <button class="portal-card portal-works" type="button" data-open-window="projects"><span class="portal-no">02 / WHAT I MAKE</span><span class="portal-symbol">创造</span><strong>创造作品</strong><small>AI 实验室 · 真实业务 · 从想法到作品</small></button>
-            <button class="portal-card portal-universe" type="button" data-open-window="universe"><span class="portal-no">03 / INNER UNIVERSE</span><span class="portal-symbol">精神</span><strong>精神宇宙</strong><small>九大关系，理解自己与世界的路径。</small></button>
-            <button class="portal-card portal-writing" type="button" data-open-window="writing"><span class="portal-no">04 / IDEAS & NOTES</span><span class="portal-symbol">思想</span><strong>思想表达</strong><small>思想、提问，以及尚未找到答案的事。</small></button>
-            <button class="portal-card portal-contact" type="button" data-open-window="contact"><span class="portal-no">05 / SAY HELLO</span><span class="portal-symbol">相遇</span><strong>与我连接</strong><small>有趣的人、深度交流、值得创造的事情。</small></button>
+            <button class="portal-card portal-writing" type="button" data-open-window="writing"><span class="portal-no">03 / EXPRESSION</span><span class="portal-symbol">思</span><strong>表达</strong><small>人生艺术化的十件作品 · 理解自己与世界的九大关系。</small></button>
+            <button class="portal-card portal-contact" type="button" data-open-window="contact"><span class="portal-no">04 / SAY HELLO</span><span class="portal-symbol">相遇</span><strong>与我连接</strong><small>有趣的人、深度交流、值得创造的事情。</small></button>
           </div>
         </section>
 
@@ -163,21 +160,14 @@
 
         <div class="window-layer" id="window-layer" aria-live="polite"></div>
 
-        <button class="mascot-desk" type="button" data-mascot-open aria-expanded="false" aria-label="打开翔叔桌面管家"><span class="mascot-glow"></span><img src="assets/xiangshu-mascot.png" alt="翔叔的卡通桌面管家" /><span class="mascot-name">翔叔管家</span></button>
-        <aside class="mascot-dialog" id="mascot-dialog" hidden><button class="dialog-close" type="button" data-mascot-close aria-label="关闭对话">×</button><p class="dialog-kicker">翔叔宇宙向导 / HELLO, STRANGER</p><p class="dialog-main" aria-live="polite">第一次来？不妨从一个好奇的问题开始。</p><div class="mascot-topics"><button type="button" data-mascot-topic="person">翔叔是怎样的人？</button><button type="button" data-mascot-topic="works">他最近在折腾什么？</button><button type="button" data-mascot-topic="ideas">他脑子里有什么想法？</button><button type="button" data-mascot-topic="poem">送我一句诗 ✳</button></div></aside>
-
         <nav class="dock" aria-label="桌面快捷入口">
           <button type="button" class="dock-item" data-open-window="about"><span class="dock-glyph glyph-finder">⌘</span><span>关于</span></button>
           <button type="button" class="dock-item" data-open-window="projects"><span class="dock-glyph glyph-folder">造</span><span>作品</span></button>
-          <button type="button" class="dock-item" data-open-window="universe"><span class="dock-glyph glyph-orbit">∞</span><span>宇宙</span></button>
           <button type="button" class="dock-item" data-open-window="writing"><span class="dock-glyph glyph-writing">思</span><span>表达</span></button>
           <button type="button" class="dock-item" data-open-window="contact"><span class="dock-glyph glyph-contact">联</span><span>联系</span></button>
-          <button type="button" class="dock-item" data-theme-toggle><span class="dock-glyph glyph-theme">◐</span><span>主题</span></button>
-          <button type="button" class="dock-item" data-mascot-open><span class="dock-glyph glyph-mascot">X</span><span>管家</span></button>
         </nav>
       </main>
-      <div class="theme-panel" id="theme-panel" hidden></div>
     </div>
-    <script src="script.js?v=20261026-coverrollback12"></script>
+    <script src="script.js?v=20261026-expressions14"></script>
   </body>
 </html>
