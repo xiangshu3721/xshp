@@ -8,7 +8,7 @@ const mascotDialog = document.querySelector('#mascot-dialog');
 let zIndex = 25;
 
 const themes = [
-  { id: 'original', name: '原始梦行山水', note: '翔叔的桌面', src: 'assets/xiangshu-dream-path.png' },
+  { id: 'original', name: '湖畔晨曦', note: '翔叔的桌面', src: 'assets/xiangshu-terrace-sunrise.jpg' },
   { id: 'castle', name: '光之城', note: '想象与远方', wallpaper: '01.jpeg', src: 'assets/manifesto/01.jpeg' },
   { id: 'forest', name: '林间之路', note: '慢下来，向内走', wallpaper: '02.jpeg', src: 'assets/manifesto/02.jpeg' },
   { id: 'valley', name: '山野之间', note: '保持好奇', wallpaper: '03.jpeg', src: 'assets/manifesto/03.jpeg' },

@@ -35,7 +35,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .system-menu { position: absolute; top: 29px; left: 11px; display: grid; min-width: 180px; padding: 7px; border: 1px solid var(--panel-line); border-radius: 9px; background: var(--panel-solid); box-shadow: 0 16px 32px var(--window-shadow); }.system-menu button { border: 0; padding: 9px 10px; background: transparent; text-align: left; cursor: pointer; border-radius: 5px; }.system-menu button:hover { background: rgba(255,255,255,.1); }
 
 .desktop { position: relative; width: 100%; min-height: 100dvh; overflow: visible; isolation: isolate; background: linear-gradient(180deg, var(--desk-top), var(--desk-bottom)); }
-.wallpaper-art { position: fixed; z-index: -3; inset: 0; background-image: linear-gradient(90deg, rgba(14,38,47,.32), rgba(14,38,47,.04) 64%), var(--active-wallpaper, var(--wallpaper, url("assets/xiangshu-dream-path.png"))); background-position: center; background-size: cover; filter: saturate(.96) contrast(.98); transition: background-image .6s ease, filter .6s ease; }
+.wallpaper-art { position: fixed; z-index: -3; inset: 0; background-image: linear-gradient(90deg, rgba(14,38,47,.32), rgba(14,38,47,.04) 64%), var(--active-wallpaper, var(--wallpaper, url("assets/xiangshu-terrace-sunrise.jpg"))); background-position: center; background-size: cover; filter: saturate(.96) contrast(.98); transition: background-image .6s ease, filter .6s ease; }
 .desktop-haze { position: fixed; z-index: -2; inset: 0; background: radial-gradient(ellipse at 20% 20%, rgba(244,217,173,.11), transparent 32%), linear-gradient(180deg, rgba(15,30,35,.08), rgba(15,30,35,.2)); pointer-events: none; }
 .desktop-welcome { position: relative; z-index: 1; max-width: 720px; text-shadow: 0 2px 18px rgba(14,28,33,.3); }.welcome-kicker { margin: 0 0 12px; color: var(--accent); font: 10px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .13em; text-transform: uppercase; }.desktop-welcome h1 { margin: 0 0 9px; font: 500 clamp(32px, 4vw, 56px)/1.1 "Hiragino Mincho ProN", "Songti SC", "STSong", serif; letter-spacing: -.04em; white-space: nowrap; }.desktop-welcome > p:not(.manifesto-scroll-hint) { max-width: 305px; margin: 0; color: var(--desk-muted); font-size: 13px; line-height: 1.65; }
 
@@ -102,7 +102,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .document-close:hover { background: rgba(26,43,47,.92); transform: scale(1.05); }
 
 /* theme presets */
-.theme-dream { --wallpaper: url("assets/xiangshu-dream-path.png"); }
+.theme-dream { --wallpaper: url("assets/xiangshu-terrace-sunrise.jpg"); }
 .theme-cartoon { --desk-top: #6e8da4; --desk-bottom: #405f68; --desk-text: #fff7eb; --accent: #f5c57b; --accent-strong: #cc7867; --panel: rgba(50,67,73,.78); --panel-solid: #354b54; --wallpaper: url("assets/reference-dream-valley.jpg"); }.theme-cartoon .wallpaper-art { filter: saturate(1.18) contrast(.95); }.theme-cartoon .folder-icon { border-radius: 14px 14px 17px 17px; }.theme-cartoon .dock { border-radius: 23px; }.theme-cartoon .mascot-name { background: #6e4f65; }
 .theme-tech { --desk-top: #122c42; --desk-bottom: #091722; --desk-text: #dff7f6; --desk-muted: rgba(223,247,246,.7); --accent: #76d5e6; --accent-strong: #ef8c65; --panel: rgba(8,25,39,.82); --panel-solid: #10283a; --panel-line: rgba(118,213,230,.25); --wallpaper: linear-gradient(rgba(5,20,33,.75), rgba(5,20,33,.82)), radial-gradient(ellipse at 70% 20%, rgba(41,132,172,.36), transparent 34%), repeating-linear-gradient(0deg, transparent 0 38px, rgba(118,213,230,.08) 39px 40px), repeating-linear-gradient(90deg, transparent 0 38px, rgba(118,213,230,.08) 39px 40px); }.theme-tech .wallpaper-art { filter: none; }.theme-tech .folder-icon { background: linear-gradient(145deg, #77c7cf, #28708e); color: #0c2935; }.theme-tech .folder-icon::before { background: #77c7cf; }.theme-tech .dock-glyph { color: #092332; background: #9cdde0; }.theme-tech .mascot-name { background: rgba(5,24,35,.86); }.theme-tech .topbar-status-dot { background: #76d5e6; box-shadow: 0 0 9px #76d5e6; }
 .theme-ancient { --desk-top: #5f6b5c; --desk-bottom: #2b3f35; --desk-text: #f7edd7; --desk-muted: rgba(247,237,215,.72); --accent: #e0b27b; --accent-strong: #ad5e45; --panel: rgba(48,60,49,.8); --panel-solid: #344438; --wallpaper: linear-gradient(rgba(35,51,43,.2), rgba(35,51,43,.52)), url("assets/reference-dream-garden.jpg"); }.theme-ancient .wallpaper-art { filter: saturate(.72) sepia(.18); }.theme-ancient .folder-icon { background: linear-gradient(145deg, #e3c28e, #a8795c); }.theme-ancient .folder-icon::before { background: #e3c28e; }.theme-ancient .dock { background: rgba(42,56,45,.68); }.theme-ancient .window { border-radius: 5px; }
@@ -187,7 +187,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .document-window.is-centered { inset: 0 !important; width: auto !important; max-height: none !important; transform: none !important; }
 
 /* artwork themes */
-.theme-art { --wallpaper: url("assets/xiangshu-dream-path.png"); }
+.theme-art { --wallpaper: url("assets/xiangshu-terrace-sunrise.jpg"); }
 .theme-panel { width: min(360px, calc(100vw - 28px)); }
 .theme-choice { position: relative; min-height: 122px; overflow: hidden; background-image: linear-gradient(180deg, rgba(16,31,37,.08), rgba(16,31,37,.78)), var(--choice-bg-image); background-position: center; background-size: cover; text-shadow: 0 2px 10px rgba(6,17,21,.5); }
 .theme-choice::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255,255,255,.15), transparent 46%); pointer-events: none; }
@@ -357,7 +357,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .portal-card:hover, .portal-card:focus-visible { transform: translateY(-6px); border-color: #f0c991; filter: saturate(1.1); }
 .portal-about { background-image: linear-gradient(120deg, rgba(24,53,54,.72), rgba(64,85,69,.64)), url("assets/reference-dream-garden.jpg"); }
 .portal-works { background-image: linear-gradient(110deg, rgba(21,48,55,.63) 0%, rgba(24,56,65,.28) 65%, rgba(20,49,56,.47) 100%), url("assets/manifesto/04.jpeg"); background-position: 56% center; }
-.portal-universe { background-image: linear-gradient(130deg, rgba(40,52,82,.75), rgba(22,39,66,.77)), url("assets/xiangshu-dream-path.png"); }
+.portal-universe { background-image: linear-gradient(130deg, rgba(40,52,82,.75), rgba(22,39,66,.77)), url("assets/xiangshu-terrace-sunrise.jpg"); }
 .portal-writing { background-image: linear-gradient(110deg, rgba(58,52,49,.8), rgba(34,55,49,.7)), url("assets/reference-luminous-castle.jpg"); }
 .portal-contact { background-image: linear-gradient(110deg, rgba(40,66,63,.77), rgba(66,81,57,.66)), url("assets/manifesto/03.jpeg"); }
 .portal-no { color: #f6d9b0; font: 10px ui-monospace, Menlo, monospace; letter-spacing: .14em; }
