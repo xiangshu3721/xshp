@@ -336,10 +336,11 @@ const windowData = {
         <div class="contact-wechat-info">
           <div class="contact-wechat-identity">
             <img src="assets/xiangshu-avatar.jpg" alt="翔叔的微信头像" loading="lazy" />
-            <div><span class="contact-wechat-kicker">WECHAT · 微信昵称</span><h3>翔叔</h3></div>
+            <div><span class="contact-wechat-kicker">WECHAT · 微信昵称</span><h3>翔叔</h3><p class="contact-wechat-id">微信号：<span>xiangshu-pm</span></p></div>
           </div>
           <p class="contact-wechat-invite">很高兴在这里遇见你。<br />扫码添加微信，我们聊聊。</p>
-          <a class="contact-wechat-link" href="https://u.wechat.com/EDQCntwGibCWB9xGitJ7gSI?s=2" target="_blank" rel="noopener noreferrer" aria-label="打开翔叔微信名片">打开微信名片 <span aria-hidden="true">↗</span></a>
+          <button class="contact-wechat-link contact-wechat-copy" type="button" data-copy-wechat="xiangshu-pm"><span class="contact-wechat-copy-label">复制微信号</span><span aria-hidden="true" class="contact-wechat-copy-icon">⧉</span></button>
+          <p class="contact-wechat-copy-status" role="status" aria-live="polite" aria-atomic="true"></p>
         </div>
         <figure class="contact-wechat-qr">
           <div class="contact-wechat-qr-paper"><img src="assets/wechat-contact-qr.svg" alt="翔叔微信名片二维码，使用微信扫一扫添加好友" loading="lazy" decoding="async" /></div>
@@ -548,7 +549,69 @@ document.addEventListener('pointerdown', (event) => {
   if (titlebar) startWindowDrag(event, titlebar);
 });
 
+// Copy feedback is only shown after the clipboard operation actually succeeds.
+async function copyWechatId(button) {
+  const id = button.dataset.copyWechat;
+  if (id !== 'xiangshu-pm') return;
+  const card = button.closest('.contact-wechat-card');
+  const status = card?.querySelector('.contact-wechat-copy-status');
+  const label = button.querySelector('.contact-wechat-copy-label');
+  if (!label || !status) return;
+
+  button.disabled = true;
+  status.textContent = '';
+  let copied = false;
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(id);
+      copied = true;
+    }
+  } catch (error) {
+    // Some browsers disallow Clipboard API; try a user-gesture-compatible fallback.
+  }
+
+  if (!copied) {
+    const field = document.createElement('textarea');
+    field.value = id;
+    field.setAttribute('readonly', '');
+    field.style.position = 'fixed';
+    field.style.top = '0';
+    field.style.left = '-9999px';
+    document.body.appendChild(field);
+    try {
+      field.focus();
+      field.select();
+      copied = document.execCommand('copy');
+    } catch (error) {
+      copied = false;
+    } finally {
+      field.remove();
+      button.focus({ preventScroll: true });
+    }
+  }
+
+  if (copied) {
+    label.textContent = '✓ 复制成功';
+    status.textContent = '微信号 xiangshu-pm 已复制，可以打开微信粘贴添加好友。';
+  } else {
+    label.textContent = '复制微信号';
+    status.textContent = '浏览器未允许自动复制，请长按上方微信号手动复制。';
+  }
+  button.disabled = false;
+  if (copied) {
+    window.setTimeout(() => {
+      if (button.isConnected) label.textContent = '复制微信号';
+    }, 2400);
+  }
+}
+
 document.addEventListener('click', (event) => {
+  const copyWechatButton = event.target.closest('[data-copy-wechat]');
+  if (copyWechatButton) {
+    void copyWechatId(copyWechatButton);
+    return;
+  }
+
   const aboutJump = event.target.closest('[data-about-jump]');
   if (aboutJump) {
     const windowEl = aboutJump.closest('.window');
