@@ -53,6 +53,29 @@ const romanticPoems = [
 
 let lastPoemIndex = -1;
 
+const mascotAnswers = {
+  person: '他好奇心很重，既能深入复杂的产品和商业系统，也会被音乐、艺术和一次有质量的谈话打动。他不太喜欢被单一标签定义。',
+  works: '最近在做解忧小屋、ASVA 导师工作台、AI 场景诊断、思想工厂和手势画板。点开「作品」可以慢慢逛。',
+  ideas: '他常常在想：当机器越来越聪明，人如何更自由、更完整地成为自己？怎样让思想进入现实，变成对别人真正有价值的作品？'
+};
+function showMascotWelcome() {
+  if (!mascotDialog) return;
+  const kicker = mascotDialog.querySelector('.dialog-kicker');
+  const main = mascotDialog.querySelector('.dialog-main');
+  if (kicker) kicker.textContent = '翔叔宇宙向导 / HELLO, STRANGER';
+  if (main) main.textContent = '第一次来？随便问我一个关于翔叔的问题，或者听一句诗。';
+  setMascot(true);
+}
+function showMascotAnswer(topic) {
+  if (topic === 'poem') { showRandomPoem(); return; }
+  if (!Object.prototype.hasOwnProperty.call(mascotAnswers, topic)) return;
+  const kicker = mascotDialog?.querySelector('.dialog-kicker');
+  const main = mascotDialog?.querySelector('.dialog-main');
+  if (kicker) kicker.textContent = '来自宇宙向导的一点线索 ✳';
+  if (main) main.textContent = mascotAnswers[topic];
+  setMascot(true);
+}
+
 function showRandomPoem() {
   if (!mascotDialog) return;
   let poemIndex = Math.floor(Math.random() * romanticPoems.length);
@@ -61,6 +84,8 @@ function showRandomPoem() {
   const poem = romanticPoems[poemIndex];
   const dialogMain = mascotDialog.querySelector('.dialog-main');
   if (!dialogMain) return;
+  const kicker = mascotDialog.querySelector('.dialog-kicker');
+  if (kicker) kicker.textContent = '随机诗句 / JUST FOR YOU';
   dialogMain.innerHTML = `<span class="poem-text">${poem.text}</span>${poem.translation ? `<span class="poem-translation">${poem.translation}</span>` : ''}<small class="poem-source">${poem.source}</small>`;
   setMascot(true);
 }
@@ -125,6 +150,16 @@ const resumeTimelineMarkup = resumeTimeline.map((project) => `
   </article>
 `).join('');
 
+const aiWorks = [{"category":"business","num":"01","title":"ASVA 导师工作台","art":"ASVA OS","tag":"组织协作 · AI 服务","status":"业务系统迭代","summary":"把客户档案、导师协作、服务跟进与 AI 洞察变成可持续的业务资产。","detail":"从线索管理到客户理解、状态流转与协作权限，围绕真实的服务摩擦持续优化。系统仍在迭代，不代表完整业务验收。","role":"产品架构 / 业务规则 / AI 工作流","url":"https://github.com/xiangshu3721/asva-workbench"},{"category":"people","num":"02","title":"解忧小屋","art":"解忧小屋","tag":"AI × 心理成长","status":"MVP 实验","summary":"让生活中的模糊困扰被听见、厘清，再找到适合的下一步。","detail":"围绕情绪、关系、事业与家庭等问题，设计 AI 澄清问题与真人支持衔接流程。这不是临床诊断工具。","role":"产品定位 / 导诊规则 / 用户体验","url":"https://github.com/xiangshu3721/jieyou-xiaowu-v1"},{"category":"business","num":"03","title":"AI 场景诊断","art":"AI 机会雷达","tag":"AI × 商业场景","status":"原型迭代","summary":"识别工作与生活中的真实痛点，看见最有价值的 AI 应用机会。","detail":"从结构化痛点到三个优先机会，再用与场景强相关的微体验激发实际行动，最后连接深度诊断。","role":"需求洞察 / 推荐逻辑 / 体验转化","url":"https://github.com/xiangshu3721/ai-scene-dx"},{"category":"people","num":"04","title":"高敏感心力地图","art":"心力地图","tag":"自我探索 · 测评","status":"产品打磨","summary":"把抽象的心理成长议题变成更直观、更易理解的互动体验。","detail":"围绕原生、情感、情绪与财富四个维度组织结果，帮助用户理解可进一步探索的方向，不替代临床评估。","role":"信息结构 / 视觉化 / 测评体验","url":"https://github.com/xiangshu3721/sensitive-map"},{"category":"creation","num":"05","title":"翔叔 · AI 思想工厂","art":"思想工厂","tag":"研究 · 表达 · 创作","status":"内部实验","summary":"让知识库、需求洞察、选题和内容表达形成持续循环。","detail":"建立面向个人使用的研究与创作工作台，把灵感变成观点，再变成文章、播客和作品。当前工作台不公开。","role":"知识架构 / AI 工作流 / 内容系统","url":""},{"category":"creation","num":"06","title":"手势画板","art":"AIR CANVAS","tag":"交互艺术 · 视觉 AI","status":"互动原型","summary":"通过摄像头和手势在空中作画，让 AI 成为身体与艺术的游戏。","detail":"支持手势作画、颜色切换与画布清除等互动机制，尝试让创作从按键与鼠标中解放出来。","role":"创意交互 / 体验设计 / 原型实验","url":"https://github.com/xiangshu3721/aircanvas"}];
+const aiCards = aiWorks.map((p) => `
+<article class="ai-card" data-ai-category="${p.category}">
+  <div class="ai-cover ai-cover-${p.category}"><small>${p.num} / ${p.tag}</small><strong>${p.art}</strong><span>CONCEPT COVER · 概念视觉</span></div>
+  <div class="ai-card-body"><small class="ai-status">${p.status}</small><h3>${p.title}</h3><p>${p.summary}</p>
+    <details class="ai-detail"><summary>走进这个作品 <span aria-hidden="true">↗</span></summary><p>${p.detail}</p><p><strong>我的参与：</strong>${p.role}</p></details>
+    ${p.url ? `<a class="ai-source" href="${p.url}" target="_blank" rel="noopener noreferrer">查看公开项目 ↗</a>` : '<span class="ai-private">内部实验 · 暂无公开入口</span>'}
+  </div>
+</article>`).join('');
+
 const windowData = {
   resume: {
     title: '个人简历 · 原版', path: 'RESUME / ORIGINAL PDF', content: `
@@ -135,7 +170,15 @@ const windowData = {
   about: {
     title: '关于翔叔', path: 'ABOUT / ME', content: `
       <div class="about-longform">
-        <div class="about-hero">
+        <div class="about-short">
+          <p class="window-kicker">HELLO / 十秒认识翔叔</p>
+          <div class="about-short-grid"><div><h2>我研究人，<br /><em>也创造可能。</em></h2><p class="about-short-lead">一个不太愿意被定义的人。<br />喜欢把彼此遥远的东西联系起来，再将想法真正做出来。</p></div><img src="assets/xiangshu-avatar.jpg" alt="翔叔的真实人物照片" loading="lazy" /></div>
+          <div class="about-short-tags"><span>产品艺术家</span><span>AI 应用构建者</span><span>思想探索者</span><span>成长探索者</span></div>
+          <div class="about-short-facts"><article><b>曾经</b><p>互联网产品与运营，创意社交、直播、电商、复杂业务系统。</p></article><article><b>现在</b><p>不断用 AI 探索理解人、服务人和创造新体验的可能。</p></article><article><b>喜欢</b><p>心理学、艺术、东方智慧、深度对话和好玩的新事物。</p></article></div>
+          <div class="about-short-actions"><button type="button" data-open-window="projects">看看我做的作品 ↗</button><button type="button" data-open-window="universe">进入我的精神宇宙 ↗</button></div>
+        </div>
+        <details class="about-full-story"><summary>继续读我的完整故事 <span>从商业世界到心理成长与 AI 创造 ↓</span></summary>
+        <div class="about-expanded-story"><div class="about-hero">
           <div class="about-hero-copy"><p class="window-kicker">THE PERSON BEHIND THE DESKTOP</p><h2>你好，我是翔叔</h2><p class="window-intro">如果只看我的履历，你可能会觉得，这是一个有点“不安分”的人。</p><p class="window-intro">我做过旅行、电商、内容社区，做过年轻人的创意社交，做过短视频直播，也做过二手奢侈品、潮玩和复杂的交易系统；后来，我又一头扎进了心理成长、艺术疗愈、东方文化，现在则把很大一部分时间放在 AI 上。</p><p class="window-intro">产品、运营、商业、心理、艺术、AI。</p><p class="window-intro">看起来跨度很大。</p><p class="window-intro">但这些年回头看，我越来越发现，我好像一直没有真正换过方向。</p><p class="about-lead">我一直在研究同一件事——人。</p></div>
           <figure class="about-image-card about-avatar-card"><img src="assets/xiangshu-avatar.jpg" alt="翔叔在竹林边手持一朵花" /><figcaption>配图 01｜翔叔真人照</figcaption></figure>
         </div>
@@ -159,6 +202,7 @@ const windowData = {
         <section class="about-section about-chapter"><p class="about-label">07</p><h3>如果未来很多事情都可以被 AI 完成，我希望自己仍然保留三种能力</h3><div class="about-three"><div><strong>思考。</strong><p>不是重复别人已经说过的话，而是始终愿意问一句：事情真的只能这样吗？</p></div><div><strong>创造。</strong><p>把脑海里的某个想法，真的变成一个产品、一篇文章、一段音乐、一幅画、一种服务或者一种新的生活方式。</p></div><div><strong>表达。</strong><p>让那些我相信的东西，可以被另外一个人看见、理解，甚至因此产生一点改变。</p></div></div><p>这是我到现在为止，对自己最稳定的信任。</p><p>无论时代怎么变化。无论职业叫什么。无论下一站在哪里。</p><p>我想，我大概还是会继续做同一件事情：</p><p class="about-lead">理解人。<br />理解世界。<br />然后创造一点以前不存在的东西。</p><p>如果它刚好也能让某个人更理解自己一点，更自由一点，更有勇气活成自己一点——那就更好了。</p></section>
         <figure class="about-closing-figure"><img src="assets/xiangshu-avatar.jpg" alt="翔叔的生活照" /><figcaption>配图 06｜结尾人物照</figcaption></figure>
         <section class="about-closing"><p class="about-lead">Think it. Build it. Share it.</p><p>思考 · 创造 · 表达</p><div class="about-profile"><p class="about-label">关于我</p><h3>翔叔</h3><p>产品艺术家<br />以万物为师，行知合一<br />探索 AI x 身心成长最佳实践</p><p>长期关注：<strong>AI × 人 · 自我认识 · 深度关系 · 美好事业 · 生命状态</strong></p><blockquote class="quote">技术可以越来越强，但人不能因此越来越远离自己。<br /><br />也希望自己最终能够创造：爱、美与智慧的 Aha Moment。</blockquote></div></section>
+        </div></details>
       </div>
     `,
   },
@@ -176,9 +220,43 @@ const windowData = {
     `,
   },
   projects: {
-    title: '作品集 · 产品经验', path: 'WORK / PRODUCT PORTFOLIO', content: `
-      <button class="document-close" type="button" data-window-action="close" aria-label="关闭作品集">×</button>
+    title: '创造作品', path: 'AI LAB / PRODUCT ARCHIVE', content: `
+      <div class="exhibition-page">
+        <div class="exhibition-hero"><p class="window-kicker">CREATIVE LAB · XIANGSHU / 2026</p><h2>把想法，<em>做成可能。</em></h2><p>我喜欢连接原本相距遥远的东西：AI、心理学、艺术、商业与真实的人。这里记录最近的探索，也记录过去在互联网与商业世界里的实践。</p><div class="exhibition-mini-tags"><span>看见真需求</span><span>创造新体验</span><span>快速做出来</span><span>在现实中迭代</span></div></div>
+        <div class="exhibition-section-title"><p class="window-kicker">01 / SELECTED AI EXPERIMENTS</p><h3>最近，我在折腾什么？</h3><p>不同项目的成熟度各不相同。点击卡片可以看创作逻辑，链接指向已核实的公开仓库，不代表产品全部正式上线。</p></div>
+        <div class="ai-filters" role="group" aria-label="筛选作品"><button type="button" data-ai-filter="all" aria-pressed="true">全部</button><button type="button" data-ai-filter="people" aria-pressed="false">AI × 人</button><button type="button" data-ai-filter="business" aria-pressed="false">AI × 商业</button><button type="button" data-ai-filter="creation" aria-pressed="false">AI × 创造</button></div>
+        <div class="ai-gallery">${aiCards}</div>
+        <div class="ai-extras"><p class="window-kicker">ALSO MAKING / 更多有趣实验</p><a href="https://github.com/xiangshu3721/juejing" target="_blank" rel="noopener noreferrer">觉镜 AI 工作台 ↗</a><a href="https://github.com/xiangshu3721/hand-drive-game" target="_blank" rel="noopener noreferrer">手势游戏 ↗</a><a href="https://github.com/xiangshu3721/mirror-cards" target="_blank" rel="noopener noreferrer">镜像卡牌 ↗</a><a href="https://github.com/xiangshu3721/guanxiang" target="_blank" rel="noopener noreferrer">AI 观相 ↗</a></div>
+        <div class="exhibition-section-title legacy-title"><p class="window-kicker">02 / PAST PRODUCT EXPERIENCE</p><h3>在真实的商业世界里。</h3><p>从社交与短视频直播，到二奢交易与复杂供应链产品。项目不是孤立的页面，而是我理解人、用户、组织和商业的过程。</p></div>
+        <div class="legacy-gallery"><article><img src="assets/portfolio-pages/page-05.jpg" alt="Soulmate 创意社交历史项目界面" loading="lazy"><span>2017–2019</span><h4>Soulmate · 创意社交</h4><p>用户连接、社交机制、活动与运营。</p></article><article><img src="assets/portfolio-pages/page-04.jpg" alt="短视频直播产品界面及后台" loading="lazy"><span>2019–2021</span><h4>短视频 · 直播商业化</h4><p>内容、主播、公会、活动与商业增长。</p></article><article><img src="assets/portfolio-pages/page-03.jpg" alt="二奢与直播电商项目界面" loading="lazy"><span>2021–2024</span><h4>二奢 · 直播电商系统</h4><p>商品、仓储、订单、交易与私域协作。</p></article></div>
+        <div class="exhibition-actions"><button type="button" data-open-window="timeline">查看职业时间轴 ↗</button><button type="button" data-open-window="portfolioArchive">查看原版 11 页作品图集 ↗</button><button type="button" data-open-window="resume">打开原版简历 ↗</button></div>
+        <p class="exhibition-ethics">注：AI 作品的彩色封面为概念视觉，并非产品真实界面；每个项目的阶段与可用性不同。历史产品图片为既有作品档案材料。</p>
+      </div>`,
+  },
+  portfolioArchive: {
+    title: '历史产品 · 原版图集', path: 'PORTFOLIO / ARCHIVE', content: `
+      <button class="document-close" type="button" data-window-action="close" aria-label="关闭图集">×</button>
       <div class="portfolio-pages">${portfolioPages.join('')}</div>
+    `,
+  },
+  universe: {
+    title: '精神宇宙 · 九大关系', path: 'INNER UNIVERSE / NINE RELATIONSHIPS', content: `
+      <div class="universe-intro"><p class="window-kicker">MY INNER UNIVERSE</p><h2>从认识自己，到理解世界。</h2><p>我一直在探索的，是人与自己、亲密关系、家庭、事业、自然乃至意义的关系。九大关系不是一套标准答案，而是一幅仍在生长的生命地图。</p><nav class="universe-toc" aria-label="跳转到不同关系">${Array.from({length:9},(_,i)=>`<button type="button" data-universe-anchor="relation-${i+1}" aria-label="查看第 ${i+1} 个关系">${String(i+1).padStart(2,'0')}</button>`).join('')}</nav></div>
+      ${document.querySelector('#universe-content')?.innerHTML || ''}
+      <p class="universe-end">内在有自己，关系有连接，现实有能力，精神有归处。<br /><button type="button" data-open-window="writing">继续探索思想札记 ↗</button></p>
+    `,
+  },
+  writing: {
+    title: '思想札记', path: 'IDEAS / THOUGHT EXPERIMENTS', content: `
+      <div class="thought-page"><p class="window-kicker">THINK DEEPLY / LIVE FULLY</p><h2>一些我认真想过，<br /><em>仍在继续思考的事。</em></h2><p class="window-intro">这里先呈现正在探索的命题，而不是冒充已经发表的文章。它们是我理解人、世界与创造的几个入口。</p>
+      <div class="thought-list">
+        <article><small>01 / 主体性</small><h3>有选择，不代表真正自由。</h3><p>能不能分辨哪些是自己的声音，选择自己想要的路，并愿意为结果负责？</p></article>
+        <article><small>02 / 行知合一</small><h3>想明白，不等于真的成长。</h3><p>认识只有走进生活、行动与复盘，才可能生长为自己的智慧。</p></article>
+        <article><small>03 / AI × 人</small><h3>机器越来越聪明，人怎样更完整地成为自己？</h3><p>主体性、感受力、关系、审美和创造，反而值得被认真珍惜。</p></article>
+        <article><small>04 / 出世 × 入世</small><h3>向内修智慧，也向外创造价值。</h3><p>不把生命困在单一的成功标准里：有内在的通透，也有进入现实的勇气。</p></article>
+        <article><small>05 / 创作与真实</small><h3>作品不是概念，必须在现实中活起来。</h3><p>真实的人、真实的场景、真实的反馈，是创造力最重要的磨刀石。</p></article>
+      </div>
+      <div class="thought-actions"><button type="button" data-open-window="universe">走进九大关系 ↗</button><button type="button" data-open-window="projects">看看我做的作品 ↗</button></div></div>
     `,
   },
   video: {
@@ -221,9 +299,9 @@ const windowData = {
   contact: {
     title: '联系翔叔', path: 'CONTACT / NEXT', content: `
       <p class="window-kicker">OPEN TO A GOOD CONVERSATION</p>
-      <h2>如果你也在做一件还没有名字的事。</h2>
-      <p class="window-intro">可以从一个具体问题开始：产品、内容、AI、个人成长，或者只是某个你想认真想清楚的念头。</p>
-      <div class="contact-sheet"><div class="info-block"><h3>适合聊什么</h3><p>个人品牌与内容系统、AI 产品原型、心理成长工具、长期主义的创造实践。</p></div><div class="info-block"><h3>联系入口</h3><p>公开联系方式正在整理中。网站先保留这个入口，避免把还没确认的地址写在这里。</p></div></div>
+      <h2>世界很大，<br /><em>我们不妨聊聊。</em></h2>
+      <p class="window-intro">如果你也在探索 AI 与人、产品创新、心理成长、艺术或商业的交叉地带，或者只是有一个想认真讨论的问题，很愿意从一场好奇的对话开始。</p>
+      <div class="contact-sheet"><div class="info-block"><h3>适合聊什么</h3><p>AI 产品与业务共创、需求洞察、心理成长、艺术创作、个人知识与内容系统。</p></div><div class="info-block"><h3>公开连接入口</h3><p><a href="https://github.com/xiangshu3721" target="_blank" rel="noopener noreferrer">查看 GitHub 和公开作品 ↗</a></p><p>直接联系方式尚未确认，这里不放可能失效的微信或邮箱。</p></div></div>
     `,
   },
   help: {
@@ -246,8 +324,8 @@ function renderWindow(id) {
   const data = windowData[id];
   if (!data) return null;
   const windowElement = document.createElement('section');
-  const isDocument = id === 'resume' || id === 'projects';
-  windowElement.className = `window is-focused is-centered${id === 'about' ? ' about-window' : ''}${isDocument ? ' document-window' : ''}`;
+  const isDocument = id === 'resume' || id === 'portfolioArchive';
+  windowElement.className = `window is-focused is-centered${id === 'about' ? ' about-window' : ''}${id === 'projects' ? ' works-window' : ''}${id === 'universe' ? ' universe-window' : ''}${id === 'writing' ? ' thoughts-window' : ''}${isDocument ? ' document-window' : ''}`;
   windowElement.dataset.window = id;
   windowElement.setAttribute('role', 'dialog');
   windowElement.setAttribute('aria-label', data.title);
@@ -268,7 +346,7 @@ function openWindow(id) {
   let windowElement = windowLayer.querySelector(`[data-window="${id}"]`);
   if (!windowElement) windowElement = renderWindow(id);
   windowElement.classList.remove('is-minimized');
-  const readingMode = id === 'resume' || id === 'projects';
+  const readingMode = id === 'resume' || id === 'portfolioArchive';
   desktop?.classList.toggle('is-document-open', readingMode);
   appShell?.classList.toggle('is-document-open', readingMode);
   bringToFront(windowElement);
@@ -427,6 +505,25 @@ document.addEventListener('pointerdown', (event) => {
 });
 
 document.addEventListener('click', (event) => {
+  const filterButton = event.target.closest('[data-ai-filter]');
+  if (filterButton) {
+    const exhibition = filterButton.closest('.exhibition-page');
+    const choice = filterButton.dataset.aiFilter;
+    if (!exhibition) return;
+    exhibition.querySelectorAll('[data-ai-filter]').forEach((b) => b.setAttribute('aria-pressed', String(b === filterButton)));
+    exhibition.querySelectorAll('.ai-card').forEach((card) => {card.hidden = choice !== 'all' && card.dataset.aiCategory !== choice;});
+    return;
+  }
+  const universeAnchor = event.target.closest('[data-universe-anchor]');
+  if (universeAnchor) {
+    const host = universeAnchor.closest('.window');
+    const target = host?.querySelector('#' + universeAnchor.dataset.universeAnchor);
+    const scroller = host?.querySelector('.window-content');
+    if (target && scroller) scroller.scrollTo({ top: scroller.scrollTop + target.getBoundingClientRect().top - scroller.getBoundingClientRect().top - 12, behavior: 'smooth' });
+    return;
+  }
+  const mascotTopic = event.target.closest('[data-mascot-topic]');
+  if (mascotTopic) { showMascotAnswer(mascotTopic.dataset.mascotTopic); return; }
   const galleryControl = event.target.closest('[data-gallery-scroll]');
   if (galleryControl) {
     const track = galleryControl.closest('.resume-timeline')?.querySelector('[data-gallery-track]');
@@ -486,7 +583,7 @@ document.addEventListener('click', (event) => {
       delete mascotOpen.dataset.skipClick;
       return;
     }
-    showRandomPoem();
+    showMascotWelcome();
     return;
   }
 
@@ -509,8 +606,12 @@ document.addEventListener('click', (event) => {
 
 document.addEventListener('keydown', (event) => {
   if (event.key !== 'Escape') return;
-  const documentWindow = windowLayer.querySelector('.document-window');
-  if (documentWindow) closeWindow(documentWindow);
+  if (themePanel && !themePanel.hidden) setThemePanel(false);
+  if (mascotDialog && !mascotDialog.hidden) setMascot(false);
+  if (systemMenu) systemMenu.hidden = true;
+  const openWindows = Array.from(windowLayer.querySelectorAll('.window:not(.is-closing):not(.is-minimized)'));
+  const topmost = openWindows.sort((a, b) => Number(b.style.zIndex || 0) - Number(a.style.zIndex || 0))[0];
+  if (topmost) closeWindow(topmost);
 });
 
 try {
