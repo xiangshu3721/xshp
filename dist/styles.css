@@ -975,3 +975,41 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   .contact-wechat-id { margin-top: 8px; font-size: 12px; }
   .contact-wechat-id span { font-size: 15px; }
 }
+
+
+/* SELECTED PORTFOLIO / 18 WORKS — Oct 2026 */
+.exhibition-hero-simple {
+  padding: clamp(30px,4vw,48px) clamp(23px,4.3vw,48px);
+  border-color: rgba(243,215,169,.28);
+  background: radial-gradient(ellipse at 95% 10%,rgba(235,197,143,.14),transparent 60%),linear-gradient(145deg,rgba(70,97,83,.19),rgba(31,49,55,.24));
+}
+.exhibition-hero-simple h2 {
+  margin: 0;
+  color: #faf2e4;
+  font: 500 clamp(39px,5.5vw,71px)/1.26 "Hiragino Mincho ProN","Songti SC","STSong",serif;
+  letter-spacing: -.06em;
+}
+.exhibition-hero-simple h2 em { color: #f1c991; font-style: normal; }
+.ai-gallery { align-items: stretch; }
+.ai-card-selected { height: 100%; }
+.ai-card-selected .ai-cover { height: 160px; padding: 18px 19px; }
+.ai-card-selected .ai-cover strong { font-size: clamp(23px,2.25vw,33px); line-height: 1.23; }
+.ai-card-selected .ai-cover small { max-width: calc(100% - 30px); line-height: 1.5; }
+.ai-card-selected .ai-card-body { padding: 21px 20px 25px; }
+.ai-card-selected .ai-card-body h3 { margin: 0 0 13px; color: #fcf0df; font: 500 clamp(20px,2.1vw,25px)/1.45 "Hiragino Mincho ProN","Songti SC","STSong",serif; }
+.ai-card-selected .ai-card-description {
+  margin: 0;
+  max-width: none;
+  color: #d0dacd;
+  font-size: 13px;
+  line-height: 1.95;
+  overflow-wrap: anywhere;
+}
+@media(max-width:760px){
+  .exhibition-hero-simple { padding: 29px 22px; }
+  .exhibition-hero-simple h2 { font-size: clamp(33px,8.4vw,49px); line-height: 1.35; }
+  .ai-card-selected .ai-cover { height: 142px; }
+  .ai-card-selected .ai-card-body { padding: 20px 19px 23px; }
+  .ai-card-selected .ai-card-body h3 { font-size: 23px; margin-bottom: 12px; }
+  .ai-card-selected .ai-card-description { font-size: 13px; line-height: 1.85; }
+}
