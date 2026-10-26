@@ -547,3 +547,122 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 @media (prefers-reduced-motion: reduce) {
   .portal-card, .ai-card, .welcome-actions button { transition: none; }
 }
+
+
+/* 2026-10-26 | 首页留白精修：仅调整首屏，不影响桌面窗口与作品区 */
+.manifesto-hero {
+  grid-template-columns: minmax(0, 1.22fr) minmax(260px, .78fr);
+  gap: clamp(48px, 7vw, 130px);
+  align-items: center;
+  padding-top: clamp(110px, 14vh, 175px);
+  padding-bottom: clamp(115px, 15vh, 175px);
+}
+.manifesto-hero .desktop-welcome {
+  max-width: 710px;
+  width: 100%;
+}
+.manifesto-hero .desktop-welcome h1 {
+  margin: 0;
+  font-size: clamp(47px, 5vw, 74px);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -.045em;
+  white-space: normal;
+}
+.manifesto-hero .welcome-name {
+  color: #efc58c;
+  text-shadow: 0 3px 20px rgba(31, 42, 39, .28);
+}
+.manifesto-hero .desktop-welcome .welcome-statement {
+  max-width: 100%;
+  margin: clamp(26px, 4vh, 45px) 0 7px;
+  color: #fff1db;
+  font: 500 clamp(23px, 2.15vw, 32px)/1.65 "Hiragino Mincho ProN", "Songti SC", "STSong", serif;
+  letter-spacing: .015em;
+}
+.manifesto-hero .desktop-welcome .welcome-bio {
+  max-width: 650px;
+  margin: 0;
+  color: #e2e9da;
+  font: 400 clamp(16px, 1.3vw, 20px)/1.95 "Hiragino Mincho ProN", "Songti SC", "STSong", serif;
+  letter-spacing: .035em;
+}
+.manifesto-hero .welcome-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: clamp(27px, 4vh, 42px);
+}
+.manifesto-hero .welcome-tags span {
+  padding: 9px 14px;
+  color: #f4efdb;
+  font-size: 11px;
+  letter-spacing: .045em;
+  border-color: rgba(247, 236, 216, .42);
+  background: rgba(25, 46, 54, .17);
+}
+.manifesto-hero .desktop-welcome .manifesto-scroll-hint {
+  margin-top: clamp(36px, 6vh, 65px) !important;
+  color: rgba(243, 224, 188, .9) !important;
+  text-decoration: none;
+}
+.manifesto-hero .hero-persona {
+  width: min(100%, 360px);
+  height: min(49vh, 445px);
+  min-height: 350px;
+  justify-self: center;
+  align-self: center;
+}
+.manifesto-hero .persona-photo {
+  width: 75%;
+  height: 88%;
+}
+.manifesto-hero .persona-orbit-one { inset: 4% -2% 4%; }
+.manifesto-hero .persona-orbit-two { inset: 9% 5% 2%; }
+@media (max-width: 1100px) and (min-width: 761px) {
+  .manifesto-hero { gap: 35px; grid-template-columns: minmax(0, 1fr) minmax(230px, .75fr); }
+  .manifesto-hero .desktop-welcome h1 { font-size: clamp(45px, 5.6vw, 66px); }
+  .manifesto-hero .hero-persona { width: min(100%, 310px); height: 375px; min-height: 320px; }
+}
+@media (max-width: 760px) {
+  .manifesto-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: 100svh;
+    gap: 24px;
+    padding: 115px 24px 100px;
+  }
+  .manifesto-hero .desktop-welcome h1 {
+    font-size: clamp(46px, 10.2vw, 65px);
+    line-height: 1.23;
+  }
+  .manifesto-hero .desktop-welcome .welcome-statement {
+    margin-top: 24px;
+    font-size: clamp(21px, 5.3vw, 29px);
+    line-height: 1.6;
+  }
+  .manifesto-hero .desktop-welcome .welcome-bio {
+    font-size: clamp(14px, 3.6vw, 17px);
+    line-height: 1.9;
+  }
+  .manifesto-hero .welcome-tags {
+    gap: 7px;
+    margin-top: 24px;
+  }
+  .manifesto-hero .welcome-tags span { padding: 7px 10px; font-size: 10px; }
+  .manifesto-hero .desktop-welcome .manifesto-scroll-hint {
+    margin-top: 28px !important;
+    font-size: 10px !important;
+  }
+  .manifesto-hero .hero-persona {
+    width: min(82vw, 300px);
+    height: clamp(220px, 31vh, 300px);
+    min-height: 220px;
+    margin-top: 12px;
+    align-self: center;
+  }
+  .manifesto-hero .persona-photo { width: 60%; height: 91%; }
+  .manifesto-hero .persona-orbit-one { inset: 2% 10% 2%; }
+  .manifesto-hero .persona-orbit-two { inset: 7% 18% 0; }
+}
