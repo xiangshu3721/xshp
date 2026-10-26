@@ -440,6 +440,7 @@ function setThemePanel(open) {
     themePanel.dataset.ready = 'true';
   }
   themePanel.hidden = !open;
+  document.querySelectorAll("[data-theme-toggle]").forEach((button) => button.setAttribute("aria-expanded", String(open)));
   if (open) updateThemeChoices();
 }
 
@@ -719,6 +720,7 @@ document.addEventListener('click', (event) => {
   const themeChoice = event.target.closest('[data-theme]');
   if (themeChoice) {
     setTheme(themeChoice.dataset.theme);
+    setThemePanel(false);
     return;
   }
 
