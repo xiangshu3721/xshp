@@ -53,6 +53,29 @@ const romanticPoems = [
 
 let lastPoemIndex = -1;
 
+const mascotAnswers = {
+  person: '他好奇心很重，既能深入复杂的产品和商业系统，也会被音乐、艺术和一次有质量的谈话打动。他不太喜欢被单一标签定义。',
+  works: '最近在做解忧小屋、ASVA 导师工作台、AI 场景诊断、思想工厂和手势画板。点开「作品」可以慢慢逛。',
+  ideas: '他常常在想：当机器越来越聪明，人如何更自由、更完整地成为自己？怎样让思想进入现实，变成对别人真正有价值的作品？'
+};
+function showMascotWelcome() {
+  if (!mascotDialog) return;
+  const kicker = mascotDialog.querySelector('.dialog-kicker');
+  const main = mascotDialog.querySelector('.dialog-main');
+  if (kicker) kicker.textContent = '翔叔宇宙向导 / HELLO, STRANGER';
+  if (main) main.textContent = '第一次来？随便问我一个关于翔叔的问题，或者听一句诗。';
+  setMascot(true);
+}
+function showMascotAnswer(topic) {
+  if (topic === 'poem') { showRandomPoem(); return; }
+  if (!Object.prototype.hasOwnProperty.call(mascotAnswers, topic)) return;
+  const kicker = mascotDialog?.querySelector('.dialog-kicker');
+  const main = mascotDialog?.querySelector('.dialog-main');
+  if (kicker) kicker.textContent = '来自宇宙向导的一点线索 ✳';
+  if (main) main.textContent = mascotAnswers[topic];
+  setMascot(true);
+}
+
 function showRandomPoem() {
   if (!mascotDialog) return;
   let poemIndex = Math.floor(Math.random() * romanticPoems.length);
@@ -61,6 +84,8 @@ function showRandomPoem() {
   const poem = romanticPoems[poemIndex];
   const dialogMain = mascotDialog.querySelector('.dialog-main');
   if (!dialogMain) return;
+  const kicker = mascotDialog.querySelector('.dialog-kicker');
+  if (kicker) kicker.textContent = '随机诗句 / JUST FOR YOU';
   dialogMain.innerHTML = `<span class="poem-text">${poem.text}</span>${poem.translation ? `<span class="poem-translation">${poem.translation}</span>` : ''}<small class="poem-source">${poem.source}</small>`;
   setMascot(true);
 }
@@ -145,7 +170,15 @@ const windowData = {
   about: {
     title: '关于翔叔', path: 'ABOUT / ME', content: `
       <div class="about-longform">
-        <div class="about-hero">
+        <div class="about-short">
+          <p class="window-kicker">HELLO / 十秒认识翔叔</p>
+          <div class="about-short-grid"><div><h2>我研究人，<br /><em>也创造可能。</em></h2><p class="about-short-lead">一个不太愿意被定义的人。<br />喜欢把彼此遥远的东西联系起来，再将想法真正做出来。</p></div><img src="assets/xiangshu-avatar.jpg" alt="翔叔的真实人物照片" loading="lazy" /></div>
+          <div class="about-short-tags"><span>产品艺术家</span><span>AI 应用构建者</span><span>思想探索者</span><span>成长探索者</span></div>
+          <div class="about-short-facts"><article><b>曾经</b><p>互联网产品与运营，创意社交、直播、电商、复杂业务系统。</p></article><article><b>现在</b><p>不断用 AI 探索理解人、服务人和创造新体验的可能。</p></article><article><b>喜欢</b><p>心理学、艺术、东方智慧、深度对话和好玩的新事物。</p></article></div>
+          <div class="about-short-actions"><button type="button" data-open-window="projects">看看我做的作品 ↗</button><button type="button" data-open-window="universe">进入我的精神宇宙 ↗</button></div>
+        </div>
+        <details class="about-full-story"><summary>继续读我的完整故事 <span>从商业世界到心理成长与 AI 创造 ↓</span></summary>
+        <div class="about-expanded-story"><div class="about-hero">
           <div class="about-hero-copy"><p class="window-kicker">THE PERSON BEHIND THE DESKTOP</p><h2>你好，我是翔叔</h2><p class="window-intro">如果只看我的履历，你可能会觉得，这是一个有点“不安分”的人。</p><p class="window-intro">我做过旅行、电商、内容社区，做过年轻人的创意社交，做过短视频直播，也做过二手奢侈品、潮玩和复杂的交易系统；后来，我又一头扎进了心理成长、艺术疗愈、东方文化，现在则把很大一部分时间放在 AI 上。</p><p class="window-intro">产品、运营、商业、心理、艺术、AI。</p><p class="window-intro">看起来跨度很大。</p><p class="window-intro">但这些年回头看，我越来越发现，我好像一直没有真正换过方向。</p><p class="about-lead">我一直在研究同一件事——人。</p></div>
           <figure class="about-image-card about-avatar-card"><img src="assets/xiangshu-avatar.jpg" alt="翔叔在竹林边手持一朵花" /><figcaption>配图 01｜翔叔真人照</figcaption></figure>
         </div>
@@ -169,6 +202,7 @@ const windowData = {
         <section class="about-section about-chapter"><p class="about-label">07</p><h3>如果未来很多事情都可以被 AI 完成，我希望自己仍然保留三种能力</h3><div class="about-three"><div><strong>思考。</strong><p>不是重复别人已经说过的话，而是始终愿意问一句：事情真的只能这样吗？</p></div><div><strong>创造。</strong><p>把脑海里的某个想法，真的变成一个产品、一篇文章、一段音乐、一幅画、一种服务或者一种新的生活方式。</p></div><div><strong>表达。</strong><p>让那些我相信的东西，可以被另外一个人看见、理解，甚至因此产生一点改变。</p></div></div><p>这是我到现在为止，对自己最稳定的信任。</p><p>无论时代怎么变化。无论职业叫什么。无论下一站在哪里。</p><p>我想，我大概还是会继续做同一件事情：</p><p class="about-lead">理解人。<br />理解世界。<br />然后创造一点以前不存在的东西。</p><p>如果它刚好也能让某个人更理解自己一点，更自由一点，更有勇气活成自己一点——那就更好了。</p></section>
         <figure class="about-closing-figure"><img src="assets/xiangshu-avatar.jpg" alt="翔叔的生活照" /><figcaption>配图 06｜结尾人物照</figcaption></figure>
         <section class="about-closing"><p class="about-lead">Think it. Build it. Share it.</p><p>思考 · 创造 · 表达</p><div class="about-profile"><p class="about-label">关于我</p><h3>翔叔</h3><p>产品艺术家<br />以万物为师，行知合一<br />探索 AI x 身心成长最佳实践</p><p>长期关注：<strong>AI × 人 · 自我认识 · 深度关系 · 美好事业 · 生命状态</strong></p><blockquote class="quote">技术可以越来越强，但人不能因此越来越远离自己。<br /><br />也希望自己最终能够创造：爱、美与智慧的 Aha Moment。</blockquote></div></section>
+        </div></details>
       </div>
     `,
   },
@@ -265,9 +299,9 @@ const windowData = {
   contact: {
     title: '联系翔叔', path: 'CONTACT / NEXT', content: `
       <p class="window-kicker">OPEN TO A GOOD CONVERSATION</p>
-      <h2>如果你也在做一件还没有名字的事。</h2>
-      <p class="window-intro">可以从一个具体问题开始：产品、内容、AI、个人成长，或者只是某个你想认真想清楚的念头。</p>
-      <div class="contact-sheet"><div class="info-block"><h3>适合聊什么</h3><p>个人品牌与内容系统、AI 产品原型、心理成长工具、长期主义的创造实践。</p></div><div class="info-block"><h3>联系入口</h3><p>公开联系方式正在整理中。网站先保留这个入口，避免把还没确认的地址写在这里。</p></div></div>
+      <h2>世界很大，<br /><em>我们不妨聊聊。</em></h2>
+      <p class="window-intro">如果你也在探索 AI 与人、产品创新、心理成长、艺术或商业的交叉地带，或者只是有一个想认真讨论的问题，很愿意从一场好奇的对话开始。</p>
+      <div class="contact-sheet"><div class="info-block"><h3>适合聊什么</h3><p>AI 产品与业务共创、需求洞察、心理成长、艺术创作、个人知识与内容系统。</p></div><div class="info-block"><h3>公开连接入口</h3><p><a href="https://github.com/xiangshu3721" target="_blank" rel="noopener noreferrer">查看 GitHub 和公开作品 ↗</a></p><p>直接联系方式尚未确认，这里不放可能失效的微信或邮箱。</p></div></div>
     `,
   },
   help: {
@@ -471,6 +505,25 @@ document.addEventListener('pointerdown', (event) => {
 });
 
 document.addEventListener('click', (event) => {
+  const filterButton = event.target.closest('[data-ai-filter]');
+  if (filterButton) {
+    const exhibition = filterButton.closest('.exhibition-page');
+    const choice = filterButton.dataset.aiFilter;
+    if (!exhibition) return;
+    exhibition.querySelectorAll('[data-ai-filter]').forEach((b) => b.setAttribute('aria-pressed', String(b === filterButton)));
+    exhibition.querySelectorAll('.ai-card').forEach((card) => {card.hidden = choice !== 'all' && card.dataset.aiCategory !== choice;});
+    return;
+  }
+  const universeAnchor = event.target.closest('[data-universe-anchor]');
+  if (universeAnchor) {
+    const host = universeAnchor.closest('.window');
+    const target = host?.querySelector('#' + universeAnchor.dataset.universeAnchor);
+    const scroller = host?.querySelector('.window-content');
+    if (target && scroller) scroller.scrollTo({ top: scroller.scrollTop + target.getBoundingClientRect().top - scroller.getBoundingClientRect().top - 12, behavior: 'smooth' });
+    return;
+  }
+  const mascotTopic = event.target.closest('[data-mascot-topic]');
+  if (mascotTopic) { showMascotAnswer(mascotTopic.dataset.mascotTopic); return; }
   const galleryControl = event.target.closest('[data-gallery-scroll]');
   if (galleryControl) {
     const track = galleryControl.closest('.resume-timeline')?.querySelector('[data-gallery-track]');
@@ -530,7 +583,7 @@ document.addEventListener('click', (event) => {
       delete mascotOpen.dataset.skipClick;
       return;
     }
-    showRandomPoem();
+    showMascotWelcome();
     return;
   }
 
@@ -553,8 +606,12 @@ document.addEventListener('click', (event) => {
 
 document.addEventListener('keydown', (event) => {
   if (event.key !== 'Escape') return;
-  const documentWindow = windowLayer.querySelector('.document-window');
-  if (documentWindow) closeWindow(documentWindow);
+  if (themePanel && !themePanel.hidden) setThemePanel(false);
+  if (mascotDialog && !mascotDialog.hidden) setMascot(false);
+  if (systemMenu) systemMenu.hidden = true;
+  const openWindows = Array.from(windowLayer.querySelectorAll('.window:not(.is-closing):not(.is-minimized)'));
+  const topmost = openWindows.sort((a, b) => Number(b.style.zIndex || 0) - Number(a.style.zIndex || 0))[0];
+  if (topmost) closeWindow(topmost);
 });
 
 try {
