@@ -356,7 +356,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .portal-card:nth-child(n+4) { grid-column: span 3; min-height: 220px; }
 .portal-card:hover, .portal-card:focus-visible { transform: translateY(-6px); border-color: #f0c991; filter: saturate(1.1); }
 .portal-about { background-image: linear-gradient(120deg, rgba(24,53,54,.72), rgba(64,85,69,.64)), url("assets/reference-dream-garden.jpg"); }
-.portal-works { background-image: linear-gradient(125deg, rgba(53,57,72,.79), rgba(21,53,61,.62)), url("assets/xiangshu-fieldboard.png"); }
+.portal-works { background-image: linear-gradient(110deg, rgba(21,48,55,.63) 0%, rgba(24,56,65,.28) 65%, rgba(20,49,56,.47) 100%), url("assets/manifesto/04.jpeg"); background-position: 56% center; }
 .portal-universe { background-image: linear-gradient(130deg, rgba(40,52,82,.75), rgba(22,39,66,.77)), url("assets/xiangshu-dream-path.png"); }
 .portal-writing { background-image: linear-gradient(110deg, rgba(58,52,49,.8), rgba(34,55,49,.7)), url("assets/reference-luminous-castle.jpg"); }
 .portal-contact { background-image: linear-gradient(110deg, rgba(40,66,63,.77), rgba(66,81,57,.66)), url("assets/manifesto/03.jpeg"); }
