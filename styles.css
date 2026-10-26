@@ -307,3 +307,243 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .dialog-main .poem-text { color: var(--panel-text); font: 500 20px/1.55 "Hiragino Mincho ProN", "Songti SC", serif; }
 .dialog-main .poem-translation { margin-top: 10px; color: var(--desk-muted); font-size: 13px; line-height: 1.65; }
 .dialog-main .poem-source { margin-top: 14px; color: var(--accent); font: 10px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .04em; }
+
+
+/* ------------------------------------------------------------------
+   2026-10 · Original Desktop Refresh
+   Extend the original dreamy desktop, never replace the visual identity.
+   ------------------------------------------------------------------ */
+:root { --portfolio-sage: #cfe1b2; }
+.manifesto-hero { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(300px, .88fr); gap: clamp(20px, 4.5vw, 90px); align-items: center; min-height: 100svh; padding: clamp(88px, 12vh, 148px) clamp(30px, 8vw, 132px) clamp(110px, 13vh, 170px); overflow: hidden; }
+.manifesto-hero::before { background: linear-gradient(90deg, rgba(12,31,39,.65), rgba(12,31,39,.37) 58%, rgba(12,31,39,.19)); }
+.desktop-welcome { max-width: 850px; text-shadow: 0 2px 25px rgba(4,23,27,.52); }
+.desktop-welcome .welcome-kicker { font-size: 10px; letter-spacing: .19em; color: #f8d2a0; margin-bottom: 21px; }
+.welcome-star { margin-inline: 8px; font-size: 15px; color: #dfd5ab; }
+.desktop-welcome .welcome-caption { margin: 0 0 18px; max-width: none; color: #d7e8d4; font-size: 12px; letter-spacing: .11em; }
+.desktop-welcome h1 { margin: 0; font-size: clamp(66px, 6.7vw, 112px); font-weight: 500; line-height: 1.19; letter-spacing: -.065em; white-space: normal; text-shadow: 0 4px 30px rgba(8,25,30,.35); }
+.welcome-dot { color: #f5c58f; }
+.desktop-welcome .welcome-statement { max-width: 700px; margin: 16px 0 13px; color: #f7eedb; font: 500 clamp(25px, 2.45vw, 38px)/1.5 "Hiragino Mincho ProN", "Songti SC", serif; letter-spacing: -.04em; }
+.welcome-statement span { color: #f6cf99; }
+.desktop-welcome .welcome-bio { max-width: 560px; margin: 0; color: rgba(245,242,223,.86); font-size: 14px; line-height: 2; }
+.welcome-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 21px; }
+.welcome-tags span { display: inline-flex; align-items: center; padding: 8px 12px; border: 1px solid rgba(242,234,207,.33); border-radius: 40px; color: #ecf2db; background: rgba(17,44,45,.18); backdrop-filter: blur(7px); font-size: 11px; letter-spacing: .045em; }
+.welcome-actions { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 31px; }
+.welcome-actions button { cursor: pointer; transition: transform .24s, background .24s; }
+.welcome-actions button:hover { transform: translateY(-3px); }
+.welcome-cta { min-width: 192px; display: inline-flex; justify-content: space-between; align-items: center; padding: 15px 20px; border: 1px solid #eac18e; border-radius: 5px; color: #263d3e; background: #eac18e; box-shadow: 0 9px 24px rgba(12,34,39,.25); font-size: 13px; font-weight: 600; }
+.welcome-cta:hover { background: #f7dfb9; }
+.welcome-link { padding: 11px 4px; border: 0; border-bottom: 1px solid rgba(255,243,220,.68); background: transparent; color: #fff3e3; font-size: 13px; }
+.desktop-welcome .manifesto-scroll-hint { display: inline-block; margin: clamp(27px, 5vh, 48px) 0 0 !important; color: #e7daae !important; font-size: 11px !important; text-decoration: none; letter-spacing: .09em; }
+.desktop-welcome .manifesto-scroll-hint span { display: inline-block; font-size: 18px; margin-left: 9px; animation: scroll-nudge 2s ease-in-out infinite; }
+.hero-persona { position: relative; justify-self: center; width: min(100%, 485px); height: min(68vh, 595px); min-height: 420px; margin: 0; display: flex; justify-content: center; align-items: center; isolation: isolate; }
+.hero-persona .persona-orbit { position: absolute; border: 1px solid rgba(241,226,180,.36); border-radius: 50%; pointer-events: none; }
+.persona-orbit-one { inset: 1% -3% 3%; transform: rotate(20deg); }
+.persona-orbit-two { inset: 6% 5% 0; transform: rotate(-42deg); border-style: dashed !important; opacity: .5; }
+.persona-photo { position: relative; z-index: 1; width: 77%; height: 86%; overflow: hidden; border: 1px solid rgba(251,240,209,.52); border-radius: 49% 49% 8px 8px; background: #334f4a; box-shadow: 0 35px 65px rgba(6,22,27,.48); }
+.persona-photo::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg, rgba(10,31,35,.35), transparent 32%); }
+.persona-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 55% 40%; filter: saturate(.82) contrast(1.06); }
+.hero-persona figcaption { position: absolute; z-index: 2; bottom: 11%; left: 16%; font: 10px/1.4 Georgia, serif; letter-spacing: .17em; color: #efe6d5; text-shadow: 0 1px 9px rgba(0,0,0,.6); }
+.persona-seal { position: absolute; z-index: 3; bottom: 5%; right: 0; display: grid; place-items: center; width: 112px; height: 112px; border-radius: 50%; color: #274039; background: #efc38d; box-shadow: 0 12px 36px rgba(4,22,25,.37); transform: rotate(12deg); text-align: center; font: 500 16px/1.65 "Hiragino Mincho ProN", "Songti SC", serif; }
+.hero-edge-note { position: absolute; z-index: 1; bottom: 30px; right: clamp(25px, 7vw, 110px); color: rgba(255,245,219,.7); font: 10px Georgia, serif; letter-spacing: .2em; }
+.desktop-explore { position: relative; z-index: 3; min-height: 95svh; padding: clamp(85px, 11vh, 135px) max(26px, calc((100vw - 1160px) / 2)) 125px; background: linear-gradient(180deg, rgba(17,36,40,.84), rgba(20,41,45,.94) 45%, rgba(14,32,37,.98)); border-top: 1px solid rgba(244,220,183,.18); color: #f8f3e6; }
+.explore-heading { max-width: 830px; margin-bottom: 44px; }
+.explore-kicker { margin: 0 0 13px; color: #f0c991; font: 11px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .16em; }
+.explore-heading h2 { margin: 0 0 17px; font: 500 clamp(37px, 4.9vw, 68px)/1.25 "Hiragino Mincho ProN", "Songti SC", serif; letter-spacing: -.06em; }
+.explore-heading h2 em { color: #f0c991; font-style: normal; }
+.explore-heading > p:last-child { margin: 0; color: #b9c7bf; font-size: 14px; line-height: 2; }
+.explore-grid { display: grid; grid-template-columns: repeat(6, minmax(0,1fr)); gap: 14px; }
+.portal-card { position: relative; grid-column: span 2; display: flex; flex-direction: column; align-items: flex-start; min-height: 244px; padding: 22px 23px; overflow: hidden; border: 1px solid rgba(246,233,202,.24); border-radius: 11px; color: #f7f2e7; background: linear-gradient(130deg, rgba(77,112,107,.4), rgba(17,47,53,.8)), url("assets/reference-dream-valley.jpg") center/cover; text-align: left; cursor: pointer; box-shadow: 0 20px 35px rgba(4,22,27,.12); transition: transform .26s, border-color .26s, filter .26s; }
+.portal-card:nth-child(n+4) { grid-column: span 3; min-height: 220px; }
+.portal-card:hover, .portal-card:focus-visible { transform: translateY(-6px); border-color: #f0c991; filter: saturate(1.1); }
+.portal-about { background-image: linear-gradient(120deg, rgba(24,53,54,.72), rgba(64,85,69,.64)), url("assets/reference-dream-garden.jpg"); }
+.portal-works { background-image: linear-gradient(125deg, rgba(53,57,72,.79), rgba(21,53,61,.62)), url("assets/xiangshu-fieldboard.png"); }
+.portal-universe { background-image: linear-gradient(130deg, rgba(40,52,82,.75), rgba(22,39,66,.77)), url("assets/xiangshu-dream-path.png"); }
+.portal-writing { background-image: linear-gradient(110deg, rgba(58,52,49,.8), rgba(34,55,49,.7)), url("assets/reference-luminous-castle.jpg"); }
+.portal-contact { background-image: linear-gradient(110deg, rgba(40,66,63,.77), rgba(66,81,57,.66)), url("assets/manifesto/03.jpeg"); }
+.portal-no { color: #f6d9b0; font: 10px ui-monospace, Menlo, monospace; letter-spacing: .14em; }
+.portal-symbol { position: absolute; top: 7px; right: 24px; font: 500 93px/1 "Hiragino Mincho ProN", "Songti SC", serif; color: rgba(245,240,210,.16); pointer-events: none; }
+.portal-card strong { position: relative; z-index: 1; margin-top: auto; color: #fff7e4; font: 500 32px/1.2 "Hiragino Mincho ProN", "Songti SC", serif; letter-spacing: -.04em; }
+.portal-card small { position: relative; z-index: 1; margin-top: 10px; max-width: 330px; color: #e1e7de; font-size: 12px; line-height: 1.7; }
+.portal-arrow { position: absolute; bottom: 20px; right: 23px; font: 24px Georgia, serif; color: #f1c58d; }
+.explore-end { margin: 34px 0 0; color: #c1bca4; font: 15px/1.7 "Hiragino Mincho ProN", "Songti SC", serif; text-align: right; }
+
+/* Desktop Windows: portfolio / universe / notes */
+.works-window { width: min(1120px, calc(100vw - 56px)); max-height: min(860px, calc(100dvh - 80px)); }
+.universe-window { width: min(940px, calc(100vw - 52px)); max-height: min(850px, calc(100dvh - 80px)); }
+.thoughts-window { width: min(800px, calc(100vw - 52px)); max-height: min(820px, calc(100dvh - 80px)); }
+.works-window .window-content, .universe-window .window-content, .thoughts-window .window-content { padding: clamp(20px,3.6vw,44px); }
+.exhibition-page { max-width: 1050px; margin-inline: auto; }
+.exhibition-hero { position: relative; padding: 32px 33px; border: 1px solid rgba(242,210,154,.27); border-radius: 12px; background: radial-gradient(ellipse at right top, rgba(228,180,121,.14), transparent 55%), rgba(255,255,255,.045); }
+.exhibition-hero h2 { max-width: none; margin: 5px 0 15px; font-size: clamp(35px,5vw,60px); line-height: 1.2; }
+.exhibition-hero h2 em, .thought-page h2 em { color: #f0c991; font-style: normal; }
+.exhibition-hero > p:nth-of-type(2) { max-width: 730px; margin: 0; font-size: 13px; line-height: 2; }
+.exhibition-mini-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 21px; }
+.exhibition-mini-tags span { padding: 7px 11px; border: 1px solid rgba(255,255,255,.2); border-radius: 99px; color: #e3e9df; font-size: 10px; }
+.exhibition-section-title { margin: 46px 0 22px; }
+.exhibition-section-title h3 { font-size: clamp(26px,3vw,35px); margin: 3px 0 10px; }
+.exhibition-section-title p:last-child { max-width: 730px; margin: 0; font-size: 12px; line-height: 1.85; }
+.ai-filters { display: flex; flex-wrap: wrap; gap: 9px; margin: 0 0 19px; }
+.ai-filters button { padding: 9px 17px; border: 1px solid rgba(242,220,182,.3); border-radius: 99px; color: #e6e7dc; background: rgba(255,255,255,.045); cursor: pointer; font-size: 12px; }
+.ai-filters button[aria-pressed="true"], .ai-filters button:hover { background: #efc991; border-color: #efc991; color: #263d40; }
+.ai-gallery { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 15px; }
+.ai-card { min-width: 0; display: flex; flex-direction: column; border: 1px solid rgba(244,234,213,.2); border-radius: 10px; background: rgba(255,255,255,.055); overflow: hidden; transition: transform .25s, border-color .25s; }
+.ai-card[hidden] { display: none; }
+.ai-card:hover { transform: translateY(-4px); border-color: rgba(244,210,152,.65); }
+.ai-cover { position: relative; height: 187px; overflow: hidden; display: flex; flex-direction: column; justify-content: end; padding: 19px; background: linear-gradient(130deg, #487670,#1a3642); }
+.ai-cover::before { content: ""; position: absolute; width: 230px; height: 230px; border: 1px solid #ffffff69; border-radius: 50%; top: -100px; right: -65px; box-shadow: 0 0 0 30px #ffffff0c, 0 0 0 65px #ffffff08; }
+.ai-cover-people { background: linear-gradient(135deg, #ad7773, #4b536f); }
+.ai-cover-business { background: linear-gradient(135deg, #305b60, #213948); }
+.ai-cover-creation { background: linear-gradient(135deg, #81736b, #424f63); }
+.ai-cover small { position: absolute; top: 14px; left: 16px; color: #ffedca; font-size: 10px; letter-spacing: .05em; }
+.ai-cover strong { position: relative; font: 500 clamp(22px,2.4vw,36px)/1.2 "Hiragino Mincho ProN", "Songti SC", serif; color: #fff7e4; letter-spacing: -.05em; word-break: break-word; }
+.ai-cover span { position: relative; color: rgba(255,255,255,.63); font: 9px/1.4 ui-monospace, Menlo, monospace; margin-top: 10px; letter-spacing: .07em; }
+.ai-card-body { padding: 17px 18px 21px; display: flex; flex: 1; flex-direction: column; }
+.ai-status { align-self: flex-start; border: 1px solid rgba(241,201,145,.43); border-radius: 99px; padding: 5px 9px; color: #f1c991; font-size: 10px; }
+.ai-card-body h3 { margin: 15px 0 9px; font-size: 22px; line-height: 1.3; }
+.ai-card-body > p { margin: 0 0 16px; color: #cad8cb; font-size: 12px; line-height: 1.8; }
+.ai-detail { margin-top: auto; border-top: 1px solid rgba(255,255,255,.15); }
+.ai-detail summary { cursor: pointer; padding: 12px 0; color: #efd0a5; list-style: none; font-size: 12px; display: flex; justify-content: space-between; gap: 10px; }
+.ai-detail summary::-webkit-details-marker { display: none; }
+.ai-detail[open] summary { border-bottom: 1px solid rgba(255,255,255,.1); }
+.ai-detail p { margin: 12px 0; font-size: 11px; line-height: 1.85; }
+.ai-detail p strong { color: #f1c991; }
+.ai-source, .ai-private { display: block; margin-top: 7px; color: #cdd9cb; font-size: 11px; line-height: 1.8; }
+.ai-source { color: #f0c991; text-decoration: underline; text-underline-offset: 4px; }
+.ai-extras { display: flex; gap: 11px; flex-wrap: wrap; padding: 21px 0; margin-top: 10px; align-items: center; }
+.ai-extras .window-kicker { flex-basis: 100%; margin-bottom: 2px; }
+.ai-extras a { border: 1px solid rgba(246,232,207,.28); border-radius: 40px; padding: 10px 12px; color: #e3e6d9; text-decoration: none; font-size: 11px; }
+.ai-extras a:hover { background: rgba(245,210,159,.13); }
+.legacy-title { margin-top: 55px; padding-top: 26px; border-top: 1px solid var(--panel-line); }
+.legacy-gallery { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 15px; }
+.legacy-gallery article { min-width: 0; padding: 12px 12px 15px; background: rgba(255,255,255,.055); border: 1px solid var(--panel-line); border-radius: 10px; }
+.legacy-gallery img { width: 100%; height: 180px; object-fit: cover; object-position: center top; background: #eee9dc; border-radius: 4px; }
+.legacy-gallery span { display: block; margin-top: 14px; color: #f0c991; font-size: 10px; letter-spacing: .08em; }
+.legacy-gallery h4 { margin: 7px 0; color: #f5eee1; font: 500 19px/1.3 "Hiragino Mincho ProN", "Songti SC", serif; }
+.legacy-gallery p { margin: 0; font-size: 11px; line-height: 1.8; }
+.exhibition-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.exhibition-actions button, .thought-actions button, .universe-end button, .about-short-actions button { padding: 11px 15px; cursor: pointer; border: 1px solid rgba(242,210,160,.5); border-radius: 5px; background: rgba(248,212,161,.08); color: #f4d5a9; font-size: 12px; transition: background .2s; }
+.exhibition-actions button:hover, .thought-actions button:hover, .universe-end button:hover, .about-short-actions button:hover { background: rgba(248,212,161,.18); }
+.exhibition-ethics { padding-top: 18px; font-size: 10px !important; line-height: 1.8 !important; }
+/* Nine relationships: whole original text now lives in a curated, readable window. */
+.universe-intro { border-bottom: 1px solid var(--panel-line); padding: 9px 0 27px; }
+.universe-intro h2 { max-width: none; font-size: clamp(32px,4.4vw,52px); margin: 0 0 17px; }
+.universe-intro > p:last-of-type { max-width: 720px; color: #ced9ce; font-size: 13px; line-height: 2; }
+.universe-toc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.universe-toc button { min-width: 40px; min-height: 37px; border: 1px solid var(--panel-line); border-radius: 5px; color: #edd2a6; background: rgba(255,255,255,.05); cursor: pointer; font: 13px ui-monospace, Menlo, monospace; }
+.universe-toc button:hover { background: rgba(238,210,161,.18); }
+.universe-window .manifesto-rail { display: block; }
+.universe-window .manifesto-page { display: block; min-height: 0; padding: 31px 3px 35px; border-bottom: 1px solid rgba(255,255,255,.16); }
+.universe-window .manifesto-page::before { display: none; }
+.universe-window .manifesto-copy, .universe-window .manifesto-page-right .manifesto-copy { max-width: 780px; width: 100%; margin: 0; justify-self: auto; text-align: left; }
+.universe-window .manifesto-page-right .manifesto-copy > .manifesto-quote, .universe-window .manifesto-page-right .manifesto-body, .universe-window .manifesto-page-right .manifesto-note { margin-left: 0; }
+.universe-window .manifesto-copy h2, .universe-window .manifesto-page-right .manifesto-copy h2 { width: auto; max-width: 780px; transform: none; white-space: normal; text-shadow: none; font-size: clamp(27px,3.4vw,43px); line-height: 1.23; margin: 10px 0 15px; }
+.universe-window .manifesto-quote { max-width: 760px; font-size: clamp(16px,1.9vw,23px); margin-bottom: 13px; text-shadow: none; line-height: 1.6; }
+.universe-window .manifesto-body { max-width: 750px; font-size: 13px; line-height: 2; text-shadow: none; }
+.universe-window .manifesto-note { max-width: 740px; }
+.universe-window .manifesto-signature { margin: 20px 0 0; font-size: 19px; }
+.universe-end { font: 17px/1.9 "Hiragino Mincho ProN", "Songti SC", serif !important; color: #f2dbb4 !important; margin: 28px 0 10px; }
+.universe-end button { margin-top: 15px; }
+/* Thoughts */
+.thought-page { max-width: 710px; margin: 0 auto; }
+.thought-page h2 { max-width: none; font-size: clamp(35px,4.3vw,56px); line-height: 1.25; }
+.thought-list { margin-top: 30px; border-top: 1px solid var(--panel-line); }
+.thought-list article { padding: 24px 0 22px; border-bottom: 1px solid var(--panel-line); }
+.thought-list small { color: #f0c991; letter-spacing: .11em; font-size: 11px; }
+.thought-list h3 { margin: 12px 0 10px; font-size: clamp(23px,3vw,31px); line-height: 1.4; }
+.thought-list p { margin: 0; font-size: 12px; line-height: 1.95; }
+.thought-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+/* About: concise first impression, original story available when desired. */
+.about-short { padding: 8px 0 30px; }
+.about-short-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 24px; align-items: center; }
+.about-short-grid h2 { font-size: clamp(35px,4.5vw,53px); line-height: 1.28; }
+.about-short-grid img { width: 100%; height: 278px; object-fit: cover; object-position: 50% 44%; border-radius: 10px; border: 1px solid var(--panel-line); }
+.about-short-lead { color: #f0eedc !important; font: 500 18px/1.85 "Hiragino Mincho ProN", "Songti SC", serif !important; }
+.about-short-tags { display: flex; gap: 7px; flex-wrap: wrap; margin: 20px 0; }
+.about-short-tags span { display: inline-block; padding: 7px 11px; border: 1px solid var(--panel-line); border-radius: 40px; color: #efd6a9; font-size: 11px; }
+.about-short-facts { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; margin-top: 15px; }
+.about-short-facts article { border-top: 2px solid #eec58f; padding: 13px; background: rgba(255,255,255,.045); }
+.about-short-facts b { display: block; color: #f0c991; font: 18px "Hiragino Mincho ProN", "Songti SC", serif; }
+.about-short-facts p { margin: 9px 0 0; font-size: 11px; line-height: 1.9; }
+.about-short-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 19px; }
+.about-full-story { margin-top: 10px; padding-top: 20px; border-top: 1px solid var(--panel-line); }
+.about-full-story > summary { list-style: none; display: flex; flex-direction: column; gap: 5px; padding: 19px 20px; border: 1px solid rgba(240,201,145,.4); border-radius: 8px; cursor: pointer; background: rgba(255,255,255,.075); color: #f3d3a0; font: 500 18px "Hiragino Mincho ProN", "Songti SC", serif; }
+.about-full-story > summary::-webkit-details-marker { display: none; }
+.about-full-story > summary span { color: #b8caba; font: 11px/1.8 ui-sans-serif, sans-serif; }
+.about-expanded-story { padding-top: 30px; }
+/* Guide: actual choices instead of a poetry-only widget */
+.mascot-dialog { width: min(340px, calc(100vw - 28px)); padding: 20px; }
+.mascot-dialog .dialog-main { margin: 12px 0 12px; color: #f1eddb; font: 14px/1.8 "Hiragino Mincho ProN", "Songti SC", serif; }
+.mascot-topics { display: grid; gap: 7px; }
+.mascot-topics button { border: 1px solid var(--panel-line); border-radius: 6px; padding: 10px 12px; background: rgba(255,255,255,.055); color: #f7e7c8; text-align: left; cursor: pointer; font-size: 12px; }
+.mascot-topics button:hover { background: rgba(246,211,161,.17); }
+.glyph-writing { background: #b7c6bb; }
+.glyph-contact { background: #e8c0a7; }
+.desktop-explore button:focus-visible, .welcome-actions button:focus-visible, .dock button:focus-visible, .window button:focus-visible, .mascot-dialog button:focus-visible { outline: 2px solid #f4d69e; outline-offset: 3px; }
+
+@media (max-width: 1100px) {
+  .manifesto-hero { padding-inline: clamp(26px,5vw,70px); grid-template-columns: minmax(0,1fr) minmax(260px,.78fr); gap: 20px; }
+  .desktop-welcome h1 { font-size: clamp(58px,6.9vw,90px); }
+  .hero-persona { height: 480px; min-height: 360px; }
+  .ai-gallery, .legacy-gallery { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 760px) {
+  .manifesto-hero { display: flex; flex-direction: column; align-items: stretch; gap: 32px; min-height: 0; padding: 100px 24px 104px; }
+  .desktop-welcome { max-width: 100%; }
+  .desktop-welcome .welcome-kicker { font-size: 9px; letter-spacing: .1em; }
+  .desktop-welcome .welcome-caption { font-size: 10px; line-height: 1.7; margin-bottom: 17px; letter-spacing: .04em; }
+  .desktop-welcome h1 { font-size: clamp(56px,13vw,78px); line-height: 1.2; }
+  .desktop-welcome .welcome-statement { font-size: clamp(23px,5.6vw,31px); line-height: 1.5; margin-top: 18px; }
+  .desktop-welcome .welcome-bio { font-size: 13px; line-height: 1.95; }
+  .welcome-tags { gap: 6px; }
+  .welcome-tags span { padding: 6px 9px; font-size: 10px; }
+  .welcome-actions { gap: 10px; margin-top: 24px; }
+  .welcome-cta { min-width: 161px; padding: 13px 14px; font-size: 11px; }
+  .welcome-link { font-size: 11px; }
+  .desktop-welcome .manifesto-scroll-hint { margin-top: 25px !important; }
+  .hero-persona { align-self: center; width: min(100%,360px); height: 325px; min-height: 0; }
+  .persona-photo { height: 92%; width: 61%; }
+  .persona-seal { width: 75px; height: 75px; right: 10%; bottom: 4%; font-size: 11px; }
+  .hero-persona figcaption { font-size: 8px; bottom: 7%; left: 19%; }
+  .hero-edge-note { bottom: 35px; right: 22px; font-size: 8px; }
+  .desktop-explore { padding: 73px 19px 120px; }
+  .explore-heading h2 { font-size: clamp(33px,8.7vw,47px); }
+  .explore-heading > p:last-child { font-size: 12px; }
+  .explore-grid { grid-template-columns: 1fr; gap: 11px; }
+  .portal-card, .portal-card:nth-child(n+4) { grid-column: auto; min-height: 190px; padding: 19px; }
+  .portal-symbol { font-size: 80px; right: 24px; }
+  .portal-card strong { font-size: 28px; }
+  .portal-card small { font-size: 11px; }
+  .explore-end { font-size: 12px; line-height: 1.9; text-align: left; }
+  .dock { max-width: calc(100vw - 12px); gap: 2px; padding: 7px 8px 6px; overflow-x: auto; scrollbar-width: none; }
+  .dock::-webkit-scrollbar { display:none; }
+  .dock-item { flex: 0 0 auto; min-width: 42px; padding-inline: 3px; }
+  .dock-glyph { width: 30px; height: 30px; font-size: 16px; }
+  .mascot-desk { width: 90px; right: 4px; bottom: 71px; }
+  .mascot-desk img { width: 76px; height: 102px; }
+  .mascot-name { font-size: 9px; margin-top: -8px; }
+  .mascot-dialog { right: 11px; bottom: 177px; width: min(340px,calc(100vw - 22px)); }
+  .works-window, .universe-window, .thoughts-window { width: calc(100vw - 16px); max-height: calc(100dvh - 75px); }
+  .works-window.is-centered, .universe-window.is-centered, .thoughts-window.is-centered { left: 50%; top: 50%; transform: translate(-50%,-50%); }
+  .works-window .window-content, .universe-window .window-content, .thoughts-window .window-content { padding: 20px 16px 30px; }
+  .exhibition-hero { padding: 22px 19px; }
+  .exhibition-hero h2 { font-size: 37px; }
+  .exhibition-hero > p:nth-of-type(2) { font-size: 12px; }
+  .ai-gallery, .legacy-gallery { grid-template-columns: 1fr; }
+  .ai-cover { height: 175px; }
+  .ai-card-body { padding: 18px; }
+  .exhibition-section-title { margin-top: 34px; }
+  .legacy-gallery img { height: 195px; object-fit: cover; }
+  .about-short-grid { grid-template-columns: 1fr; gap: 15px; }
+  .about-short-grid img { height: 225px; object-position: 50% 39%; }
+  .about-short-grid h2 { font-size: 40px; }
+  .about-short-facts { grid-template-columns: 1fr; }
+  .about-short-facts article { padding: 13px 15px; }
+  .universe-window .manifesto-copy h2, .universe-window .manifesto-page-right .manifesto-copy h2 { font-size: 27px; }
+  .universe-window .manifesto-page { padding-block: 25px; }
+  .universe-toc { gap: 5px; }
+  .universe-toc button { min-width: 32px; min-height: 34px; font-size: 11px; }
+  .thought-page h2 { font-size: 35px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portal-card, .ai-card, .welcome-actions button { transition: none; }
+}
