@@ -817,6 +817,30 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   letter-spacing: .08em;
   border-bottom: 1px solid rgba(240,201,145,.48);
 }
+
+.about-v3-can-solve {
+  margin-top: 8px;
+  padding-top: 6px;
+}
+.about-v3-can-solve-title {
+  margin: 0 0 12px !important;
+  color: #f1c991 !important;
+  font: 500 clamp(15px,1.5vw,17px)/1.7 "Hiragino Mincho ProN","Songti SC","STSong",serif !important;
+  letter-spacing: .06em;
+}
+.about-v3-can-solve-list {
+  margin: 0;
+  padding: 0 0 0 1.35em;
+  color: #e1e9df;
+  font: 400 clamp(14px,1.45vw,16px)/1.95 "Hiragino Mincho ProN","Songti SC","STSong",serif;
+  letter-spacing: .015em;
+  list-style: decimal;
+}
+.about-v3-can-solve-list li {
+  margin: 0 0 8px;
+  padding-left: .15em;
+}
+.about-v3-can-solve-list li:last-child { margin-bottom: 0; }
 .about-v3-profile-invitation {
   position: relative;
   min-width: 0;
@@ -858,6 +882,9 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   .about-v3-profile-body { grid-template-columns: 1fr; gap: 25px; margin-top: 28px; }
   .about-v3-profile-story p { font-size: 15px !important; line-height: 1.95 !important; margin-bottom: 18px; }
   .about-v3-profile-story .about-v3-mantra { font-size: 22px !important; margin: 0 0 20px; }
+  .about-v3-can-solve { margin-top: 4px; }
+  .about-v3-can-solve-title { font-size: 15px !important; margin-bottom: 10px !important; }
+  .about-v3-can-solve-list { font-size: 15px !important; line-height: 1.9 !important; }
   .about-v3-profile-invitation { padding: 24px 22px; }
   .about-v3-profile-invitation p { font-size: clamp(18px,4.5vw,23px) !important; }
 }
