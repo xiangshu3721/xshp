@@ -819,26 +819,31 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 }
 
 .about-v3-can-solve {
-  margin-top: 8px;
-  padding-top: 6px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(240,201,145,.28);
 }
 .about-v3-can-solve-title {
   margin: 0 0 12px !important;
-  color: #f1c991 !important;
+  color: #f6d9ac !important;
   font: 500 clamp(15px,1.5vw,17px)/1.7 "Hiragino Mincho ProN","Songti SC","STSong",serif !important;
-  letter-spacing: .06em;
+  letter-spacing: .08em;
 }
 .about-v3-can-solve-list {
   margin: 0;
   padding: 0 0 0 1.35em;
-  color: #e1e9df;
-  font: 400 clamp(14px,1.45vw,16px)/1.95 "Hiragino Mincho ProN","Songti SC","STSong",serif;
-  letter-spacing: .015em;
+  color: #efe2c4;
+  font: 500 clamp(14px,1.45vw,16px)/1.95 "Hiragino Mincho ProN","Songti SC","STSong",serif;
+  letter-spacing: .02em;
   list-style: decimal;
 }
 .about-v3-can-solve-list li {
   margin: 0 0 8px;
   padding-left: .15em;
+}
+.about-v3-can-solve-list li::marker {
+  color: #efc68c;
+  font-weight: 500;
 }
 .about-v3-can-solve-list li:last-child { margin-bottom: 0; }
 .about-v3-profile-invitation {
