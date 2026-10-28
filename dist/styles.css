@@ -819,9 +819,12 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 }
 
 .about-v3-can-solve {
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(240,201,145,.28);
+  margin-top: 14px;
+  padding: 14px 16px 16px;
+  border: 1px solid rgba(240,201,145,.42);
+  border-radius: 10px;
+  background: rgba(240,201,145,.06);
+  box-sizing: border-box;
 }
 .about-v3-can-solve-title {
   margin: 0 0 12px !important;
@@ -887,7 +890,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   .about-v3-profile-body { grid-template-columns: 1fr; gap: 25px; margin-top: 28px; }
   .about-v3-profile-story p { font-size: 15px !important; line-height: 1.95 !important; margin-bottom: 18px; }
   .about-v3-profile-story .about-v3-mantra { font-size: 22px !important; margin: 0 0 20px; }
-  .about-v3-can-solve { margin-top: 4px; }
+  .about-v3-can-solve { margin-top: 10px; padding: 12px 14px 14px; }
   .about-v3-can-solve-title { font-size: 15px !important; margin-bottom: 10px !important; }
   .about-v3-can-solve-list { font-size: 15px !important; line-height: 1.9 !important; }
   .about-v3-profile-invitation { padding: 24px 22px; }
