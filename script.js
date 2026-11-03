@@ -8,6 +8,10 @@ const mascotDialog = document.querySelector('#mascot-dialog');
 let zIndex = 25;
 
 const themes = [
+  { id: 'sky-signal', name: '云路信号', note: '蓝天·停灯·方向', src: 'assets/theme-walls/sky-traffic.jpg', tone: 'bright' },
+  { id: 'toile-sea', name: '青花山海', note: '瓷画海岸与远山', src: 'assets/theme-walls/toile-coast.jpg', tone: 'bright' },
+  { id: 'crimson-self', name: '赤焰身影', note: '红雾里的自观', src: 'assets/theme-walls/crimson-figure.jpg', tone: 'dark' },
+  { id: 'marionette-night', name: '提线夜域', note: '手与被牵引的小我', src: 'assets/theme-walls/marionette-night.jpg', tone: 'dark' },
   { id: 'original', name: '静谧青蓝', note: '纯色桌面', solid: '#224551' },
   { id: 'castle', name: '光之城', note: '想象与远方', wallpaper: '01.jpeg', src: 'assets/manifesto/01.jpeg' },
   { id: 'forest', name: '林间之路', note: '慢下来，向内走', wallpaper: '02.jpeg', src: 'assets/manifesto/02.jpeg' },
@@ -456,6 +460,7 @@ function setTheme(id) {
     desktop.style.setProperty('--active-wallpaper', `url("${theme.src}")`);
   }
   desktop.dataset.wallpaperTheme = theme.id;
+  desktop.dataset.wallpaperTone = theme.tone || (theme.solid ? 'solid' : 'dark');
   try { localStorage.setItem('xiangshu-art-theme-v2', id); } catch (error) { /* local preference is optional */ }
   updateThemeChoices();
 }
@@ -765,7 +770,7 @@ document.addEventListener('keydown', (event) => {
 
 try {
   const savedTheme = localStorage.getItem('xiangshu-art-theme-v2');
-  setTheme(savedTheme || 'original');
+  setTheme(savedTheme || 'sky-signal');
 } catch (error) { /* local preference is optional */ }
 
 function updateClock() {
