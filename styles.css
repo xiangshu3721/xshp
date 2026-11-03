@@ -327,7 +327,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
    ------------------------------------------------------------------ */
 :root { --portfolio-sage: #cfe1b2; }
 .manifesto-hero { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(300px, .88fr); gap: clamp(20px, 4.5vw, 90px); align-items: center; min-height: 100svh; padding: clamp(88px, 12vh, 148px) clamp(30px, 8vw, 132px) clamp(110px, 13vh, 170px); overflow: hidden; }
-.manifesto-hero::before { background: linear-gradient(90deg, rgba(12,31,39,.16), rgba(12,31,39,.08) 58%, rgba(12,31,39,.03)); }
+.manifesto-hero::before { background: linear-gradient(90deg, rgba(12,31,39,.16), rgba(12,31,39,.08) 58%, rgba(12,31,39,.03)); -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 72%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, #000 72%, transparent 100%); }
 .desktop-welcome { max-width: 850px; text-shadow: 0 2px 28px rgba(4,23,27,.68), 0 1px 2px rgba(4,23,27,.35); }
 .desktop-welcome .welcome-kicker { font-size: 10px; letter-spacing: .19em; color: #f8d2a0; margin-bottom: 21px; }
 .welcome-star { margin-inline: 8px; font-size: 15px; color: #dfd5ab; }
@@ -357,7 +357,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .hero-persona figcaption { position: absolute; z-index: 2; bottom: 11%; left: 16%; font: 10px/1.4 Georgia, serif; letter-spacing: .17em; color: #efe6d5; text-shadow: 0 1px 9px rgba(0,0,0,.6); }
 .persona-seal { position: absolute; z-index: 3; bottom: 5%; right: 0; display: grid; place-items: center; width: 112px; height: 112px; border-radius: 50%; color: #274039; background: #efc38d; box-shadow: 0 12px 36px rgba(4,22,25,.37); transform: rotate(12deg); text-align: center; font: 500 16px/1.65 "Hiragino Mincho ProN", "Songti SC", serif; }
 .hero-edge-note { position: absolute; z-index: 1; bottom: 30px; right: clamp(25px, 7vw, 110px); color: rgba(255,245,219,.7); font: 10px Georgia, serif; letter-spacing: .2em; }
-.desktop-explore { position: relative; z-index: 3; min-height: 95svh; padding: clamp(85px, 11vh, 135px) max(26px, calc((100vw - 1160px) / 2)) 125px; background: linear-gradient(180deg, rgba(17,36,40,0), rgba(20,41,45,.12) 55%, rgba(14,32,37,.18)); color: #f8f3e6; }
+.desktop-explore { position: relative; z-index: 3; min-height: 95svh; padding: clamp(85px, 11vh, 135px) max(26px, calc((100vw - 1160px) / 2)) 125px; background: transparent; color: #f8f3e6; }
 .explore-heading { max-width: 830px; margin-bottom: 44px; }
 .explore-kicker { margin: 0 0 13px; color: #f0c991; font: 11px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: .16em; }
 .explore-heading h2 { margin: 0 0 17px; font: 500 clamp(37px, 4.9vw, 68px)/1.25 "Hiragino Mincho ProN", "Songti SC", serif; letter-spacing: -.06em; text-shadow: 0 2px 18px rgba(4,20,25,.55); }
