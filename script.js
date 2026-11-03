@@ -8,8 +8,8 @@ const mascotDialog = document.querySelector('#mascot-dialog');
 let zIndex = 25;
 
 const themes = [
-  { id: 'sky-signal', name: '云路信号', note: '蓝天·停灯·方向', src: 'assets/theme-walls/sky-traffic.jpg', tone: 'bright' },
   { id: 'toile-sea', name: '青花山海', note: '瓷画海岸与远山', src: 'assets/theme-walls/toile-coast.jpg', tone: 'bright' },
+  { id: 'sky-signal', name: '云路信号', note: '蓝天·停灯·方向', src: 'assets/theme-walls/sky-traffic.jpg', tone: 'bright' },
   { id: 'crimson-self', name: '赤焰身影', note: '红雾里的自观', src: 'assets/theme-walls/crimson-figure.jpg', tone: 'dark' },
   { id: 'marionette-night', name: '提线夜域', note: '手与被牵引的小我', src: 'assets/theme-walls/marionette-night.jpg', tone: 'dark' },
   { id: 'original', name: '静谧青蓝', note: '纯色桌面', solid: '#224551' },
@@ -397,7 +397,7 @@ function renderWindow(id) {
   windowElement.setAttribute('aria-label', data.title);
   windowElement.innerHTML = `
     <header class="window-titlebar">
-      <div class="window-controls" aria-label="窗口控制"><button class="window-control close" type="button" data-window-action="close" aria-label="关闭窗口"></button><button class="window-control min" type="button" data-window-action="minimize" aria-label="隐藏窗口"></button><button class="window-control max" type="button" data-window-action="maximize" aria-label="放大窗口"></button></div>
+      <div class="window-controls" aria-label="窗口控制"><button class="window-control close" type="button" data-window-action="close" aria-label="关闭窗口" title="关闭"></button><button class="window-control min" type="button" data-window-action="minimize" aria-label="最小化窗口" title="最小化"></button><button class="window-control max" type="button" data-window-action="maximize" aria-label="全屏窗口" title="全屏"></button></div>
       <div class="window-title">${data.title}</div><div class="window-path">${data.path}</div>
     </header>
     <div class="window-content">${data.content}</div>
@@ -461,7 +461,7 @@ function setTheme(id) {
   }
   desktop.dataset.wallpaperTheme = theme.id;
   desktop.dataset.wallpaperTone = theme.tone || (theme.solid ? 'solid' : 'dark');
-  try { localStorage.setItem('xiangshu-art-theme-v2', id); } catch (error) { /* local preference is optional */ }
+  try { localStorage.setItem('xiangshu-art-theme-v3', id); } catch (error) { /* local preference is optional */ }
   updateThemeChoices();
 }
 
@@ -701,8 +701,46 @@ document.addEventListener('click', (event) => {
     if (action === 'minimize') windowElement.classList.toggle('is-minimized');
     if (action === 'maximize') {
       const maximizing = !windowElement.classList.contains('is-maximized');
-      windowElement.classList.toggle('is-maximized', maximizing);
-      windowElement.classList.toggle('is-centered', !maximizing);
+      if (maximizing) {
+        windowElement.dataset.prevRect = JSON.stringify({
+          left: windowElement.style.left,
+          top: windowElement.style.top,
+          right: windowElement.style.right,
+          width: windowElement.style.width,
+          height: windowElement.style.height,
+          transform: windowElement.style.transform,
+        });
+        windowElement.style.left = '';
+        windowElement.style.top = '';
+        windowElement.style.right = '';
+        windowElement.style.width = '';
+        windowElement.style.height = '';
+        windowElement.style.transform = '';
+        windowElement.classList.remove('is-centered');
+        windowElement.classList.add('is-maximized');
+        const maxBtn = windowElement.querySelector('.window-control.max');
+        if (maxBtn) {
+          maxBtn.setAttribute('aria-label', '退出全屏');
+          maxBtn.title = '退出全屏';
+        }
+      } else {
+        windowElement.classList.remove('is-maximized');
+        let prev = {};
+        try { prev = JSON.parse(windowElement.dataset.prevRect || '{}'); } catch (error) { prev = {}; }
+        windowElement.style.left = prev.left || '';
+        windowElement.style.top = prev.top || '';
+        windowElement.style.right = prev.right || '';
+        windowElement.style.width = prev.width || '';
+        windowElement.style.height = prev.height || '';
+        windowElement.style.transform = prev.transform || '';
+        const hadInlinePos = Boolean(prev.left || prev.top);
+        windowElement.classList.toggle('is-centered', !hadInlinePos);
+        const maxBtn = windowElement.querySelector('.window-control.max');
+        if (maxBtn) {
+          maxBtn.setAttribute('aria-label', '全屏窗口');
+          maxBtn.title = '全屏';
+        }
+      }
     }
     return;
   }
@@ -769,8 +807,8 @@ document.addEventListener('keydown', (event) => {
 });
 
 try {
-  const savedTheme = localStorage.getItem('xiangshu-art-theme-v2');
-  setTheme(savedTheme || 'sky-signal');
+  const savedTheme = localStorage.getItem('xiangshu-art-theme-v3');
+  setTheme(savedTheme || 'toile-sea');
 } catch (error) { /* local preference is optional */ }
 
 function updateClock() {
